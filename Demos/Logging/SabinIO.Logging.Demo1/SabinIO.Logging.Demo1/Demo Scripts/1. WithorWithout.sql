@@ -1,0 +1,25 @@
+﻿-- WHICH WILL BE FASTER AND WHY?
+
+
+-- BATCH 1 - No Transaction
+DECLARE @x INT = 0
+WHILE @x < 20000
+BEGIN
+	INSERT INTO Test1 (Col2)
+	VALUES (REPLICATE('a',8000))
+	SET @x = @x + 1
+END
+GO
+
+
+-- BATCH 2 - Explict Transaction
+DECLARE @x INT = 0
+BEGIN TRANSACTION
+	WHILE @x < 20000
+	BEGIN
+		INSERT INTO Test1 (Col2)
+		VALUES (REPLICATE('a',8000))
+		SET @x = @x + 1
+	END
+COMMIT TRANSACTION
+GO
