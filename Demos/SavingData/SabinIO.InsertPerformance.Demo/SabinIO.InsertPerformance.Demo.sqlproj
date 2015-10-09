@@ -129,6 +129,7 @@
   <ItemGroup>
     <None Include="dbo\Demos\Demo1.sql" />
     <None Include="dbo\Demos\Demo2.sql" />
+    <None Include="SabinIO.InsertPerformance.Demo.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="dbo\PostDBDeploy\SetDBSize.sql" />
