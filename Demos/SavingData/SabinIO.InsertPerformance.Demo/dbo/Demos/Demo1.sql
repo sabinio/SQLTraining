@@ -97,7 +97,7 @@ GO
 --page count 20000
 
 
---rebuild index with fill factor of 80%
+--rebuild index with fill factor of 70%
 alter index idx_PageSplits on PageSplits rebuild with (fillfactor = 70)
 go
 select page_count from sys.dm_db_index_physical_stats(db_id(),object_id('PageSplits'),1,Null,null)

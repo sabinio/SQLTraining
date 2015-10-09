@@ -31,8 +31,8 @@ and type_desc = 'LOG'
 
 --record values
 --log size before = 2 
---log size after = 459
---457mb transaction log to delete 12.5mb data 
+--log size after = 109
+--109mb transaction log to delete 3mb data 
 
 
 
@@ -70,5 +70,5 @@ and type_desc = 'LOG'
 --record values
 --log size before = 2 
 --log size after = 2
---0mb transaction log to delete 12.5mb data 
+--0mb transaction log to delete 3mb data 
 

@@ -19,7 +19,7 @@ and type_desc = 'LOG'
 
 BEGIN TRANSACTION
 declare @id int = 0
-while @id <= 1000000
+while @id <= 250000
 begin
 	insert into LogOverhead
 	select 6
@@ -32,11 +32,11 @@ from sys.master_files
 where database_id = db_id()
 and type_desc = 'LOG'
 /*TO HERE*/
---Check Table Size = 13.203mb
+--Check Table Size = 3.305mb
 --record values
 --log size before = 2 
---log size after = 313
---311mb transaction log for 13mb data inserted
+--log size after = 82
+--311mb transaction log for 3mb data inserted
 
 
 
@@ -72,8 +72,8 @@ where database_id = db_id()
 and type_desc = 'LOG'
 /*TO HERE*/
 
---Check Table Size = 12.563mb
+--Check Table Size = 3.141mb
 --record values
 --log size before = 2 
---log size after = 313
---311mb transaction log for 12.5mb data inserted
+--log size after = 74
+--74mb transaction log for 3mb data inserted

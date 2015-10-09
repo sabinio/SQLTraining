@@ -7,7 +7,7 @@ SET NOCOUNT ON
 -- Generate Test Data
 INSERT INTO Sales (CustomerID, ProductID, Qty)
 SELECT RAND()*10000,RAND()*100,RAND()*10
-GO 10000
+GO 2000
 
 
 SELECT * FROM Sales
@@ -62,7 +62,7 @@ SET NOCOUNT ON
 -- Generate Test Data
 INSERT INTO Sales (CustomerID, ProductID, Qty)
 SELECT RAND()*10000,RAND()*100,RAND()*10
-GO 10000
+GO 2000
 
 
 SELECT * FROM Sales

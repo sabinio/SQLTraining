@@ -7,7 +7,7 @@ SET NOCOUNT ON
 
 INSERT INTO Sales (CustomerID, ProductID, Qty)
 SELECT RAND()*10000,RAND()*100,RAND()*10
-GO 50000
+GO 2000
 
 SELECT * FROM Sales
 GO
@@ -59,7 +59,7 @@ GO
 
 -- SET THE PAGE ID IN THE NEXT STATEMENT
 -- We now go through the latest backup chain to restore the page
-RESTORE DATABASE [SabinIO.Recovery.PageRestore] PAGE='1:493' FROM DISK='C:\Temp\FullBackup_PageRestore.bak' 
+RESTORE DATABASE [SabinIO.Recovery.PageRestore] PAGE='1:489' FROM DISK='C:\Temp\FullBackup_PageRestore.bak' 
 WITH NORECOVERY
 GO
 
