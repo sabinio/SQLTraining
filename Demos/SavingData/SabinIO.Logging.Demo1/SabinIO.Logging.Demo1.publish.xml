@@ -4,7 +4,7 @@
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseName>SabinIO.Logging.Demo1</TargetDatabaseName>
     <DeployScriptFileName>SabinIO.Logging.Demo1.sql</DeployScriptFileName>
-    <TargetConnectionString>Data Source=SQL14;Integrated Security=True;Pooling=False</TargetConnectionString>
+    <TargetConnectionString>Data Source=.\SEATTLE;Integrated Security=True;Pooling=False</TargetConnectionString>
     <BlockOnPossibleDataLoss>True</BlockOnPossibleDataLoss>
     <CreateNewDatabase>True</CreateNewDatabase>
     <ProfileVersionNumber>1</ProfileVersionNumber>
