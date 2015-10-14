@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Locking.Demos", "SabinIO.Locking.Demos\SabinIO.Locking.Demos.sqlproj", "{BD79A7F6-5F17-4806-A6D5-3B0A9D4C3B4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD79A7F6-5F17-4806-A6D5-3B0A9D4C3B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD79A7F6-5F17-4806-A6D5-3B0A9D4C3B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD79A7F6-5F17-4806-A6D5-3B0A9D4C3B4D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BD79A7F6-5F17-4806-A6D5-3B0A9D4C3B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD79A7F6-5F17-4806-A6D5-3B0A9D4C3B4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD79A7F6-5F17-4806-A6D5-3B0A9D4C3B4D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
