@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Locking.LockingHierarchy", "SabinIO.Locking.Demos\SabinIO.Locking.LockingHierarchy.sqlproj", "{BD79A7F6-5F17-4806-A6D5-3B0A9D4C3B4D}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Locking.LockingHierarchy", "SabinIO.Locking.LockingHierarchy\SabinIO.Locking.LockingHierarchy.sqlproj", "{BD79A7F6-5F17-4806-A6D5-3B0A9D4C3B4D}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Locking.Isolation", "SabinIO.Locking.Isolation\SabinIO.Locking.Isolation.sqlproj", "{46CD5106-11E4-4D3A-8BE9-45345A334A62}"
 EndProject
