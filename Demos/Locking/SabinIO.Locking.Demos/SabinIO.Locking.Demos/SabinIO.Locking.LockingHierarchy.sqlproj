@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>SabinIO.Locking.Demos</Name>
+    <Name>SabinIO.Locking.LockingHierarchy</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{bd79a7f6-5f17-4806-a6d5-3b0a9d4c3b4d}</ProjectGuid>
@@ -124,5 +124,6 @@
   <ItemGroup>
     <None Include="Demos\Demo2_LockingHierachy.sql" />
     <None Include="Demos\Demo1_LockingHierarchy.sql" />
+    <None Include="SabinIO.Locking.Demos.publish.xml" />
   </ItemGroup>
 </Project>

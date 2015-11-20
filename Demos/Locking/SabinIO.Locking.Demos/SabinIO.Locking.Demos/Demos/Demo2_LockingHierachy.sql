@@ -1,4 +1,7 @@
-﻿--Row level locks
+﻿USE [SabinIO.Locking.LockingHierarchy]
+GO
+
+--Row level locks
 
 
 --execute the next transaction (inluding the commmit)

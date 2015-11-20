@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[TableA]
+(
+	[Id] INT NOT NULL PRIMARY KEY,
+	Col1	VARCHAR(4000) NOT NULL
+)

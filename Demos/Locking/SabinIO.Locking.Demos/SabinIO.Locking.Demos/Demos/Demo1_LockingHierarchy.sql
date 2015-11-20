@@ -1,5 +1,5 @@
-﻿use [SabinIO.Locking.Demos]
-go
+﻿USE [SabinIO.Locking.LockingHierarchy]
+GO
 
 --Execute the transaction (including the commmit)
 begin transaction
