@@ -124,5 +124,6 @@
   <ItemGroup>
     <None Include="DemoScripts\Demo1-WriteLogTest.sql" />
     <None Include="DemoScripts\Demo2-IncompleteTransactionWriteLogTest.sql" />
+    <None Include="SabinIO.dirtyPage.Demo.publish.xml" />
   </ItemGroup>
 </Project>
