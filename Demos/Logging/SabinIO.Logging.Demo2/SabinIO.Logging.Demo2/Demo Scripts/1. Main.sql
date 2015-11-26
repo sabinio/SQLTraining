@@ -1,4 +1,8 @@
-﻿DBCC LOGINFO()
+﻿USE [SabinIO.Logging.Demo2]
+GO
+
+
+DBCC LOGINFO()
 
 -- Run until two active VLF's
 INSERT INTO Test1 (col1) VALUES (REPLICATE('a',8000))
