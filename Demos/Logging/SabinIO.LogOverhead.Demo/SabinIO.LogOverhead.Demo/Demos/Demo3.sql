@@ -1,4 +1,7 @@
-﻿
+﻿USE [SabinIO.LogOverhead.Demo]
+GO
+
+
 --INSERT Large number of records
 
 --ensure transaction log is small

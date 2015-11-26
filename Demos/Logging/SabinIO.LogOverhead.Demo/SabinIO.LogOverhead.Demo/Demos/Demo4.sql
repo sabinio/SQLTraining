@@ -1,4 +1,8 @@
-﻿--UPDATE Large number of records
+﻿USE [SabinIO.LogOverhead.Demo]
+GO
+
+
+--UPDATE Large number of records
 
 --ensure transaction log is small
 USE [SabinIO.LogOverhead.Demo];
