@@ -1,4 +1,12 @@
-﻿--INSERT Small number of records
+﻿USE [SabinIO.LogOverhead.Demo]
+GO
+
+SET NOCOUNT ON;
+GO
+
+
+
+--INSERT Small number of records
 
 --insert 1 record into the table
 BEGIN TRANSACTION

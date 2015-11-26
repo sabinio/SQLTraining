@@ -1,4 +1,9 @@
-﻿-- WHICH WILL BE FASTER AND WHY?
+﻿USE [SabinIO.Logging.Demo1]
+GO
+
+SET NOCOUNT ON;
+
+-- WHICH WILL BE FASTER AND WHY?
 
 
 -- BATCH 1 - No Transaction
