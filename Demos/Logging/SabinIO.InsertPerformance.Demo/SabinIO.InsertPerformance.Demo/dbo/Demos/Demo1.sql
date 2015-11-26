@@ -1,4 +1,8 @@
-﻿--Page Splits Demo
+﻿use [SabinIO.InsertPerformance.Demo]
+GO
+
+
+--Page Splits Demo
 set nocount on
 go
 --Insert 160000 records
@@ -6,7 +10,7 @@ go
 BEGIN TRANSACTION
 
 declare @a int = 1
-while @a <= 20000
+while @a <= 2000
 begin
 	insert into PageSplits(id,col1)
 	values (@a,'a'),(@a,'b'),(@a,'c'),(@a,'d'),(@a,'e'),(@a,'f'),(@a,'g'),(@a,'h')
@@ -25,15 +29,15 @@ GO
 --5 secs
 --transaction log bytes - 183925500
 --transaction log bytes reserved - 49654176
---page count 20000
+--page count 2000
 
 
---Insert 20000 records 
+--Insert 2000 records 
 --1 to each page
 BEGIN TRANSACTION
 
 declare @a int = 1
-while @a <= 20000
+while @a <= 2000
 begin
 	insert into PageSplits(id,col1)
 	values (@a,'a')
@@ -105,12 +109,12 @@ go
 --page count 22860
 
 
---Insert 20000 records 
+--Insert 2000 records 
 --1 to each page
 BEGIN TRANSACTION
 
 declare @a int = 1
-while @a <= 20000
+while @a <= 2000
 begin
 	insert into PageSplits(id,col1)
 	values (@a,'a')
