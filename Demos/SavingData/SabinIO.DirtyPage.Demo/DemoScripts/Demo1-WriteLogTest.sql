@@ -1,4 +1,7 @@
-﻿
+﻿USE [SabinIO.dirtyPage.Demo]
+GO
+
+
 --Insert A Record into the table
 insert into WriteLogTest
 Select 'CleanPage'

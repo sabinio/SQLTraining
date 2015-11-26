@@ -1,4 +1,10 @@
-﻿
+﻿USE [SabinIO.LogOverhead.Demo]
+GO
+
+SET NOCOUNT ON;
+GO
+
+
 --UPDATE Small number of records
 
 --Update 1 record in the table

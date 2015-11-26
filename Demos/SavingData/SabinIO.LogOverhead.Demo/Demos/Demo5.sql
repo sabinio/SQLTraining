@@ -1,4 +1,12 @@
-﻿
+﻿USE [SabinIO.LogOverhead.Demo]
+GO
+
+SET NOCOUNT ON;
+GO
+
+
+
+
 --DELETE / TRUNCATE Large number of records
 
 --ensure transaction log is small

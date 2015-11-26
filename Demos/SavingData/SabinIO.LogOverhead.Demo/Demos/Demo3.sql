@@ -1,4 +1,11 @@
-﻿
+﻿USE [SabinIO.LogOverhead.Demo]
+GO
+
+SET NOCOUNT ON;
+GO
+
+
+
 --INSERT Large number of records
 
 --ensure transaction log is small

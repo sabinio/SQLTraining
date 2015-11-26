@@ -1,4 +1,8 @@
-﻿--Page Splits Demo
+﻿USE [SabinIO.InsertPerformance.Demo]
+GO
+
+
+--Page Splits Demo
 set nocount on
 go
 --Insert 160000 records

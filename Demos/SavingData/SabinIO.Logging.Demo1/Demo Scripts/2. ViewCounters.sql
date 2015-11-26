@@ -1,4 +1,10 @@
-﻿-- Prep
+﻿USE [SabinIO.Logging.Demo1]
+GO
+
+SET NOCOUNT ON;
+
+
+-- Prep
 TRUNCATE TABLE Test1
 GO
 

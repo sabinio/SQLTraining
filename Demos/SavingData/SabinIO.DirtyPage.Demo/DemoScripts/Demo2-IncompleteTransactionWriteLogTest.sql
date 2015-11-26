@@ -1,4 +1,7 @@
-﻿
+﻿USE [SabinIO.dirtyPage.Demo]
+GO
+
+
 /*EXECUTE STATEMENT FROM HERE*/
 BEGIN TRANSACTION
 --Insert A Record into the table
