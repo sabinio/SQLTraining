@@ -1,9 +1,13 @@
-﻿-- WHICH WILL BE FASTER AND WHY?
+﻿USE [SabinIO.Logging.Demo1]
+GO
+
+
+-- WHICH WILL BE FASTER AND WHY?
 
 
 -- BATCH 1 - No Transaction
 DECLARE @x INT = 0
-WHILE @x < 20000
+WHILE @x < 2000
 BEGIN
 	INSERT INTO Test1 (Col2)
 	VALUES (REPLICATE('a',8000))
@@ -15,7 +19,7 @@ GO
 -- BATCH 2 - Explict Transaction
 DECLARE @x INT = 0
 BEGIN TRANSACTION
-	WHILE @x < 20000
+	WHILE @x < 2000
 	BEGIN
 		INSERT INTO Test1 (Col2)
 		VALUES (REPLICATE('a',8000))
