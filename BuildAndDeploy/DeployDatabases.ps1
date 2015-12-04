@@ -1,5 +1,5 @@
 ﻿
-[string] $SERVER = "SQL14"
+[string] $SERVER = "."
 [string] $sqlpackage = "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\120\sqlpackage.exe"
 
 cls
@@ -16,7 +16,7 @@ $DropFolder = join-Path (Get-ScriptDirectory) ('..\Demos\')
 
 if((Test-Path C:\Demos) -eq 1)
     {
-        Remove-Item C:\Demos;
+        Remove-Item C:\Demos -Recurse -Force;
     }
 New-Item C:\Demos -type directory -force
 
@@ -26,7 +26,7 @@ Foreach-Object{
    if (([uri]$_.FullName).segments[-2].trim('/') -eq "Demos"){   # In a folder called Demos
     if (([uri]$_.FullName).segments[-4].trim('/') -ne "bin"){    # Not in Bin sub-folder
         write-host $_.FullName
-        $NewSubFolder = join-Path ("C:\Demos\") ([uri]$_.FullName).segments[-3].trim('/')
+        $NewSubFolder = join-Path ("C:\Demos\") ([uri]$_.FullName).segments[-3].trim('/')  # Get the Project name from folder name 2 deep
         if((Test-Path $NewSubFolder) -eq 0)
         {
             mkdir $NewSubFolder;
@@ -36,8 +36,6 @@ Foreach-Object{
     }
 }
 
-
-return
 
 Get-ChildItem $DropFolder -Filter *.dacpac -Recurse | `
 Foreach-Object{
@@ -52,7 +50,7 @@ Foreach-Object{
 
     $vars = ('/a:publish'), ('/sf:' + $DACPAC), ('/pr:' + $PROFILE), ('/TargetServerName:' + $SERVER)
 
-    write-host "Comparing model for database " + $DACPAC  -foregroundcolor green -backgroundcolor black 
+    write-host "Deploying model for database " $DACPAC  -foregroundcolor green -backgroundcolor black 
 	    & $SQLPackage $vars
     if (! $?) { throw "Deploy failed" }
 }

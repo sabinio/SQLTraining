@@ -1,4 +1,4 @@
-﻿
+﻿# USE TO CREATE A VM IMAGE FOR REUSE
 
 #
 #
@@ -12,22 +12,18 @@
 
 $subScriptionName = "Visual Studio Ultimate with MSDN"
 $rgName="sqltraining"
-$MasterMachine = "SQLTRAINMASTER"
+$MasterMachine = "SQLTRAINMASTER"        # THIS IS THE MACHINE THAT YOU HAVE ALREADY SYSPREPED AND WANT TO USE AS THE FUTURE IMAGE
+$VHDName = "Trainingv1"
 
-$user = "Simon.DMorias@sabin.io"
-$pw = ConvertTo-SecureString "" -AsPlainText -Force
-$cred = New-Object –TypeName System.Management.Automation.PSCredential –ArgumentList $user, $pw
 
 Import-AzureRM
 Import-Module AzureRM.Compute
 Import-Module Azure
-Login-AzureRmAccount # -Credential $cred
 
+Login-AzureRmAccount # COMMENT OUT IF YOU HAVE LOGGED IN DURING THIS SESSION ALREADY
 
 
 Get-AzureRmSubscription –SubscriptionName $subscriptionName | Select-AzureRmSubscription
-
-
 
 
 # Deallocate the virtual machine
@@ -37,5 +33,5 @@ Stop-AzureRmVM -ResourceGroupName $rgName -Name $MasterMachine -Force
 Set-AzureRmVM -ResourceGroupName $rgName -Name $MasterMachine -Generalized
 
 # Capture the image to storage account.
-Save-AzureRmVMImage -ResourceGroupName $rgName -VMName $MasterMachine -DestinationContainerName 'mytemplates' -VHDNamePrefix 'Trainingv1' -Path C:\temp\SampleTemplate.json -Overwrite
+Save-AzureRmVMImage -ResourceGroupName $rgName -VMName $MasterMachine -DestinationContainerName 'mytemplates' -VHDNamePrefix $VHDName -Path C:\temp\SampleTemplate.json -Overwrite
 

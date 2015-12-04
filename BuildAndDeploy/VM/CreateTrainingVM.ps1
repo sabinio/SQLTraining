@@ -1,25 +1,25 @@
-﻿# Set values for existing resource group and storage account names
+﻿# CREATE A VM FROM AZURE STOCK IMAGES
 
+
+# Set values for existing resource group and storage account names
 $subScriptionName = "Visual Studio Ultimate with MSDN"
-$serverNumber = "05"
 $rgName="sqltraining"
 $locName="WestEurope" 
-$saName="sabiniotraining1"   # No upper case or special characters
-$vmName="SABINIOBUILD" # + $serverNumber
+$saName="sabiniotraining1"   # Storage Account - No upper case or special characters
+$vmName="SABINIOBUILD"
 $vmSize="Standard_A1"
 $vnetName="trainingvnet"
 
-
-$user = "simon.dmorias@sabin.io"
-$pw = ConvertTo-SecureString "" -AsPlainText -Force
-$cred = New-Object –TypeName System.Management.Automation.PSCredential –ArgumentList $user, $pw
 
 cls
 
 Import-AzureRM
 Import-Module AzureRM.Compute
 Import-Module Azure
-# Login-AzureRmAccount # -Credential $cred
+
+
+Login-AzureRmAccount # COMMENT OUT IF YOU HAVE LOGGED IN DURING THIS SESSION ALREADY
+
 
 Get-AzureRmSubscription –SubscriptionName $subscriptionName | Select-AzureRmSubscription
 
