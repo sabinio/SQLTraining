@@ -7,9 +7,9 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.dirtyPage.Demo", "S
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.InsertPerformance.Demo", "SabinIO.InsertPerformance.Demo\SabinIO.InsertPerformance.Demo.sqlproj", "{AA154AD3-7D5E-4A41-91BE-42A4F2190A90}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Logging.Demo1", "SabinIO.Logging.Demo1\SabinIO.Logging.Demo1.sqlproj", "{34E1EC80-A2B4-4C48-8B2D-303C4F504A94}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Logging.WithTran", "SabinIO.Logging.Demo1\SabinIO.Logging.WithTran.sqlproj", "{34E1EC80-A2B4-4C48-8B2D-303C4F504A94}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Logging.Demo2", "SabinIO.Logging.Demo2\SabinIO.Logging.Demo2.sqlproj", "{9A494AB5-A0E9-437D-8C5E-57A1E996B0D6}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Logging.VLFs", "SabinIO.Logging.Demo2\SabinIO.Logging.VLFs.sqlproj", "{9A494AB5-A0E9-437D-8C5E-57A1E996B0D6}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.LogOverhead.Demo", "SabinIO.LogOverhead.Demo\SabinIO.LogOverhead.Demo.sqlproj", "{39603BEC-1F5A-4B5B-A535-AF50B2385FE4}"
 EndProject

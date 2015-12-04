@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>SabinIO.Logging.Demo2</Name>
+    <Name>SabinIO.Logging.VLFs</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{9a494ab5-a0e9-437d-8c5e-57a1e996b0d6}</ProjectGuid>
@@ -12,8 +12,8 @@
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>SabinIO.Logging.Demo2</RootNamespace>
-    <AssemblyName>SabinIO.Logging.Demo2</AssemblyName>
+    <RootNamespace>SabinIO.Logging.VLFs</RootNamespace>
+    <AssemblyName>SabinIO.Logging.VLFs</AssemblyName>
     <ModelCollation>1033,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -60,7 +60,7 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Schemas" />
-    <Folder Include="Demo Scripts" />
+    <Folder Include="Demos" />
     <Folder Include="Scripts" />
     <Folder Include="Storage" />
   </ItemGroup>
@@ -77,14 +77,14 @@
     <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="SabinIO.Logging.Demo2.publish.xml" />
-    <None Include="Demo Scripts\1. Main.sql">
+    <None Include="SabinIO.Logging.VLFs.publish.xml" />
+    <None Include="Demos\1. Main.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Demo Scripts\2. Session 2.sql">
+    <None Include="Demos\2. Session 2.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Demo Scripts\3. Session 3.sql">
+    <None Include="Demos\3. Session 3.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -2,12 +2,11 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
-    <TargetDatabaseName>SabinIO.Logging.Demo2</TargetDatabaseName>
-    <DeployScriptFileName>SabinIO.Logging.Demo2.sql</DeployScriptFileName>
-    <TargetConnectionString>Data Source=.\SEATTLE;Integrated Security=True;Pooling=False</TargetConnectionString>
+    <TargetDatabaseName>SabinIO.Logging.WithTran</TargetDatabaseName>
+    <DeployScriptFileName>SabinIO.Logging.Demo1.sql</DeployScriptFileName>
+    <TargetConnectionString>Data Source=.;Integrated Security=True;Pooling=False</TargetConnectionString>
     <BlockOnPossibleDataLoss>True</BlockOnPossibleDataLoss>
     <CreateNewDatabase>True</CreateNewDatabase>
     <ProfileVersionNumber>1</ProfileVersionNumber>
-    <ScriptFileSize>True</ScriptFileSize>
   </PropertyGroup>
 </Project>

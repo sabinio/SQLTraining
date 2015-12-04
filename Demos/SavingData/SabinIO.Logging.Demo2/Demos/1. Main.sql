@@ -1,4 +1,4 @@
-﻿USE [SabinIO.Logging.Demo2]
+﻿USE [SabinIO.Logging.VLFs]
 GO
 
 SET NOCOUNT ON;

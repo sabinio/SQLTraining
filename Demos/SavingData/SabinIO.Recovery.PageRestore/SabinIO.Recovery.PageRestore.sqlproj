@@ -62,7 +62,7 @@
     <Folder Include="Schemas" />
     <Folder Include="Schemas\Tables" />
     <Folder Include="Schemas\Procs" />
-    <Folder Include="Demo Scripts" />
+    <Folder Include="Demos" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schemas\Tables\Sales.sql" />
@@ -70,7 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="SabinIO.Recovery.PageRestore.publish.xml" />
-    <None Include="Demo Scripts\1. PageRestore.sql">
+    <None Include="Demos\1. PageRestore.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

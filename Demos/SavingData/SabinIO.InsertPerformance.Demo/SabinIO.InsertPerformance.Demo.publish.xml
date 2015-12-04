@@ -4,7 +4,9 @@
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseName>SabinIO.InsertPerformance.Demo</TargetDatabaseName>
     <DeployScriptFileName>SabinIO.InsertPerformance.Demo.sql</DeployScriptFileName>
-    <TargetConnectionString>Data Source=.\SEATTLE;Integrated Security=True;Pooling=False</TargetConnectionString>
+    <TargetConnectionString>Data Source=.;Integrated Security=True;Pooling=False</TargetConnectionString>
     <ProfileVersionNumber>1</ProfileVersionNumber>
+    <BlockOnPossibleDataLoss>True</BlockOnPossibleDataLoss>
+    <CreateNewDatabase>True</CreateNewDatabase>
   </PropertyGroup>
 </Project>

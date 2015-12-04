@@ -4,17 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>SabinIO.Recovery.PageRestore</Name>
+    <Name>SabinIO.Logging.WithTran</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{daef5b8c-bb3f-4423-901b-c29eb6b09ff4}</ProjectGuid>
+    <ProjectGuid>{34e1ec80-a2b4-4c48-8b2d-303c4f504a94}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>SabinIO.Recovery.PageRestore</RootNamespace>
-    <AssemblyName>SabinIO.Recovery.PageRestore</AssemblyName>
-    <ModelCollation>1033,CI</ModelCollation>
+    <RootNamespace>SabinIO.Logging.WithTran</RootNamespace>
+    <AssemblyName>SabinIO.Logging.WithTran</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
@@ -23,8 +23,7 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
-    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
-    <PageVerify>NONE</PageVerify>
+    <PageVerify>CHECKSUM</PageVerify>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -60,18 +59,22 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Schemas" />
-    <Folder Include="Schemas\Tables" />
-    <Folder Include="Schemas\Procs" />
-    <Folder Include="Demo Scripts" />
+    <Folder Include="Scripts" />
+    <Folder Include="Demos" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Schemas\Tables\Sales.sql" />
-    <Build Include="Schemas\Procs\CorruptDatabase.sql" />
+    <Build Include="Schemas\Test1.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="SabinIO.Recovery.PageVerify.publish.xml" />
-    <None Include="Demo Scripts\1. PageVerify.sql">
+    <None Include="SabinIO.Logging.WithTran.publish.xml" />
+    <None Include="Demos\1. WithorWithout.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Demos\2. ViewCounters.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
   </ItemGroup>
 </Project>

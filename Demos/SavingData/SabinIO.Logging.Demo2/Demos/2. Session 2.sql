@@ -1,4 +1,4 @@
-﻿USE [SabinIO.Logging.Demo2]
+﻿USE [SabinIO.Logging.VLFs]
 GO
 
 SET NOCOUNT ON;
@@ -8,7 +8,7 @@ GO
 
 -- Run without commit
 BEGIN TRANSACTION
-	INSERT INTO Test3 VALUES ('ccc')
+	INSERT INTO Test2 VALUES ('bbb')
 
 -----------------------------------------------------------------
 

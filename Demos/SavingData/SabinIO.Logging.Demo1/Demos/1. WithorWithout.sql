@@ -1,4 +1,4 @@
-﻿USE [SabinIO.Logging.Demo1]
+﻿USE [SabinIO.Logging.WithTran]
 GO
 
 SET NOCOUNT ON;
