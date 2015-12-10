@@ -1,6 +1,6 @@
 ﻿
 ## Execute stuff on remote machine
-Enter-PSSession sabiniotr01.2a0elsp3h2ze1jnokg4br13lnf.ax.internal.cloudapp.net -UseSSL:$true -SessionOption (New-PSSessionOption -SkipCACheck)
+Enter-PSSession sabiniotr01.2a0elsp3h2ze1jnokg4br13lnf.ax.internal.cloudapp.net -UseSSL:$true -SessionOption (New-PSSessionOption -SkipCACheck  -SkipCNCheck)
 
 [string] $SERVER = "."
 [string] $sqlpackage = "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\120\sqlpackage.exe"
