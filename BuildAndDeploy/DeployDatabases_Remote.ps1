@@ -1,4 +1,4 @@
-﻿param{[string]$ServerName}
+﻿param([string]$ServerName)
 
 
 $s = New-PSSession $ServerName -UseSSL:$true -SessionOption (New-PSSessionOption -SkipCACheck  -SkipCNCheck)
