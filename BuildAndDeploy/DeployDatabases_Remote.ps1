@@ -13,7 +13,7 @@ Enter-PSSession sabiniotr01.2a0elsp3h2ze1jnokg4br13lnf.ax.internal.cloudapp.net 
 
 
 # $DropFolder = join-Path (Get-ScriptDirectory) ('..\Demos\')
-$DropFolder = ('C:\Drops')
+$DropFolder = "C:\Drops"
 
 if((Test-Path C:\Demos) -eq 1)
     {
