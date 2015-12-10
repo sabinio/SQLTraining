@@ -1,22 +1,27 @@
 ﻿
+cls
 
+# Copy Drop folder to target machine
+$Dest = "\\sabiniotr01.2a0elsp3h2ze1jnokg4br13lnf.ax.internal.cloudapp.net\c$\Drop"
+write-host $Dest
 
+Copy-Item '..\Demos\' $Dest -Recurse -Force
+
+## Execute stuff on remote machine
 Enter-PSSession sabiniotr01.2a0elsp3h2ze1jnokg4br13lnf.ax.internal.cloudapp.net -UseSSL:$true -SessionOption (New-PSSessionOption -SkipCACheck)
 
 [string] $SERVER = "."
 [string] $sqlpackage = "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\120\sqlpackage.exe"
 
-cls
+#function Get-ScriptDirectory
+#{
+# $Invocation = (Get-Variable MyInvocation -Scope 1).Value
+# Split-Path $Invocation.MyCommand.Path
+#}
 
 
-function Get-ScriptDirectory
-{
- $Invocation = (Get-Variable MyInvocation -Scope 1).Value
- Split-Path $Invocation.MyCommand.Path
-}
-
-
-$DropFolder = join-Path (Get-ScriptDirectory) ('..\Demos\')
+# $DropFolder = join-Path (Get-ScriptDirectory) ('..\Demos\')
+$DropFolder = ('C:\Drop')
 
 if((Test-Path C:\Demos) -eq 1)
     {

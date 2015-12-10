@@ -1,25 +1,31 @@
-﻿$subScriptionName = "Visual Studio Ultimate with MSDN"              # Subscription Name (credentials below)
-$serverNumber = "14"                              # Unique Number (if exists the VM will be reconfigured/imaged/sized as below)
-$rgName="sqltraining"                         # Resource Group
-$locName="WestEurope"                             # Azure Location
-$saName="sabiniotraining1"                   # Image must be in same storage account as vhd for this vm
-$vmName="SabinioTR" + $serverNumber             # Max 15 chars
-$vmSize="Standard_A2"                             # Machine Size
-$vnetName="trainingvnet"                          # Network Name (the first valid subnet will be selected)/(Will overwrite any manual changes)
-$SourceImageUri = "https://sabiniotraining1.blob.core.windows.net/system/Microsoft.Compute/Images/mytemplates/Trainingv1-osDisk.2e2de330-b244-492a-8c23-ff27fe0540b6.vhd"
-$user = "Simon.DMorias@sabin.io"
-$pw = ConvertTo-SecureString "" -AsPlainText -Force
-$cred = New-Object –TypeName System.Management.Automation.PSCredential –ArgumentList $user, $pw
+﻿param(
+[string]$subScriptionName = "Visual Studio Ultimate with MSDN"  # Subscription Name (login before calling script)
+[string]$serverNumber = "01"                              # Unique Number (if exists the VM will be reconfigured/imaged/sized as below)
+[string]$rgName="sqltraining"                         	  # Resource Group
+[string]$locName="WestEurope"                             # Azure Location
+[string]$saName="sabiniotraining1"                        # Image must be in same storage account as vhd for this vm
+[string]$vmName="SabinioTR" + $serverNumber               # Max 15 chars
+[string]$vmSize="Standard_A2"                             # Machine Size
+[string]$vnetName="trainingvnet"                          # Network Name (the first valid subnet will be selected)/(Will overwrite any manual changes)
+[string]$SourceImageUri = "https://sabiniotraining1.blob.core.windows.net/system/Microsoft.Compute/Images/mytemplates/Trainingv1-osDisk.2e2de330-b244-492a-8c23-ff27fe0540b6.vhd"
+)
+
+#	To call this script:
+#	Login first:
+# 		Import-AzureRM
+#		Login-AzureRmAccount
+#
+#	Then call script overriding any variables:
+#	.\CreateTrainingVM_fromImage.ps1 -serverNumber "12" -SourceImageUri "https://blah"
+#
+#
 
 cls
 
-
-Import-AzureRM
 Import-Module AzureRM.Compute
 Import-Module Azure
 
-# Connect to Azure and get Subscription
-Login-AzureRmAccount # -Credential $cred
+# Get Subscription
 Get-AzureRmSubscription –SubscriptionName $subscriptionName | Select-AzureRmSubscription
 
 # Make Sure Resource Group Exists
