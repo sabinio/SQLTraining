@@ -12,8 +12,8 @@
 
 $subScriptionName = "Visual Studio Ultimate with MSDN"
 $rgName="sqltraining"
-$MasterMachine = "SQLTRAINMASTER"        # THIS IS THE MACHINE THAT YOU HAVE ALREADY SYSPREPED AND WANT TO USE AS THE FUTURE IMAGE
-$VHDName = "Trainingv1"
+$MasterMachine = "sabiniotr01"        # THIS IS THE MACHINE THAT YOU HAVE ALREADY SYSPREPED AND WANT TO USE AS THE FUTURE IMAGE
+$VHDName = "Trainingv2"
 
 
 Import-AzureRM
@@ -33,5 +33,5 @@ Stop-AzureRmVM -ResourceGroupName $rgName -Name $MasterMachine -Force
 Set-AzureRmVM -ResourceGroupName $rgName -Name $MasterMachine -Generalized
 
 # Capture the image to storage account.
-Save-AzureRmVMImage -ResourceGroupName $rgName -VMName $MasterMachine -DestinationContainerName 'mytemplates' -VHDNamePrefix $VHDName -Path C:\temp\SampleTemplate.json -Overwrite
+Save-AzureRmVMImage -ResourceGroupName $rgName -VMName $MasterMachine -DestinationContainerName 'mytemplates' -VHDNamePrefix $VHDName -Path C:\temp\SampleTemplate2.json -Overwrite
 

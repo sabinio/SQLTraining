@@ -1,20 +1,25 @@
 ﻿param(
 [string]$subScriptionName = "Visual Studio Ultimate with MSDN"  # Subscription Name (login before calling script)
-[string]$serverNumber = "01"                              # Unique Number (if exists the VM will be reconfigured/imaged/sized as below)
-[string]$rgName="sqltraining"                         	  # Resource Group
-[string]$locName="WestEurope"                             # Azure Location
-[string]$saName="sabiniotraining1"                        # Image must be in same storage account as vhd for this vm
-[string]$vmName="SabinioTR" + $serverNumber               # Max 15 chars
-[string]$vmSize="Standard_A2"                             # Machine Size
-[string]$vnetName="trainingvnet"                          # Network Name (the first valid subnet will be selected)/(Will overwrite any manual changes)
-[string]$SourceImageUri = "https://sabiniotraining1.blob.core.windows.net/system/Microsoft.Compute/Images/mytemplates/Trainingv1-osDisk.2e2de330-b244-492a-8c23-ff27fe0540b6.vhd"
+,[string]$serverNumber = "10"                              # Unique Number (if exists the VM will be reconfigured/imaged/sized as below)
+,[string]$rgName="sqltraining"                         	  # Resource Group
+,[string]$locName="WestEurope"                             # Azure Location
+,[string]$saName="sabiniotraining1"                        # Image must be in same storage account as vhd for this vm
+,[string]$vmName="SabinioTR" + $serverNumber               # Max 15 chars
+,[string]$vmSize="Standard_A1"                             # Machine Size
+,[string]$vnetName="trainingvnet"                          # Network Name (the first valid subnet will be selected)/(Will overwrite any manual changes)
+,[string]$SourceImageUri = "https://sabiniotraining1.blob.core.windows.net/system/Microsoft.Compute/Images/mytemplates/Trainingv2-osDisk.4d11904f-0c3d-4559-9fde-3f18eb6c517f.vhd"
 )
 
 #	To call this script:
 #	Login first:
 # 		Import-AzureRM
 #		Login-AzureRmAccount
+#		Import-Module AzureRM.Compute
+#		Import-Module Azure
 #
+#	 Get Subscription
+#		Get-AzureRmSubscription –SubscriptionName $subscriptionName | Select-AzureRmSubscription
+#		
 #	Then call script overriding any variables:
 #	.\CreateTrainingVM_fromImage.ps1 -serverNumber "12" -SourceImageUri "https://blah"
 #
@@ -22,11 +27,10 @@
 
 cls
 
-Import-Module AzureRM.Compute
-Import-Module Azure
 
-# Get Subscription
-Get-AzureRmSubscription –SubscriptionName $subscriptionName | Select-AzureRmSubscription
+
+
+
 
 # Make Sure Resource Group Exists
 New-AzureRmResourceGroup -Name $rgName -Location $locName -Force
