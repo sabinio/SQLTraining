@@ -19,6 +19,7 @@
       "type": "string"
     }
   },
+  
   "resources": [
     {
       "apiVersion": "2015-06-15",
@@ -48,7 +49,7 @@
         "networkProfile": {
           "networkInterfaces": [
             {
-              "id": "[parameters('networkInterfaceId')]"
+              "id": "[resourceId('Microsoft.Network/networkInterfaces',parameters('networkInterfaceId'))]"
             }
           ]
         },
