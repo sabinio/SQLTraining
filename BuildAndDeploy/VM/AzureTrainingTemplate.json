@@ -1,0 +1,68 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/VM_IP.json",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vmName": {
+      "type": "string"
+    },
+    "vmSize": {
+      "type": "string",
+      "defaultValue": "Standard_A1"
+    },
+    "adminUserName": {
+      "type": "string"
+    },
+    "adminPassword": {
+      "type": "securestring"
+    },
+    "networkInterfaceId": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "apiVersion": "2015-06-15",
+      "properties": {
+        "hardwareProfile": {
+          "vmSize": "[parameters('vmSize')]"
+        },
+        "storageProfile": {
+          "osDisk": {
+            "osType": "Windows",
+            "name": "Trainingv1-osDisk.2e2de330-b244-492a-8c23-ff27fe0540b6.vhd",
+            "createOption": "FromImage",
+            "image": {
+              "uri": "https://sabiniotraining1.blob.core.windows.net/system/Microsoft.Compute/Images/mytemplates/Trainingv1-osDisk.2e2de330-b244-492a-8c23-ff27fe0540b6.vhd"
+            },
+            "vhd": {
+              "uri": "https://sabiniotraining1.blob.core.windows.net/vmcontainer066363da-ee12-4031-b949-d965161a85f6/osDisk.066363da-ee12-4031-b949-d965161a85f6.vhd"
+            },
+            "caching": "ReadWrite"
+          }
+        },
+        "osProfile": {
+          "computerName": "[parameters('vmName')]",
+          "adminUsername": "[parameters('adminUsername')]",
+          "adminPassword": "[parameters('adminPassword')]"
+        },
+        "networkProfile": {
+          "networkInterfaces": [
+            {
+              "id": "[parameters('networkInterfaceId')]"
+            }
+          ]
+        },
+        "diagnosticsProfile": {
+          "bootDiagnostics": {
+            "enabled": true,
+            "storageUri": "https://sabiniotraining1.blob.core.windows.net/"
+          }
+        },
+        "provisioningState": 0
+      },
+      "name": "[parameters('vmName')]",
+      "type": "Microsoft.Compute/virtualMachines",
+      "location": "westeurope"
+    }
+  ]
+}
