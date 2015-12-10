@@ -11,7 +11,7 @@ Post-Deployment Script Template
 */
 
 -- Make sure the files do not have to autgrow during demo
-ALTER DATABASE [$(DatabaseName)] MODIFY FILE ( NAME = N'$(DefaultFilePrefix)', SIZE = 1GB )
+ALTER DATABASE [$(DatabaseName)] MODIFY FILE ( NAME = N'$(DefaultFilePrefix)', SIZE = 100MB )
 GO
-ALTER DATABASE [$(DatabaseName)] MODIFY FILE ( NAME = N'$(DefaultFilePrefix)_log', SIZE = 2GB )
+ALTER DATABASE [$(DatabaseName)] MODIFY FILE ( NAME = N'$(DefaultFilePrefix)_log', SIZE = 100MB )
 GO
