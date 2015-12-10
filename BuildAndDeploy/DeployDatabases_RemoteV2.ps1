@@ -1,4 +1,4 @@
-param([string]$ServerName, [string]$DropFolder)
+param([string]$ServerName, [string]$DropFolder, [string]$SQLPassword)
 
 [string] $sqlpackage = "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\120\sqlpackage.exe"
 
@@ -15,7 +15,7 @@ Foreach-Object{
 		$Profile = $_.FullName
 	}
 
-	$vars = ('/a:publish'), ('/sf:' + $DACPAC), ('/pr:' + $PROFILE), ('/TargetServerName:' + $ServerName)
+	$vars = ('/a:publish'), ('/sf:' + $DACPAC), ('/pr:' + $PROFILE), ('/TargetServerName:' + $ServerName), ('/TargetUser:SQLTraining'), ('/TargetPassword:$SQLPassword')
 
 	write-host "Deploying model for database " $DACPAC  -foregroundcolor green -backgroundcolor black 
 		& $SQLPackage $vars
