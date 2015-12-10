@@ -15,7 +15,7 @@ Foreach-Object{
 		$Profile = $_.FullName
 	}
 
-	$vars = ('/a:publish'), ('/sf:' + $DACPAC), ('/pr:' + $PROFILE), ('/TargetServerName:' + $ServerName), ('/TargetUser:SQLTraining'), ('/TargetPassword:$SQLPassword')
+	$vars = ('/a:publish'), ('/sf:' + $DACPAC), ('/pr:' + $PROFILE), ('/TargetServerName:' + $ServerName), ('/TargetUser:SQLTraining'), ('/TargetPassword:'+$SQLPassword)
 
 	write-host "Deploying model for database " $DACPAC  -foregroundcolor green -backgroundcolor black 
 		& $SQLPackage $vars
