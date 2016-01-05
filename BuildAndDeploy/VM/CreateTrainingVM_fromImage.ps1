@@ -7,7 +7,7 @@
 ,[string]$vmName="SabinioTR" + $serverNumber               # Max 15 chars
 ,[string]$vmSize="Standard_A1"                             # Machine Size
 ,[string]$vnetName="trainingvnet"                          # Network Name (the first valid subnet will be selected)/(Will overwrite any manual changes)
-,[string]$SourceImageUri = "https://sabiniotraining1.blob.core.windows.net/system/Microsoft.Compute/Images/mytemplates/Trainingv2-osDisk.4d11904f-0c3d-4559-9fde-3f18eb6c517f.vhd"
+,[string]$SourceImageUri = "https://sabiniotraining1.blob.core.windows.net/system/Microsoft.Compute/Images/mytemplates/Trainingv4-osDisk.24a26de0-dd82-4eb8-92f3-d74691f0d765.vhd"
 )
 
 #	To call this script:
