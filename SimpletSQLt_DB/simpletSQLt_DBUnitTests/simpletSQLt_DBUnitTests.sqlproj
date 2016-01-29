@@ -227,7 +227,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assemblies\tSQLtCLR.dll" />
-    <None Include="localdb_simpletSQLt_DBUnitTests.publish.publish.xml" />
+    <None Include="localdb_simpletSQLt_DBUnitTests.publish.publish.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="tSQLt_DBUnitTests_sqlpackage.bat" />
   </ItemGroup>
   <ItemGroup>
