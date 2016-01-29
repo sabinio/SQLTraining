@@ -77,6 +77,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="runlocaldb.bat" />
+    <None Include="sqlpackage.bat" />
   </ItemGroup>
   <PropertyGroup>
     <PostBuildEvent>"C:\Program Files\Microsoft SQL Server\120\Tools\Binn\SqlLocalDB.exe" create "MYTESTDB" 12.0 -s</PostBuildEvent>
