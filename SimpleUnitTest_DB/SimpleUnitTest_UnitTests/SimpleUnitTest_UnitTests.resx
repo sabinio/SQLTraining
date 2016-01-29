@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="dbo_uspCancelOrderTest_TestAction.SqlScript" xml:space="preserve">
+    <value>-- SQL Server unit test for Sales.uspFillOrder
+DECLARE @ret AS INT, @CustomerID AS INT, @Amount AS INT, @FilledDate AS DATETIME, @Status AS CHAR (1);
+DECLARE @CustomerName AS NVARCHAR(40), @OrderID AS INT;
+
+SELECT @ret = 0,
+       @CustomerID = 0,
+       @OrderID = 0,
+       @CustomerName = N'Mr X',
+       @Amount = 100,
+       @FilledDate = getdate(),
+       @Status = 'O';
+   
+SELECT @CustomerID = [CustomerID] FROM [Customer] WHERE [CustomerName] = @CustomerName;
+
+SELECT @OrderID = MAX([OrderID]) FROM [CustomerOrders] WHERE [CustomerID] = @CustomerID;
+
+EXECUTE @ret = [uspCancelOrder] @OrderID;
+
+SELECT @ret AS ret;</value>
+  </data>
+  <data name="dbo_uspFillOrderTest_TestAction.SqlScript" xml:space="preserve">
+    <value>    --uspFillOrder - updates a record in the Orders table by changing the status from 'O' to 'F' and increments the CustomerSales amount on the matching record in the Customer table. 
+	--Note CustomerOrders is not affected by this change.
+	--uspFillOrder - For the customer createdi npre-test step, place an order for 100 and fill that order. Verify that CustomerOrders and CustomerSales amounts are both 100.
+
+DECLARE @ret AS INT, @CustomerID AS INT, @Amount AS INT, @FilledDate AS DATETIME, @Status AS CHAR (1);
+DECLARE @CustomerName AS NVARCHAR(40), @OrderID AS INT;
+
+SELECT @ret = 0,
+       @CustomerID = 0,
+       @OrderID = 0,
+       @CustomerName = N'Mr X',
+       @Amount = 100,
+       @FilledDate = getdate(),
+       @Status = 'O';
+   
+-- NOTE: Assumes that you inserted a Customer record with CustomerName='Fictitious Customer' in the pre-test script.
+SELECT @CustomerID = [CustomerID] FROM [Customer] WHERE [CustomerName] = @CustomerName;
+-- Get the most recently added order.
+SELECT @OrderID = MAX([OrderID]) FROM [CustomerOrders] WHERE [CustomerID] = @CustomerID;
+
+-- fill an order for that customer
+EXECUTE @ret = [uspFillOrder] @OrderID, @FilledDate;
+
+---- verify that the CustomerSales value is correct.
+SELECT @ret = [CustomerSales] FROM [Customer] WHERE [CustomerID] = @CustomerID
+
+SELECT @ret AS ret;
+
+-- verify that the CustomerOrders value is correct.
+SELECT @ret = [CustomerOrders] FROM [Customer] WHERE [CustomerID] = @CustomerID
+
+SELECT @ret AS ret;</value>
+  </data>
+  <data name="dbo_uspNewCustomerTest_TestAction.SqlScript" xml:space="preserve">
+    <value>-- SQL Server unit test for uspNewCustomer
+	--uspNewCustomer - adds a record to the Customer table.
+	--uspNewCustomer - Checks that ROW COUNT IS 1 
+DECLARE @ret AS INT, @CustomerName AS NVARCHAR (12);
+
+SELECT @ret = 0,
+       @CustomerName = 'Mr X';
+
+EXECUTE @ret = [uspNewCustomer] @CustomerName;
+
+SELECT * FROM [dbo].[Customer];
+</value>
+  </data>
+  <data name="dbo_uspPlaceNewOrderTest_TestAction.SqlScript" xml:space="preserve">
+    <value>-- SQL Server unit test for uspPlaceNewOrder
+    --uspPlaceNewOrder - This stored procedure adds a record to the Orders table for the specified customer and updates the YTDOrders value on the corresponding record in the Customer table.
+	--uspPlaceNewOrder - For the customer who has a CustomerID of 1, place an order for 100. Verify that the CustomerOrders amount for that customer is 100
+
+DECLARE @ret AS INT, @CustomerID AS INT, @Amount AS INT, @OrderDate AS DATETIME
+		, @Status AS CHAR (1), @CustomerName AS NVARCHAR(40);
+
+SELECT @ret = 0,
+       @CustomerID = 0,
+       @CustomerName = N'Mr X',
+       @Amount = 100,
+       @OrderDate = getdate(),
+       @Status = 'O';
+   
+SELECT @CustomerID = [CustomerID] FROM [Customer] WHERE [CustomerName] = @CustomerName;
+
+EXECUTE @ret = [uspPlaceNewOrder] @CustomerID, @Amount, @OrderDate, @Status;
+
+-- verify that the CustomerOrders value is 100.
+SELECT @ret = [CustomerOrders] FROM [Customer] WHERE [CustomerID] = @CustomerID
+
+SELECT @ret AS ret
+
+SELECT @ret = [CustomerSales] FROM [Customer] WHERE [CustomerID] = @CustomerID
+
+SELECT @ret AS ret</value>
+  </data>
+  <metadata name="checksumCondition1.Configuration" xml:space="preserve">
+    <value>Press to configure</value>
+  </metadata>
+  <data name="dbo_uspShowOrderDetailsTest_TestAction.SqlScript" xml:space="preserve">
+    <value>-- SQL Server unit test for Sales.uspFillOrder
+--Customer and Orders created in the pre-test step
+DECLARE @ret AS INT, @CustomerID AS INT, @Amount AS INT, @FilledDate AS DATETIME, @Status AS CHAR (1);
+DECLARE @CustomerName AS NVARCHAR(40), @OrderID AS INT;
+
+SELECT @ret = 0,
+       @CustomerID = 0,
+       @OrderID = 0,
+       @CustomerName = N'Mr X',
+       @Amount = 100,
+       @FilledDate = getdate(),
+       @Status = 'O';
+
+SELECT @CustomerID = [CustomerID] FROM [Customer] WHERE [CustomerName] = @CustomerName;
+
+EXECUTE @ret = [uspShowOrderDetails] @CustomerID;
+
+SELECT @ret AS ret;</value>
+  </data>
+  <data name="dbo_uspPlaceNewOrderTest_PretestAction.SqlScript" xml:space="preserve">
+    <value>--Add customer so that test has a customer to place order against
+
+DECLARE @NewCustomerID AS INT, @CustomerID AS INT, @CustomerName AS NVARCHAR (40);
+
+SELECT
+       @NewCustomerID = 0,
+   @CustomerID = 0,
+       @CustomerName = N'Mr X';
+
+IF NOT EXISTS(SELECT * FROM [Customer] WHERE CustomerName = @CustomerName)
+BEGIN
+EXECUTE @NewCustomerID = [uspNewCustomer] @CustomerName;
+END
+
+SELECT @CustomerID = [CustomerID] FROM [Customer] WHERE [CustomerName] = @CustomerName;
+
+DELETE from [CustomerOrders] WHERE [CustomerID] = @CustomerID;
+UPDATE [Customer] SET CustomerOrders = 0, CustomerSales = 0 WHERE [CustomerID] = @CustomerID;</value>
+  </data>
+  <data name="dbo_uspFillOrderTest_PretestAction.SqlScript" xml:space="preserve">
+    <value>
+-- Add a customer for this test with the name 'Mr X'
+DECLARE @NewCustomerID AS INT, @ret AS INT, @CustomerName AS NVARCHAR (40)
+
+
+SELECT @ret = 0,
+       @NewCustomerID = 0,
+       @CustomerName = N'Mr X';
+
+IF NOT EXISTS(SELECT * FROM [Customer] WHERE CustomerName = @CustomerName)
+BEGIN
+EXECUTE @NewCustomerID = [uspNewCustomer] @CustomerName;
+END
+
+DECLARE @CustomerID AS INT, @Amount AS INT, @OrderDate AS DATETIME, @Status AS CHAR (1);
+
+SELECT @ret = 0,
+       @CustomerID = 0,
+	   @CustomerName = N'Mr X',
+       @Amount = 100,
+       @OrderDate = GETDATE(),
+       @Status = 'O';
+   
+SELECT @CustomerID = [CustomerID] FROM [Customer] WHERE [CustomerName] = @CustomerName;
+
+-- delete any old records in the Orders table and clear out the YTD Sales/Orders fields
+DELETE from [CustomerOrders] WHERE [CustomerID] = @CustomerID;
+UPDATE [Customer] SET CustomerOrders = 0, CustomerSales = 0 WHERE [CustomerID] = @CustomerID;
+
+-- place an order for that customer so that we can fill the order in the test
+EXECUTE @ret = [uspPlaceNewOrder] @CustomerID, @Amount, @OrderDate, @Status;
+</value>
+  </data>
+  <data name="dbo_uspShowOrderDetailsTest_PretestAction.SqlScript" xml:space="preserve">
+    <value>
+BEGIN TRANSACTION
+
+-- Add a customer for this test
+DECLARE @NewCustomerID AS INT, @RC AS INT, @CustomerName AS NVARCHAR (40);
+
+SELECT @RC = 0,
+       @NewCustomerID = 0,
+       @CustomerName = N'Mr X';
+
+IF NOT EXISTS(SELECT * FROM [Customer] WHERE CustomerName = @CustomerName)
+BEGIN
+EXECUTE @NewCustomerID = [uspNewCustomer] @CustomerName;
+END
+
+
+DECLARE @CustomerID AS INT, @Amount AS INT, @OrderDate AS DATETIME, @Status AS CHAR (1);
+
+SELECT @RC = 0,
+       @CustomerID = 0,
+       @OrderDate = GETDATE(),
+       @Status = 'O';
+--CustomerId would most likely be 1, but run to verify
+SELECT @CustomerID = [CustomerID] FROM [Customer] WHERE [CustomerName] = @CustomerName;
+
+--clear out anyhint that may exist for the customer
+DELETE from [CustomerOrders] WHERE [CustomerID] = @CustomerID;
+UPDATE [Customer] SET CustomerOrders = 0, CustomerSales = 0 WHERE [CustomerID] = @CustomerID;
+
+-- place 3 orders for Mr X, these are used in the test step
+EXECUTE @RC = [uspPlaceNewOrder] @CustomerID, 100, @OrderDate, @Status;
+EXECUTE @RC = [uspPlaceNewOrder] @CustomerID, 50, @OrderDate, @Status;
+EXECUTE @RC = [uspPlaceNewOrder] @CustomerID, 5, @OrderDate, @Status;
+
+COMMIT TRANSACTION</value>
+  </data>
+  <data name="dbo_uspCancelOrderTest_PretestAction.SqlScript" xml:space="preserve">
+    <value>/*
+Add Transact-SQL statements here to run before the test script is run.
+*/
+BEGIN TRANSACTION
+
+-- Add a customer for this test with the name 'CustomerB'
+DECLARE @NewCustomerID AS INT, @ret AS INT, @CustomerName AS NVARCHAR (40);
+
+SELECT @ret = 0,
+       @NewCustomerID = 0,
+       @CustomerName = N'Mr X';
+
+IF NOT EXISTS(SELECT * FROM [Customer] WHERE CustomerName = @CustomerName)
+BEGIN
+EXECUTE @NewCustomerID = [uspNewCustomer] @CustomerName;
+END
+
+DECLARE @CustomerID AS INT, @Amount AS INT, @OrderDate AS DATETIME, @FilledDate AS DATETIME, @Status AS CHAR (1), @OrderID AS INT;
+
+SELECT 
+       @CustomerID = 0,
+	   @OrderID = 0,
+       @Amount = 100,
+       @OrderDate = GETDATE(),
+       @FilledDate = GETDATE(),
+       @Status = 'O';
+   
+SELECT @CustomerID = [CustomerID] FROM [Customer] WHERE [CustomerName] = @CustomerName;
+
+-- delete any old records in the Orders table and clear out any values
+DELETE from [CustomerOrders] WHERE [CustomerID] = @CustomerID;
+UPDATE [Customer] SET CustomerOrders = 0, CustomerSales = 0 WHERE [CustomerID] = @CustomerID;
+
+-- place an order for that customer
+EXECUTE @OrderID = [uspPlaceNewOrder] @CustomerID, @Amount, @OrderDate, @Status;
+
+-- fill the order for that customer
+EXECUTE @ret = [uspFillOrder] @OrderID, @FilledDate;
+
+COMMIT TRANSACTION</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+</root>
