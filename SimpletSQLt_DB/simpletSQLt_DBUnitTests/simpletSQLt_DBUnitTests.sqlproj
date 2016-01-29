@@ -243,7 +243,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Script.PreDeployment.Setup_tSQLt.sql" />
+    <PostDeploy Include="Script.PreDeployment.Setup_tSQLt.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </PostDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="tSQLt_runall.sql" />
