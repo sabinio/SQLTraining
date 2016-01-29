@@ -75,6 +75,8 @@
   <ItemGroup>
     <None Include="runlocaldb.bat" />
     <None Include="SimpletSQLt_DB_sqlpackage.bat" />
-    <None Include="localdb_SimpletSQLt_DB.publish.publish.xml" />
+    <None Include="localdb_SimpletSQLt_DB.publish.publish.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
