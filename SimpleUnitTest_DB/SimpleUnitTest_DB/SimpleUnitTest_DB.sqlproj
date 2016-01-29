@@ -72,10 +72,15 @@
     <Build Include="dbo\Stored Procedures\uspShowOrderDetails.sql" />
     <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="localdb_SimpleUnitTest_DB.publish.publish.xml" />
+    <None Include="runlocaldb.bat" />
+  </ItemGroup>
   <PropertyGroup>
     <PostBuildEvent>"C:\Program Files\Microsoft SQL Server\120\Tools\Binn\SqlLocalDB.exe" create "MYTESTDB" 12.0 -s</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>"C:\Program Files\Microsoft SQL Server\120\Tools\Binn\SqlLocalDB.exe" create "ProjectsV12" 12.0 -s</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>
