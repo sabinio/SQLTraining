@@ -73,7 +73,9 @@
     <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="localdb_SimpleUnitTest_DB.publish.publish.xml" />
+    <None Include="localdb_SimpleUnitTest_DB.publish.publish.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="runlocaldb.bat" />
   </ItemGroup>
   <PropertyGroup>

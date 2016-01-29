@@ -1,3 +1,3 @@
 "%ProgramFiles%\Microsoft SQL Server\120\Tools\Binn\SqlLocalDB.exe" create "ProjectsV12" 12.0 -s
 
-"%ProgramFiles(x86)%\Microsoft Visual Studio 12.0\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\120\SqlPackage.exe" /Action:Publish /SourceFile:"%TF_BUILD_BINARIESDIRECTORY%\SimpleUnitTest_DB.dacpac" /Profile:"%TF_BUILD_SOURCESDIRECTORY%\SQL Training\SimpleUnitTest_DB\SimpleUnitTest_DB\localdb_SimpleUnitTest_DB.publish.publish.xml"
+"%ProgramFiles(x86)%\Microsoft Visual Studio 12.0\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\120\SqlPackage.exe" /Action:Publish /SourceFile:"C:\a\1\s\SimpleUnitTest_DB\SimpleUnitTest_DB\bin\Debug\SimpleUnitTest_DB.dacpac" /Profile:"C:\a\1\s\SimpleUnitTest_DB\SimpleUnitTest_DB\bin\Debug\localdb_SimpleUnitTest_DB.publish.publish.xml"
