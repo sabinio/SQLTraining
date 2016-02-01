@@ -70,6 +70,8 @@
     <None Include="Demos\Demo1 - Reading Locked Records - Session 1.sql" />
     <None Include="Demos\Demo2 - Snapshot Data Change - Session 1.sql" />
     <None Include="Demos\Demo3 - RepeatbleRead - Session 1.sql" />
+    <None Include="localdb.publish.xml" />
+    <None Include="sqlpackage.bat" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\TableA.sql" />

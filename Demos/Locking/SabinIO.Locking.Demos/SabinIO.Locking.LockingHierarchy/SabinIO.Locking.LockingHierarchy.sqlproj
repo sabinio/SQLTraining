@@ -125,5 +125,8 @@
     <None Include="Demos\Demo2_LockingHierachy.sql" />
     <None Include="Demos\Demo1_LockingHierarchy.sql" />
     <None Include="local.publish.xml" />
+    <None Include="localdb.publish.xml" />
+    <None Include="runlocaldb.bat" />
+    <None Include="sqlpackage.bat" />
   </ItemGroup>
 </Project>
