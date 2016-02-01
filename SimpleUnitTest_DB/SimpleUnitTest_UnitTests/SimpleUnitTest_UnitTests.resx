@@ -228,7 +228,6 @@ SELECT @ret = 0,
        @OrderID = 0,
        @CustomerName = N'Mr X',
        @Amount = 100,
-       @FilledDate = getdate(),
        @Status = 'O';
 
 SELECT @CustomerID = [CustomerID] FROM [Customer] WHERE [CustomerName] = @CustomerName;
@@ -312,7 +311,7 @@ DECLARE @CustomerID AS INT, @Amount AS INT, @OrderDate AS DATETIME, @Status AS C
 
 SELECT @RC = 0,
        @CustomerID = 0,
-       @OrderDate = GETDATE(),
+       @OrderDate = '2016-02-01 14:24:18.950',
        @Status = 'O';
 --CustomerId would most likely be 1, but run to verify
 SELECT @CustomerID = [CustomerID] FROM [Customer] WHERE [CustomerName] = @CustomerName;

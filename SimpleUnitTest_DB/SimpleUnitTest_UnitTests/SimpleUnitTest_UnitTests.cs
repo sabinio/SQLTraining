@@ -162,7 +162,7 @@ namespace SimpleUnitTest_UnitTests
             // 
             // checksumCondition1
             // 
-            checksumCondition1.Checksum = "634734400";
+            checksumCondition1.Checksum = "790719402";
             checksumCondition1.Enabled = true;
             checksumCondition1.Name = "checksumCondition1";
             // 
