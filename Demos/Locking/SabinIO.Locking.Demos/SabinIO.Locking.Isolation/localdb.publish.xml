@@ -2,7 +2,7 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
-    <TargetDatabaseName>master</TargetDatabaseName>
+    <TargetDatabaseName>SabinIO.Locking.Isolation</TargetDatabaseName>
     <DeployScriptFileName>SabinIO.Locking.Isolation.sql</DeployScriptFileName>
     <TargetConnectionString>Data Source=(localdb)\ProjectsV12;Integrated Security=True;Pooling=False</TargetConnectionString>
     <ProfileVersionNumber>1</ProfileVersionNumber>
