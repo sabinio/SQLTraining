@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Sabio.Locking.tSQLt.UnitTestProject")]
+[assembly: AssemblyTitle("SabinIO.Locking.tSQLt.UnitTestProject")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Sabio.Locking.tSQLt.UnitTestProject")]
+[assembly: AssemblyProduct("SabinIO.Locking.tSQLt.UnitTestProject")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b0f678a3-0ec1-40f8-b0f9-86dd58919e3b")]
+[assembly: Guid("1c31f603-029b-49d3-8f33-28eb5e37d71f")]
 
 // Version information for an assembly consists of the following four values:
 //

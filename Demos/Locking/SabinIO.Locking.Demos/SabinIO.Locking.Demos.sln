@@ -7,15 +7,15 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Locking.LockingHier
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Locking.Isolation", "SabinIO.Locking.Isolation\SabinIO.Locking.Isolation.sqlproj", "{46CD5106-11E4-4D3A-8BE9-45345A334A62}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Locking.tSQLt.UnitTests", "SabinOP.Locking.tSQLt.UnitTests\SabinIO.Locking.tSQLt.UnitTests.sqlproj", "{9E55FE70-B7B3-4BB4-B9BF-DE59CB4FCF85}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{654A612C-35A8-4CE4-A951-471FAA8E25C3}"
 	ProjectSection(SolutionItems) = preProject
 		References\tSQLt.Client.Net.dll = References\tSQLt.Client.Net.dll
 		References\tSQLt_DB.dacpac = References\tSQLt_DB.dacpac
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sabio.Locking.tSQLt.UnitTestProject", "Sabio.Locking.tSQLt.UnitTestProject\Sabio.Locking.tSQLt.UnitTestProject.csproj", "{B0F678A3-0EC1-40F8-B0F9-86DD58919E3B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SabinIO.Locking.tSQLt.UnitTestProject", "SabinIO.Locking.tSQLt.UnitTestProject\SabinIO.Locking.tSQLt.UnitTestProject.csproj", "{B0F678A3-0EC1-40F8-B0F9-86DD58919E3B}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Locking.tSQLt.UnitTests", "SabinIO.Locking.tSQLt.UnitTests\SabinIO.Locking.tSQLt.UnitTests.sqlproj", "{9E55FE70-B7B3-4BB4-B9BF-DE59CB4FCF85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,16 +35,16 @@ Global
 		{46CD5106-11E4-4D3A-8BE9-45345A334A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46CD5106-11E4-4D3A-8BE9-45345A334A62}.Release|Any CPU.Build.0 = Release|Any CPU
 		{46CD5106-11E4-4D3A-8BE9-45345A334A62}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B0F678A3-0EC1-40F8-B0F9-86DD58919E3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0F678A3-0EC1-40F8-B0F9-86DD58919E3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0F678A3-0EC1-40F8-B0F9-86DD58919E3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0F678A3-0EC1-40F8-B0F9-86DD58919E3B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9E55FE70-B7B3-4BB4-B9BF-DE59CB4FCF85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9E55FE70-B7B3-4BB4-B9BF-DE59CB4FCF85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E55FE70-B7B3-4BB4-B9BF-DE59CB4FCF85}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{9E55FE70-B7B3-4BB4-B9BF-DE59CB4FCF85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E55FE70-B7B3-4BB4-B9BF-DE59CB4FCF85}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9E55FE70-B7B3-4BB4-B9BF-DE59CB4FCF85}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{B0F678A3-0EC1-40F8-B0F9-86DD58919E3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B0F678A3-0EC1-40F8-B0F9-86DD58919E3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B0F678A3-0EC1-40F8-B0F9-86DD58919E3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B0F678A3-0EC1-40F8-B0F9-86DD58919E3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
