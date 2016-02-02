@@ -90,7 +90,9 @@
     <Build Include="Security\TestCustomer.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="localdb.SimpletSQLt_DB.UnitTests.publish.xml" />
+    <None Include="localdb.SimpletSQLt_DB.UnitTests.publish.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="SimpletSQLt_DB.UnitTests_sqlpackage.bat" />
   </ItemGroup>
   <ItemGroup>
