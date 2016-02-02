@@ -62,28 +62,14 @@
     <Folder Include="Security\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SabinIO.Locking.Isolation\SabinIO.Locking.Isolation.sqlproj">
-      <Name>SabinIO.Locking.Isolation</Name>
-      <Project>{46cd5106-11e4-4d3a-8be9-45345a334a62}</Project>
-      <Private>True</Private>
+    <ArtifactReference Include="..\References\tSQLt_DB.dacpac">
+      <HintPath>..\References\tSQLt_DB.dacpac</HintPath>
       <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
-    </ProjectReference>
-    <ProjectReference Include="..\SabinIO.Locking.LockingHierarchy\SabinIO.Locking.LockingHierarchy.sqlproj">
-      <Name>SabinIO.Locking.LockingHierarchy</Name>
-      <Project>{bd79a7f6-5f17-4806-a6d5-3b0a9d4c3b4d}</Project>
-      <Private>True</Private>
-      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
+    </ArtifactReference>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\120\SqlSchemas\master.dacpac">
       <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\120\SqlSchemas\master.dacpac</HintPath>
       <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
       <DatabaseVariableLiteralValue>sys</DatabaseVariableLiteralValue>
-    </ArtifactReference>
-    <ArtifactReference Include="..\References\tSQLt_DB.dacpac">
-      <HintPath>..\References\tSQLt_DB.dacpac</HintPath>
-      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
     </ArtifactReference>
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +83,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="sqlpackage.bat" />
+    <None Include="localdb.publish.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Build Include="TestLockingHierarchy\Stored Procedures\TestHeapLockHierarchy.sql" />
@@ -104,5 +93,19 @@
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.RunAll.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SabinIO.Locking.Isolation\SabinIO.Locking.Isolation.sqlproj">
+      <Name>SabinIO.Locking.Isolation</Name>
+      <Project>{46cd5106-11e4-4d3a-8be9-45345a334a62}</Project>
+      <Private>True</Private>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ProjectReference>
+    <ProjectReference Include="..\SabinIO.Locking.LockingHierarchy\SabinIO.Locking.LockingHierarchy.sqlproj">
+      <Name>SabinIO.Locking.LockingHierarchy</Name>
+      <Project>{bd79a7f6-5f17-4806-a6d5-3b0a9d4c3b4d}</Project>
+      <Private>True</Private>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ProjectReference>
   </ItemGroup>
 </Project>
