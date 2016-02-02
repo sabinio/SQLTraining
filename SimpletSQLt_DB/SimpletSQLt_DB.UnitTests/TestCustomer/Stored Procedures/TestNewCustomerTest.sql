@@ -4,7 +4,7 @@ CREATE PROCEDURE [TestCustomer].[TestNewCustomerTest]
 AS 
 BEGIN
 
-EXEC tsqlt.FakeTable 'dbo.Customer'
+EXEC tSQLt.FakeTable 'dbo.Customer'
 
 DECLARE @CustomerName AS NVARCHAR (12), @ret INT;
 
