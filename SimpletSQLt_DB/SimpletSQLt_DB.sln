@@ -16,6 +16,7 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SimpletSQLt_DB.UnitTests", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{4A321D29-BEC1-4129-8430-9705B63A3D92}"
 	ProjectSection(SolutionItems) = preProject
+		References\tSQLt.Client.Net.dll = References\tSQLt.Client.Net.dll
 		References\tSQLt_DB.dacpac = References\tSQLt_DB.dacpac
 	EndProjectSection
 EndProject
