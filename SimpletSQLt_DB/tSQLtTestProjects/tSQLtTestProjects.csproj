@@ -36,8 +36,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="tSQLt.Client.Net">
-      <HintPath>..\simpletSQLt_DBUnitTests\tSQLt.Client.Net.dll</HintPath>
+    <Reference Include="tSQLt.Client.Net, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\tSQLt.Client.Net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Choose>

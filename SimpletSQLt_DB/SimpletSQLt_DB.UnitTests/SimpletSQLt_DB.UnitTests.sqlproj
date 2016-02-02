@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="localdb.SimpletSQLt_DB.UnitTests.publish.xml" />
+    <None Include="SimpletSQLt_DB.UnitTests_sqlpackage.bat" />
   </ItemGroup>
   <ItemGroup>
     <PreDeploy Include="Script.PreDeployment.tSQLt.Setup.sql" />
