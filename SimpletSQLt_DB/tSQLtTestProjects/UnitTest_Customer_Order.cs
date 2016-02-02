@@ -12,13 +12,6 @@ namespace tSQLtTestProjects
             new tSQLtTestRunner("server=(localdb)\\ProjectsV12;Integrated Security=True;initial catalog=simpletSQLt_DB.UnitTests;", 60 * 1000/*optional timeout, default is 2 minutes*/);
             //new tSQLtTestRunner("server=giratina;Integrated Security=True;initial catalog=SimpleUnitTest_DB;", 60 * 1000/*optional timeout, default is 2 minutes*/); 
 
-        //[TestMethod]
-        //public void sqlcop_test_user_aliases()
-        //{
-        //    var result = _runner.Run("SQLCop", "test User Aliases");
-        //    Assert.IsTrue(result.Passed());
-        //}
-
         [TestMethod]
         public void TestNewCustomerTest()
         {
