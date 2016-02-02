@@ -5,13 +5,18 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SimpletSQLt_DB", "SimpletSQLt_DB\SimpletSQLt_DB.sqlproj", "{7A226391-0C07-4631-8E1B-BCA8415EE5BC}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "simpletSQLt_DBUnitTests", "simpletSQLt_DBUnitTests\simpletSQLt_DBUnitTests.sqlproj", "{082E4833-015C-4165-B013-3A63F890F9B4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tSQLtTestProjects", "tSQLtTestProjects\tSQLtTestProjects.csproj", "{30CB9F6C-0888-468A-8BA2-3D39C17B587F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{95908357-4827-4B8B-AEE8-1B2066E07370}"
 	ProjectSection(SolutionItems) = preProject
 		simpletSQLt_DBUnitTests\tSQLt.Client.Net.dll = simpletSQLt_DBUnitTests\tSQLt.Client.Net.dll
+	EndProjectSection
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SimpletSQLt_DB.UnitTests", "SimpletSQLt_DB.UnitTests\SimpletSQLt_DB.UnitTests.sqlproj", "{B7122FAC-5A5C-4DAB-BDF9-FFBC9C0C7568}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{4A321D29-BEC1-4129-8430-9705B63A3D92}"
+	ProjectSection(SolutionItems) = preProject
+		References\tSQLt_DB.dacpac = References\tSQLt_DB.dacpac
 	EndProjectSection
 EndProject
 Global
@@ -26,16 +31,16 @@ Global
 		{7A226391-0C07-4631-8E1B-BCA8415EE5BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A226391-0C07-4631-8E1B-BCA8415EE5BC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7A226391-0C07-4631-8E1B-BCA8415EE5BC}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{082E4833-015C-4165-B013-3A63F890F9B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{082E4833-015C-4165-B013-3A63F890F9B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{082E4833-015C-4165-B013-3A63F890F9B4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{082E4833-015C-4165-B013-3A63F890F9B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{082E4833-015C-4165-B013-3A63F890F9B4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{082E4833-015C-4165-B013-3A63F890F9B4}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{30CB9F6C-0888-468A-8BA2-3D39C17B587F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{30CB9F6C-0888-468A-8BA2-3D39C17B587F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30CB9F6C-0888-468A-8BA2-3D39C17B587F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30CB9F6C-0888-468A-8BA2-3D39C17B587F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7122FAC-5A5C-4DAB-BDF9-FFBC9C0C7568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7122FAC-5A5C-4DAB-BDF9-FFBC9C0C7568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7122FAC-5A5C-4DAB-BDF9-FFBC9C0C7568}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B7122FAC-5A5C-4DAB-BDF9-FFBC9C0C7568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7122FAC-5A5C-4DAB-BDF9-FFBC9C0C7568}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7122FAC-5A5C-4DAB-BDF9-FFBC9C0C7568}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

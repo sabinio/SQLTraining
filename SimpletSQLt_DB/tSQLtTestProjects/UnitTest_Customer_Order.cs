@@ -9,7 +9,7 @@ namespace tSQLtTestProjects
     {
 
         private readonly tSQLtTestRunner _runner =
-            new tSQLtTestRunner("server=(localdb)\\ProjectsV12;Integrated Security=True;initial catalog=simpletSQLt_DBUnitTests;", 60 * 1000/*optional timeout, default is 2 minutes*/);
+            new tSQLtTestRunner("server=(localdb)\\ProjectsV12;Integrated Security=True;initial catalog=simpletSQLt_DB.UnitTests;", 60 * 1000/*optional timeout, default is 2 minutes*/);
             //new tSQLtTestRunner("server=giratina;Integrated Security=True;initial catalog=SimpleUnitTest_DB;", 60 * 1000/*optional timeout, default is 2 minutes*/); 
 
         //[TestMethod]

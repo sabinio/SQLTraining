@@ -4,17 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>SimpletSQLt_DB</Name>
+    <Name>SimpletSQLt_DB.UnitTests</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{7a226391-0c07-4631-8e1b-bca8415ee5bc}</ProjectGuid>
+    <ProjectGuid>{b7122fac-5a5c-4dab-bdf9-ffbc9c0c7568}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>SimpletSQLt_DB</RootNamespace>
-    <AssemblyName>SimpletSQLt_DB</AssemblyName>
-    <ModelCollation>1033, CI</ModelCollation>
+    <RootNamespace>SimpletSQLt_DB.UnitTests</RootNamespace>
+    <AssemblyName>SimpletSQLt_DB.UnitTests</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
@@ -23,6 +23,7 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -57,27 +58,39 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="dbo\" />
-    <Folder Include="dbo\Tables\" />
-    <Folder Include="dbo\Stored Procedures\" />
-    <Folder Include="Scripts\" />
+    <Folder Include="TestOrder\" />
+    <Folder Include="TestOrder\Stored Procedures\" />
+    <Folder Include="TestCustomer\" />
+    <Folder Include="TestCustomer\Stored Procedures\" />
+    <Folder Include="Security\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\Customer.sql" />
-    <Build Include="dbo\Tables\CustomerOrders.sql" />
-    <Build Include="dbo\Stored Procedures\uspCancelOrder.sql" />
-    <Build Include="dbo\Stored Procedures\uspFillOrder.sql" />
-    <Build Include="dbo\Stored Procedures\uspNewCustomer.sql" />
-    <Build Include="dbo\Stored Procedures\uspPlaceNewOrder.sql" />
-    <Build Include="dbo\Stored Procedures\uspShowOrderDetails.sql" />
-    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+    <ArtifactReference Include="..\References\tSQLt_DB.dacpac">
+      <HintPath>..\References\tSQLt_DB.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\120\SqlSchemas\master.dacpac">
+      <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\120\SqlSchemas\master.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>sys</DatabaseVariableLiteralValue>
+    </ArtifactReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="runlocaldb.bat" />
-    <None Include="SimpletSQLt_DB_sqlpackage.bat" />
-    <None Include="localdb_SimpletSQLt_DB.publish.publish.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <ProjectReference Include="..\SimpletSQLt_DB\SimpletSQLt_DB.sqlproj">
+      <Name>SimpletSQLt_DB</Name>
+      <Project>{7a226391-0c07-4631-8e1b-bca8415ee5bc}</Project>
+      <Private>True</Private>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="TestOrder\Stored Procedures\TestuspFillOrderTest.sql" />
+    <Build Include="TestCustomer\Stored Procedures\TestNewCustomerTest.sql" />
+    <Build Include="Security\TestOrder.sql" />
+    <Build Include="Security\TestCustomer.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="localdb.SimpletSQLt_DB.UnitTests.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <PreDeploy Include="Script.PreDeployment.tSQLt.Setup.sql" />
