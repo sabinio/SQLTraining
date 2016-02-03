@@ -93,13 +93,11 @@
     <Build Include="TestLockingHierarchy\Stored Procedures\TestHeapLockHierarchy.sql" />
     <Build Include="Security\TestLockingHierarchy.sql" />
     <Build Include="Security\TestLockingIsolation.sql" />
-    <Build Include="TestLockingIsolation\TestDefaultValues.sql">
-      <SuppressTSqlWarnings>71562</SuppressTSqlWarnings>
-    </Build>
     <Build Include="TestLockingIsolation\ShellNoLock.sql" />
     <Build Include="TestLockingIsolation\TestNoLock.sql" />
     <Build Include="TestLockingHierarchy\Stored Procedures\TestClusteredIXLockHierarchy.sql" />
     <Build Include="TestLockingHierarchy\Stored Procedures\TestDemo2RidLocks.sql" />
+    <Build Include="TestLockingIsolation\TestDefaultValues.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.RunAll.sql" />
