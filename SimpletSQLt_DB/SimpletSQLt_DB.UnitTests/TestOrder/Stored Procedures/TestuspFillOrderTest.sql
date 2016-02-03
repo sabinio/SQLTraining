@@ -7,7 +7,8 @@ BEGIN
 		,@Amount AS INT
 		,@OrderDate AS DATETIME
 		,@Status AS CHAR(1)
-		,@CustomerName NVARCHAR(12);
+		,@CustomerName NVARCHAR(12)
+		,@OrderId INT;
 
 	SELECT @ret = 0
 		,@CustomerID = 0
@@ -22,32 +23,31 @@ BEGIN
 	FROM dbo.Customer
 	WHERE CustomerName = @CustomerName
 
-	EXECUTE @ret = [uspPlaceNewOrder] @CustomerId
+	EXECUTE @OrderId = [uspPlaceNewOrder] @CustomerId
 		,@Amount
 		,@OrderDate
 		,@Status;
 
-	EXECUTE @ret = [uspFillOrder] @CustomerID,
+	EXECUTE @ret = [uspFillOrder] @OrderId,
 		@OrderDate;
 
 	DECLARE @CustomerSales INT, @CustomerOrders INT,@NewCustomerName NVARCHAR (12)
 
-SELECT @NewCustomerName = CustomerName from dbo.Customer WHERE CustomerName = @CustomerName;
+    SELECT @NewCustomerName = CustomerName from dbo.Customer WHERE CustomerName = @CustomerName;
 
 EXEC tSQLt.AssertEquals @CustomerName, @NewCustomerName;
 
 	SELECT @CustomerSales = [CustomerSales]
 	FROM [Customer]
 	WHERE [CustomerID] = @CustomerID
-
-	EXEC tSQLt.AssertEquals 100
-		,@CustomerSales;
-
-	-- verify that the CustomerOrders value is correct.
+		-- verify that the CustomerOrders value is correct.
 	SELECT @CustomerOrders = [CustomerOrders]
 	FROM [Customer]
 	WHERE [CustomerID] = @CustomerID
 
 	EXEC tSQLt.AssertEquals 100
 		,@CustomerOrders;
+
+	EXEC tSQLt.AssertEquals 100
+		,@CustomerSales;
 END;
