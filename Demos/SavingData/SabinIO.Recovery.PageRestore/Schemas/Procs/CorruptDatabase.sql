@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[CorruptDatabase]
+﻿CREATE PROCEDURE [dbo].[PR_CorruptDatabase]
 AS
 
 -- DBCC IND (N'DBName', N'Sales', -1);

@@ -4,17 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>SabinIO.Recovery.PageRestore</Name>
+    <Name>SabinIO.InsertPerformance.tSQLt.UnitTests</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{3fc519eb-8e1f-4b52-b41e-4a7846549965}</ProjectGuid>
+    <ProjectGuid>{0eb2c4da-77ff-420f-a551-63a08bd6d5a2}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>SabinIO.Recovery.PageRestore</RootNamespace>
-    <AssemblyName>SabinIO.Recovery.PageRestore</AssemblyName>
-    <ModelCollation>1033,CI</ModelCollation>
+    <RootNamespace>SabinIO.InsertPerformance..tSQLt.UnitTests</RootNamespace>
+    <AssemblyName>SabinIO.InsertPerformance..tSQLt.UnitTests</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
@@ -23,8 +23,6 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
-    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
-    <PageVerify>NONE</PageVerify>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -59,19 +57,37 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Schemas" />
-    <Folder Include="Schemas\Tables" />
-    <Folder Include="Schemas\Procs" />
-    <Folder Include="Demos" />
+    <Folder Include="Security" />
+    <Folder Include="TestInsertPerformance" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Schemas\Tables\PV_Sales.sql" />
-    <Build Include="Schemas\Procs\CorruptDatabase.sql" />
+    <ArtifactReference Include="..\References\tSQLt_DB.dacpac">
+      <HintPath>..\References\tSQLt_DB.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\120\SqlSchemas\master.dacpac">
+      <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\120\SqlSchemas\master.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>sys</DatabaseVariableLiteralValue>
+    </ArtifactReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="SabinIO.Recovery.PageVerify.publish.xml" />
-    <None Include="Demos\1. PageVerify.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <ProjectReference Include="..\SabinIO.InsertPerformance.Demo\SabinIO.InsertPerformance.Demo.sqlproj">
+      <Name>SabinIO.InsertPerformance.Demo</Name>
+      <Project>{aa154ad3-7d5e-4a41-91be-42a4f2190a90}</Project>
+      <Private>True</Private>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment.SetDbSize.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Security\TestInsertPerformance.sql" />
+    <PreDeploy Include="Script.PreDeployment.tSQLt.Setup.sql" />
+    <Build Include="TestInsertPerformance\TestPageSplits.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="SabinIO.InsertPerformance.tSQLt.UnitTests.refactorlog" />
   </ItemGroup>
 </Project>

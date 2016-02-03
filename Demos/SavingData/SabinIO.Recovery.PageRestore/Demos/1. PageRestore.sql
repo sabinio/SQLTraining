@@ -7,11 +7,11 @@ GO
 SET NOCOUNT ON
 
 
-INSERT INTO Sales (CustomerID, ProductID, Qty)
+INSERT INTO PR_Sales (CustomerID, ProductID, Qty)
 SELECT RAND()*10000,RAND()*100,RAND()*10
 GO 2000
 
-SELECT * FROM Sales
+SELECT * FROM PR_Sales
 GO
 
 -- First validate the database
@@ -22,7 +22,7 @@ BACKUP DATABASE [SabinIO.Recovery.PageRestore] TO DISK='C:\Temp\FullBackup_PageR
 GO
 
 -- Insert some more data to make things a little more tricky (ie data has changed since the last full backup)
-INSERT INTO Sales (CustomerID, ProductID, Qty)
+INSERT INTO PR_Sales (CustomerID, ProductID, Qty)
 SELECT RAND()*10000,RAND()*100,RAND()*10
 GO 1000
 
@@ -31,21 +31,21 @@ BACKUP LOG [SabinIO.Recovery.PageRestore] TO DISK='C:\Temp\LogBackup_PageRestore
 GO
 
 -- Corrupt a page
-EXEC CorruptDatabase
+EXEC [PR_CorruptDatabase]
 GO
 
 -- User Runs this query
-SELECT * FROM Sales
+SELECT * FROM PR_Sales
 
 -- MSDB Keeps a record
 SELECT * FROM msdb.dbo.suspect_pages WHERE database_id = DB_ID()
 
 -- Table can still be inserted to
-INSERT INTO dbo.Sales (CustomerID, ProductID, Qty)
+INSERT INTO dbo.PR_Sales (CustomerID, ProductID, Qty)
 SELECT RAND()*10000,RAND()*100,RAND()*10
 GO 10
 
--- At this point we should 51010 records in sales - Remember this
+-- At this point we should 51010 records in PR_Sales - Remember this
 
 -- Validate there is an issue
 DBCC CHECKDB
@@ -66,7 +66,7 @@ WITH NORECOVERY
 GO
 
 -- Notice even though recovery has started the DB is still online for users (Enterprise feature)
-SELECT TOP 10 * FROM [SabinIO.Recovery.PageRestore]..Sales
+SELECT TOP 10 * FROM [SabinIO.Recovery.PageRestore]..PR_Sales
 
 -- Restore the logs
 RESTORE DATABASE [SabinIO.Recovery.PageRestore] FROM DISK='C:\Temp\LogBackup_PageRestore1.trn'
@@ -91,7 +91,7 @@ GO
 USE [SabinIO.Recovery.PageRestore]
 GO
 
-SELECT COUNT(*) FROM dbo.Sales
+SELECT COUNT(*) FROM dbo.PR_Sales
 GO
 
 DBCC CHECKDB()

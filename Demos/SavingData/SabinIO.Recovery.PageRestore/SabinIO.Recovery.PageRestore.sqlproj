@@ -65,7 +65,7 @@
     <Folder Include="Demos" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Schemas\Tables\Sales.sql" />
+    <Build Include="Schemas\Tables\PR_Sales.sql" />
     <Build Include="Schemas\Procs\CorruptDatabase.sql" />
   </ItemGroup>
   <ItemGroup>
@@ -73,5 +73,8 @@
     <None Include="Demos\1. PageRestore.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="SabinIO.Recovery.PageRestore.refactorlog" />
   </ItemGroup>
 </Project>

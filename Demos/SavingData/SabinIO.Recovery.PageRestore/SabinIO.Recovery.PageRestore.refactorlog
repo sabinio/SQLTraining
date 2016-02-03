@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="b32f3d59-9886-47ed-89ac-a1ff50f3143b" ChangeDateTime="02/03/2016 12:05:24">
+    <Property Name="ElementName" Value="[dbo].[CorruptDatabase]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[dbo]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[PR_CorruptDatabase]" />
+  </Operation>
+</Operations>

@@ -5,7 +5,7 @@ SET NOCOUNT ON;
 
 
 -- Prep
-TRUNCATE TABLE Test1
+TRUNCATE TABLE Test
 GO
 
 
@@ -15,7 +15,7 @@ DECLARE @StartFlushes INT = (SELECT cntr_value FROM sys.dm_os_performance_counte
 DECLARE @x INT = 0
 WHILE @x < 2000
 BEGIN
-	INSERT INTO Test1 (Col2)
+	INSERT INTO Test (Col2)
 	VALUES (REPLICATE('a',8000))
 	SET @x = @x + 1
 END
@@ -37,7 +37,7 @@ DECLARE @x INT = 0
 BEGIN TRANSACTION
 	WHILE @x < 2000
 	BEGIN
-		INSERT INTO Test1 (Col2)
+		INSERT INTO Test (Col2)
 		VALUES (REPLICATE('a',8000))
 		SET @x = @x + 1
 	END
