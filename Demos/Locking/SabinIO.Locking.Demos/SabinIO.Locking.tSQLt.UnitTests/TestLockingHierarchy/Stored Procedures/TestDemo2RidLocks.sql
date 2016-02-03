@@ -73,8 +73,8 @@ BEGIN
 		AND resource_type = 'RID'
 		AND resource_associated_entity_id = @PartitionId
 
-	EXEC tSQLT.AssertEquals 2
-		,@RidObjectID
+	--EXEC tSQLT.AssertEquals 2
+	--	,@RidObjectID
 
 	--COMMIT TRANSACTION
 
