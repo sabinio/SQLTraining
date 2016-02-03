@@ -80,9 +80,6 @@ BEGIN
 
 	EXEC tSQLT.AssertEquals 'X'
 		,@requestMode
-
-	EXEC tSQLT.AssertEquals 2
-		,@count
 END
 GO
 
