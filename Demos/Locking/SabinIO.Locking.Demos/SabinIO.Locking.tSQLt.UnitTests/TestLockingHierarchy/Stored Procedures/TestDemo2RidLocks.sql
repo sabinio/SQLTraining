@@ -8,7 +8,7 @@ BEGIN
 	DECLARE @object_id BIGINT = OBJECT_ID(N'Demo2_LockingHierarchy')
 	DECLARE @PartitionId BIGINT
 
-	BEGIN TRANSACTION
+	--BEGIN TRANSACTION
 
 	INSERT INTO Demo2_LockingHierarchy
 	SELECT 0
@@ -30,9 +30,9 @@ BEGIN
 		AND resource_type = 'RID'
 		AND resource_associated_entity_id = @PartitionId
 
-	COMMIT
+	--COMMIT
 
-	BEGIN TRANSACTION
+	--BEGIN TRANSACTION
 
 	INSERT INTO Demo2_LockingHierarchy
 	SELECT 1
@@ -50,7 +50,7 @@ BEGIN
 		AND resource_type = 'RID'
 		AND resource_associated_entity_id = @PartitionId
 
-	COMMIT
+	--COMMIT
 
 	EXEC tSQLT.AssertEquals 1
 		,@RidObjectID
@@ -60,7 +60,7 @@ BEGIN
 	WHERE resource_type = 'RID'
 		AND resource_associated_entity_id = @PartitionId
 
-	BEGIN TRANSACTION
+	--BEGIN TRANSACTION
 
 	INSERT INTO Demo2_LockingHierarchy
 	SELECT 2
@@ -76,7 +76,7 @@ BEGIN
 	EXEC tSQLT.AssertEquals 2
 		,@RidObjectID
 
-	COMMIT TRANSACTION
+	--COMMIT TRANSACTION
 
 	EXEC tSQLT.AssertEquals 'X'
 		,@requestMode
