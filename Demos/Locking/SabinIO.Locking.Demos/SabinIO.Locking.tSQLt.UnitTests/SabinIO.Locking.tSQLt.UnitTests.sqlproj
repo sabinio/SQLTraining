@@ -60,16 +60,17 @@
     <Folder Include="TestLockingHierarchy\" />
     <Folder Include="TestLockingHierarchy\Stored Procedures\" />
     <Folder Include="Security\" />
+    <Folder Include="TestLockingIsolation" />
   </ItemGroup>
   <ItemGroup>
-    <ArtifactReference Include="..\References\tSQLt_DB.dacpac">
-      <HintPath>..\References\tSQLt_DB.dacpac</HintPath>
-      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
-    </ArtifactReference>
     <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\120\SqlSchemas\master.dacpac">
       <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\120\SqlSchemas\master.dacpac</HintPath>
       <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
       <DatabaseVariableLiteralValue>sys</DatabaseVariableLiteralValue>
+    </ArtifactReference>
+    <ArtifactReference Include="..\References\tSQLt_DB.dacpac">
+      <HintPath>..\References\tSQLt_DB.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
     </ArtifactReference>
   </ItemGroup>
   <ItemGroup>
@@ -86,10 +87,19 @@
     <None Include="localdb.publish.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="local.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="TestLockingHierarchy\Stored Procedures\TestHeapLockHierarchy.sql" />
     <Build Include="Security\TestLockingHierarchy.sql" />
+    <Build Include="Security\TestLockingIsolation.sql" />
+    <Build Include="TestLockingIsolation\TestDefaultValues.sql">
+      <SuppressTSqlWarnings>71562</SuppressTSqlWarnings>
+    </Build>
+    <Build Include="TestLockingIsolation\ShellNoLock.sql" />
+    <Build Include="TestLockingIsolation\TestNoLock.sql" />
+    <Build Include="TestLockingHierarchy\Stored Procedures\TestClusteredIXLockHierarchy.sql" />
+    <Build Include="TestLockingHierarchy\Stored Procedures\TestDemo2RidLocks.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.RunAll.sql" />

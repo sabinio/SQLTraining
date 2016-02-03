@@ -4,6 +4,8 @@ CREATE PROCEDURE TestLockingHierarchy.TestHeapLockHierarchy
 AS 
 BEGIN
 
+DELETE FROM [Demo1_LockingHierarchy]
+
 DECLARE @TableObjectID bigint, @PartitionObjectId BIGINT, @DbLock CHAR (2), @ObjectLock CHAR (2), @PageLock CHAR (2), @RidLock CHAR(2), @partitionId BIGINT
 
 select @TableObjectID = OBJECT_ID (N'Demo1_LockingHierarchy')
