@@ -97,7 +97,9 @@
     <Build Include="TestLockingIsolation\TestNoLock.sql" />
     <Build Include="TestLockingHierarchy\Stored Procedures\TestClusteredIXLockHierarchy.sql" />
     <Build Include="TestLockingHierarchy\Stored Procedures\TestDemo2RidLocks.sql" />
-    <Build Include="TestLockingIsolation\TestDefaultValues.sql" />
+    <Build Include="TestLockingIsolation\TestDefaultValues.sql">
+      <SuppressTSqlWarnings>71562</SuppressTSqlWarnings>
+    </Build>
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.RunAll.sql" />

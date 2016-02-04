@@ -130,6 +130,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="SabinIO.InsertPerformance.Demo.publish.xml" />
+    <None Include="localdb.publish.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="dbo\PostDBDeploy\SetDBSize.sql" />

@@ -9,9 +9,9 @@ INSERT INTO TableA VALUES (2, 'bbbbbbbb');
 INSERT INTO TableA VALUES (3, 'cccccccc');
 
 IF NOT EXISTS (
-			SELECT NAME
+			SELECT name
 			FROM sys.tables
-			WHERE NAME = 'Expected'
+			WHERE name = 'Expected'
 			)
 BEGIN
 CREATE TABLE [Expected]

@@ -5,9 +5,9 @@ AS
 BEGIN
 
 IF NOT EXISTS (
-			SELECT NAME
+			SELECT name
 			FROM sys.objects
-			WHERE NAME = 'Expected'
+			WHERE name = 'Expected'
 			)
 
 CREATE TABLE [Expected]

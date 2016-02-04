@@ -7,7 +7,7 @@ BEGIN TRANSACTION
 	IF NOT EXISTS (
 			SELECT name
 			FROM sysindexes
-			WHERE NAME = 'ind_Demo1_LockingHierarchy'
+			WHERE name = 'ind_Demo1_LockingHierarchy'
 			)
 		CREATE CLUSTERED INDEX ind_Demo1_LockingHierarchy ON Demo1_LockingHierarchy (id)
 COMMIT

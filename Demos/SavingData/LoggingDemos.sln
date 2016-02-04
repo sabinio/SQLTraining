@@ -31,6 +31,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SabinIO.Logging.tSQLt.UnitT
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.InsertPerformance.tSQLt.UnitTests", "SabinIO.InsertPerformance.tSQLt.UnitTests\SabinIO.InsertPerformance.tSQLt.UnitTests.sqlproj", "{0EB2C4DA-77FF-420F-A551-63A08BD6D5A2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "batfiles", "batfiles", "{5906A013-0BA5-45F8-AA3D-8286175D3AE5}"
+	ProjectSection(SolutionItems) = preProject
+		batfiles\runlocaldb.bat = batfiles\runlocaldb.bat
+		batfiles\sqlpackage.bat = batfiles\sqlpackage.bat
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -81,7 +81,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="local.publish.xml" />
-    <None Include="localdb.publish.xml" />
+    <None Include="localdb.publish.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <PreDeploy Include="Script.PreDeployment.tSQLt.Setup.sql" />

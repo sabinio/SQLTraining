@@ -90,4 +90,10 @@
   <ItemGroup>
     <RefactorLog Include="SabinIO.InsertPerformance.tSQLt.UnitTests.refactorlog" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="localdb.publish.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="local.publish.xml" />
+  </ItemGroup>
 </Project>

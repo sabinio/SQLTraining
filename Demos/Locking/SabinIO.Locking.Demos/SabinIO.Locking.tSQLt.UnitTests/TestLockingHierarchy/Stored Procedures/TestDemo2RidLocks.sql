@@ -28,7 +28,7 @@ BEGIN
 		AND resource_type = 'RID'
 		AND resource_associated_entity_id = @PartitionId
 
-		EXEC tSQLT.AssertEquals 0
+		EXEC tSQLt.AssertEquals 0
 		,@RidObjectID
 
 	INSERT INTO Demo2_LockingHierarchy
