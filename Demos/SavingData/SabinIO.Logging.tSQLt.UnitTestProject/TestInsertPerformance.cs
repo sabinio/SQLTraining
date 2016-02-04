@@ -18,5 +18,11 @@ namespace SabinIO.Logging.tSQLt.UnitTestProject
             var result = _runner.Run("TestInsertPerformance", "TestPageSplits");
             Assert.IsTrue(result.Passed(), result.FailureMessages());
         }
+        [TestMethod]
+        public void TestSplitPagesFillFactorSeventyPc()
+        {
+            var result = _runner.Run("TestInsertPerformance", "TestSplitPagesFillFactorSeventyPc");
+            Assert.IsTrue(result.Passed(), result.FailureMessages());
+        }
     }
 }

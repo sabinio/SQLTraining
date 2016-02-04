@@ -1,23 +1,23 @@
-﻿CREATE PROCEDURE TestInsertPerformance.TestPageSplits
+﻿CREATE PROCEDURE TestInsertPerformance.TestSplitPagesFillFactorSeventyPc
 AS
 BEGIN
-	TRUNCATE TABLE PageSplits
-
 	DECLARE @startTime DATETIME2(3)
 	DECLARE @endTime DATETIME2(3)
 	DECLARE @FirstRunDateDiff SMALLINT
 	DECLARE @SecondRunDateDiff SMALLINT
 	DECLARE @page_Count INT
+	DECLARE @70_pc_PageCount INT
 	DECLARE @first_run_database_transaction_log_bytes_used BIGINT
 	DECLARE @first_run_database_transaction_log_bytes_reserved BIGINT
 	DECLARE @second_run_database_transaction_log_bytes_used BIGINT
 	DECLARE @second_run_database_transaction_log_bytes_reserved BIGINT
 
-	BEGIN TRANSACTION
+	TRUNCATE TABLE PageSplits
 
-	SELECT @startTime = GETDATE()
-
-	DECLARE @a INT = 1
+BEGIN TRANSACTION
+	declare @a INT
+	set @a = 1
+SELECT @startTime = GETDATE()
 
 	WHILE @a <= 20000
 	BEGIN
@@ -65,7 +65,8 @@ BEGIN
 
 	SELECT @FirstRunDateDiff = DATEDIFF(SECOND, @startTime, @endTime)
 
-	SELECT @first_run_database_transaction_log_bytes_used = dt.database_transaction_log_bytes_used
+
+SELECT @first_run_database_transaction_log_bytes_used = dt.database_transaction_log_bytes_used
 		,@first_run_database_transaction_log_bytes_reserved = dt.database_transaction_log_bytes_reserved
 	FROM sys.dm_exec_requests er
 	INNER JOIN sys.dm_tran_database_transactions dt ON er.transaction_id = dt.transaction_id
@@ -74,15 +75,21 @@ BEGIN
 	SELECT @page_count = page_count
 	FROM sys.dm_db_index_physical_stats(db_id(), object_id('PageSplits'), 1, NULL, NULL)
 
-	--select page_count from sys.dm_db_index_physical_stats(db_id(),object_id('PageSplits'),1,Null,null)
+	--output for debugging
+	--select @page_Count,  @first_run_database_transaction_log_bytes_used, @first_run_database_transaction_log_bytes_reserved
+
 	COMMIT TRANSACTION
 
-	EXEC tSQLt.AssertEquals 20000
-		,@page_Count
+	alter index idx_PageSplits on PageSplits rebuild with (fillfactor = 70)
+
+select @70_pc_PageCount = page_count from sys.dm_db_index_physical_stats(db_id(),object_id('PageSplits'),1,Null,null)
+
+	IF @70_pc_PageCount !> @page_Count
+	BEGIN
+		EXEC tSQLt.Fail 'rebuild of index with 70% fill factor has resulted in less pages than FF at 100%.'
+	END
 
 	BEGIN TRANSACTION
-
-	SET @a = 1
 
 	SELECT @startTime = GETDATE()
 
@@ -114,13 +121,16 @@ BEGIN
 	FROM sys.dm_db_index_physical_stats(db_id(), object_id('PageSplits'), 1, NULL, NULL)
 
 	COMMIT TRANSACTION
+
+	--output for debugging
+	--select @page_Count, @second_run_database_transaction_log_bytes_used, @second_run_database_transaction_log_bytes_reserved
 	
-	EXEC tSQLt.AssertEquals 40000
+	EXEC tSQLt.AssertEquals @70_pc_PageCount
 		,@page_Count
 
 	IF @FirstRunDateDiff < @SecondRunDateDiff
 	BEGIN
-		EXEC tSQLt.Fail 'FirstRun was quicker or as quick as second run. '
+		EXEC tSQLt.Fail 'Second run was quicker or as quick as first run. '
 	END
 
 		IF @first_run_database_transaction_log_bytes_used < @second_run_database_transaction_log_bytes_used
@@ -134,3 +144,5 @@ BEGIN
 	END
 END
 GO
+
+
