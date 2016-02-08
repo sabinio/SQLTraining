@@ -14,6 +14,7 @@ Checkpoint
 --Check value 
 select * from IncompleteTransactionWriteLogTest
 /*TO HERE*/
+GO
 
 
 
@@ -27,6 +28,7 @@ select * from IncompleteTransactionWriteLogTest
 
 --Now check what is stored in the database
 select * from IncompleteTransactionWriteLogTest
+GO
 
 
 --Check the SQL Server Log to see what happened on Startup

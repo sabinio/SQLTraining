@@ -12,7 +12,7 @@ namespace SabinIO.LoggingDemos.UnitTestProject
     {
 
         [TestMethod]
-        public void TestMethodDemo1()
+        public void TestMethodInsertPerformanceDemo1()
         {
             int database_transaction_log_record_count_1 = 0;
             int database_transaction_log_bytes_used_1 = 0;
@@ -159,7 +159,7 @@ namespace SabinIO.LoggingDemos.UnitTestProject
         }
 
         [TestMethod]
-        public void TestMethodDemo2()
+        public void TestMethodInsertPerformanceDemo2()
         {
             int page_count_1 = 0;
             int page_count_2 = 0;

@@ -1,6 +1,8 @@
 ﻿USE [SabinIO.dirtyPage.Demo]
 GO
 
+TRUNCATE TABLE WriteLogTest
+GO
 
 --Insert A Record into the table
 insert into WriteLogTest
@@ -9,16 +11,19 @@ Select 'CleanPage'
 --Ensure written to disk
 Checkpoint
 
+GO
+
 --Check value 
 select * from WriteLogTest
 
-
+GO
 
 
 --Update value
 update WriteLogTest
 set StringColumn = 'DirtyPage'
-
+select * from WriteLogTest
+GO
 --Using Task manager kill the "sqlservr.exe" process 
 --Open the MDF file in HxD (Hex editor) (download from http://mh-nexus.de/en/hxd/)
 --Search for DirtyPage
@@ -30,7 +35,7 @@ set StringColumn = 'DirtyPage'
 
 --Now check what is stored in the database
 select * from WriteLogTest
-
+GO
 --Check the SQl Server Log to see what happened on Startup
 EXEC sys.xp_readerrorlog 
 
