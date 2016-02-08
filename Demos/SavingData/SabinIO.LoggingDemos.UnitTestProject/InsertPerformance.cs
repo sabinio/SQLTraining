@@ -38,7 +38,7 @@ namespace SabinIO.LoggingDemos.UnitTestProject
 
             int page_count = 0;
 
-            string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.InsertPerformance.Demo;Data Source=.;";
+            string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.InsertPerformance.Demo;Data Source=(localdb)\\ProjectsV12";
             string fileContent = File.ReadAllText("..\\..\\..\\SabinIO.InsertPerformance.Demo\\Demos\\Demo1.sql");
             string[] batches = Regex.Split(fileContent, "GO", RegexOptions.IgnoreCase);
 
@@ -163,7 +163,7 @@ namespace SabinIO.LoggingDemos.UnitTestProject
         {
             int page_count_1 = 0;
             int page_count_2 = 0;
-            string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.InsertPerformance.Demo;Data Source=.;";
+            string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.InsertPerformance.Demo;Data Source=(localdb)\\ProjectsV12;";
             string fileContent = File.ReadAllText(@"..\\..\\..\\SabinIO.InsertPerformance.Demo\\Demos\\Demo2.sql");
             string[] batches = Regex.Split(fileContent, "GO", RegexOptions.IgnoreCase);
 
