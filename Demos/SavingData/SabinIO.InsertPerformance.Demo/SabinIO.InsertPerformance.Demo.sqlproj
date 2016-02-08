@@ -133,6 +133,7 @@
     <None Include="localdb.publish.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="local.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="dbo\PostDBDeploy\SetDBSize.sql" />

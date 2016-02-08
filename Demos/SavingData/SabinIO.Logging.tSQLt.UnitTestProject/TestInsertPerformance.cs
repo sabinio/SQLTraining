@@ -24,5 +24,12 @@ namespace SabinIO.Logging.tSQLt.UnitTestProject
             var result = _runner.Run("TestInsertPerformance", "TestSplitPagesFillFactorSeventyPc");
             Assert.IsTrue(result.Passed(), result.FailureMessages());
         }
+
+        [TestMethod]
+        public void TestWideTableNCI()
+        {
+            var result = _runner.Run("TestInsertPerformance", "TestWideTableNCI");
+            Assert.IsTrue(result.Passed(), result.FailureMessages());
+        }
     }
 }

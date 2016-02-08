@@ -87,6 +87,7 @@
     <PreDeploy Include="Script.PreDeployment.tSQLt.Setup.sql" />
     <Build Include="TestInsertPerformance\TestPageSplits.sql" />
     <Build Include="TestInsertPerformance\TestSplitPagesFillFactorSeventyPc.sql" />
+    <Build Include="TestInsertPerformance\TestWideTableNCI.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="SabinIO.InsertPerformance.tSQLt.UnitTests.refactorlog" />

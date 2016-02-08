@@ -6,7 +6,7 @@ GO
 DECLARE @mdfCurrentSize BIGINT
 DECLARE @mdfNewSize BIGINT = 500
 DECLARE @ldfCurrentSize BIGINT
-DECLARE @ldfNewSize BIGINT = 600
+DECLARE @ldfNewSize BIGINT = 500
 
 IF (DB_ID(N'$(DatabaseName)') IS NOT NULL) 
 BEGIN
@@ -28,7 +28,7 @@ END
 if (@ldfCurrentSize < @ldfNewSize)
 BEGIN
 PRINT 'increasing log size'
-ALTER DATABASE [$(DatabaseName)] MODIFY FILE ( NAME =[$(DatabaseName)_log], SIZE = 600MB , FILEGROWTH = 100MB )
+ALTER DATABASE [$(DatabaseName)] MODIFY FILE ( NAME =[$(DatabaseName)_log], SIZE = 500MB , FILEGROWTH = 100MB )
 END
 
 END

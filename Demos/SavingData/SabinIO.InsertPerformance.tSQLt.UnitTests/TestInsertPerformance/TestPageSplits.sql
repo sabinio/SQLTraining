@@ -3,20 +3,13 @@ AS
 BEGIN
 	TRUNCATE TABLE PageSplits
 
-	DECLARE @startTime DATETIME2(3)
-	DECLARE @endTime DATETIME2(3)
-	DECLARE @FirstRunDateDiff SMALLINT
-	DECLARE @SecondRunDateDiff SMALLINT
+	BEGIN TRANSACTION
+
 	DECLARE @page_Count INT
 	DECLARE @first_run_database_transaction_log_bytes_used BIGINT
 	DECLARE @first_run_database_transaction_log_bytes_reserved BIGINT
 	DECLARE @second_run_database_transaction_log_bytes_used BIGINT
 	DECLARE @second_run_database_transaction_log_bytes_reserved BIGINT
-
-	BEGIN TRANSACTION
-
-	SELECT @startTime = GETDATE()
-
 	DECLARE @a INT = 1
 
 	WHILE @a <= 20000
@@ -61,10 +54,6 @@ BEGIN
 		SET @a = @a + 1
 	END
 
-	SELECT @endTime = GETDATE()
-
-	SELECT @FirstRunDateDiff = DATEDIFF(SECOND, @startTime, @endTime)
-
 	SELECT @first_run_database_transaction_log_bytes_used = dt.database_transaction_log_bytes_used
 		,@first_run_database_transaction_log_bytes_reserved = dt.database_transaction_log_bytes_reserved
 	FROM sys.dm_exec_requests er
@@ -75,16 +64,14 @@ BEGIN
 	FROM sys.dm_db_index_physical_stats(db_id(), object_id('PageSplits'), 1, NULL, NULL)
 
 	--select page_count from sys.dm_db_index_physical_stats(db_id(),object_id('PageSplits'),1,Null,null)
-	COMMIT TRANSACTION
-
 	EXEC tSQLt.AssertEquals 20000
 		,@page_Count
 
-	BEGIN TRANSACTION
+		COMMIT TRANSACTION
+
+		BEGIN TRANSACTION
 
 	SET @a = 1
-
-	SELECT @startTime = GETDATE()
 
 	WHILE @a <= 20000
 	BEGIN
@@ -100,10 +87,6 @@ BEGIN
 		SET @a = @a + 1
 	END
 
-	SELECT @endTime = GETDATE()
-
-	SELECT @SecondRunDateDiff = DATEDIFF(SECOND, @StartTime, @EndTime)
-
 	SELECT @second_run_database_transaction_log_bytes_used = dt.database_transaction_log_bytes_used - @first_run_database_transaction_log_bytes_used
 		,@second_run_database_transaction_log_bytes_reserved = dt.database_transaction_log_bytes_reserved - @first_run_database_transaction_log_bytes_reserved
 	FROM sys.dm_exec_requests er
@@ -112,25 +95,25 @@ BEGIN
 
 	SELECT @page_count = page_count
 	FROM sys.dm_db_index_physical_stats(db_id(), object_id('PageSplits'), 1, NULL, NULL)
-
-	COMMIT TRANSACTION
 	
+	COMMIT TRANSACTION
+
+	--debugging
+	--	select @first_run_database_transaction_log_bytes_used as '1stbytesused', @second_run_database_transaction_log_bytes_used as '2ndbytesused', @first_run_database_transaction_log_bytes_reserved as '1stbytesreserved', @second_run_database_transaction_log_bytes_reserved as '2ndbytesreserved'
 	EXEC tSQLt.AssertEquals 40000
 		,@page_Count
 
-	IF @FirstRunDateDiff < @SecondRunDateDiff
-	BEGIN
-		EXEC tSQLt.Fail 'FirstRun was quicker or as quick as second run. '
-	END
-
-		IF @first_run_database_transaction_log_bytes_used < @second_run_database_transaction_log_bytes_used
+	IF @first_run_database_transaction_log_bytes_used < @second_run_database_transaction_log_bytes_used
 	BEGIN
 		EXEC tSQLt.Fail 'database_transaction_log_bytes_used is larger than second run'
 	END
-	
+
 	IF @first_run_database_transaction_log_bytes_reserved < @second_run_database_transaction_log_bytes_reserved
 	BEGIN
 		EXEC tSQLt.Fail 'database_transaction_log_bytes_reserved is larger than second run'
 	END
+
 END
 GO
+
+

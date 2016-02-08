@@ -4,13 +4,13 @@ GO
 
 --Page Splits Demo
 set nocount on
-go
+GO
 --Insert 160000 records
 --Create 20000 pages in table
 BEGIN TRANSACTION
 
 declare @a int = 1
-while @a <= 20000
+while @a <= 200
 begin
 	insert into PageSplits(id,col1)
 	values (@a,'a'),(@a,'b'),(@a,'c'),(@a,'d'),(@a,'e'),(@a,'f'),(@a,'g'),(@a,'h')
@@ -22,6 +22,7 @@ from sys.dm_exec_requests er
 inner join sys.dm_tran_database_transactions dt
 on er.transaction_id = dt.transaction_id
 where er.session_id = @@spid
+
 select page_count from sys.dm_db_index_physical_stats(db_id(),object_id('PageSplits'),1,Null,null)
 
 COMMIT TRANSACTION
@@ -37,7 +38,7 @@ GO
 BEGIN TRANSACTION
 
 declare @a int = 1
-while @a <= 20000
+while @a <= 200
 begin
 	insert into PageSplits(id,col1)
 	values (@a,'a')
@@ -79,7 +80,7 @@ truncate table PageSplits
 BEGIN TRANSACTION
 
 declare @a int = 1
-while @a <= 20000
+while @a <= 200
 begin
 	insert into PageSplits(id,col1)
 	values (@a,'a'),(@a,'b'),(@a,'c'),(@a,'d'),(@a,'e'),(@a,'f'),(@a,'g'),(@a,'h')
@@ -103,9 +104,9 @@ GO
 
 --rebuild index with fill factor of 70%
 alter index idx_PageSplits on PageSplits rebuild with (fillfactor = 70)
-go
+GO
 select page_count from sys.dm_db_index_physical_stats(db_id(),object_id('PageSplits'),1,Null,null)
-go
+GO
 --page count 22860
 
 
@@ -114,7 +115,7 @@ go
 BEGIN TRANSACTION
 
 declare @a int = 1
-while @a <= 20000
+while @a <= 200
 begin
 	insert into PageSplits(id,col1)
 	values (@a,'a')

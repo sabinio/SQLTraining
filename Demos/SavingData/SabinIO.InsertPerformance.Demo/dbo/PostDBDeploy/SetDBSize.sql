@@ -5,9 +5,9 @@ GO
 :setvar DatabaseName "SabinIO.InsertPerformance.Demo"
 
 DECLARE @mdfCurrentSize BIGINT
-DECLARE @mdfNewSize BIGINT = 500
+DECLARE @mdfNewSize BIGINT = 100
 DECLARE @ldfCurrentSize BIGINT
-DECLARE @ldfNewSize BIGINT = 600
+DECLARE @ldfNewSize BIGINT = 100
 
 IF (DB_ID(N'$(DatabaseName)') IS NOT NULL) 
 BEGIN
@@ -24,12 +24,12 @@ where name = '$(DatabaseName)_log'
 if (@mdfCurrentSize < @mdfNewSize)
 BEGIN
 PRINT 'increasing data file size'
-ALTER DATABASE [$(DatabaseName)] MODIFY FILE ( NAME =[$(DatabaseName)], SIZE = 500MB , FILEGROWTH = 100MB )
+ALTER DATABASE [$(DatabaseName)] MODIFY FILE ( NAME =[$(DatabaseName)], SIZE = 100MB , FILEGROWTH = 100MB )
 END
 if (@ldfCurrentSize < @ldfNewSize)
 BEGIN
 PRINT 'increasing log size'
-ALTER DATABASE [$(DatabaseName)] MODIFY FILE ( NAME =[$(DatabaseName)_log], SIZE = 600MB , FILEGROWTH = 100MB )
+ALTER DATABASE [$(DatabaseName)] MODIFY FILE ( NAME =[$(DatabaseName)_log], SIZE = 100MB , FILEGROWTH = 100MB )
 END
 
 END

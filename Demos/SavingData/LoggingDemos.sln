@@ -17,8 +17,6 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Recovery.PageRestor
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Recovery.PageVerify", "SabinIO.Recovery.PageVerify\SabinIO.Recovery.PageVerify.sqlproj", "{3FC519EB-8E1F-4B52-B41E-4A7846549965}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.DirtyPage.tSQLt.UnitTests", "SabinIO.Logging.tSQLt.UnitTests\SabinIO.DirtyPage.tSQLt.UnitTests.sqlproj", "{E78925CF-F9E2-4E24-8E48-6E77C0875ACC}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{14B3682D-EB34-4CAD-940E-9B8EC9742A0D}"
 	ProjectSection(SolutionItems) = preProject
 		References\tSQLt.Client.Net.dll = References\tSQLt.Client.Net.dll
@@ -27,15 +25,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{82A0DDF7-F845-4602-A816-584FB7152F28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SabinIO.Logging.tSQLt.UnitTestProject", "SabinIO.Logging.tSQLt.UnitTestProject\SabinIO.Logging.tSQLt.UnitTestProject.csproj", "{484FF5E2-B830-43D9-825D-F3198E955197}"
-EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.InsertPerformance.tSQLt.UnitTests", "SabinIO.InsertPerformance.tSQLt.UnitTests\SabinIO.InsertPerformance.tSQLt.UnitTests.sqlproj", "{0EB2C4DA-77FF-420F-A551-63A08BD6D5A2}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "batfiles", "batfiles", "{5906A013-0BA5-45F8-AA3D-8286175D3AE5}"
 	ProjectSection(SolutionItems) = preProject
 		batfiles\runlocaldb.bat = batfiles\runlocaldb.bat
 		batfiles\sqlpackage.bat = batfiles\sqlpackage.bat
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SabinIO.LoggingDemos.UnitTestProject", "SabinIO.LoggingDemos.UnitTestProject\SabinIO.LoggingDemos.UnitTestProject.csproj", "{4932B3DB-319A-4313-9788-C8D466C2AE37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,29 +81,15 @@ Global
 		{3FC519EB-8E1F-4B52-B41E-4A7846549965}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FC519EB-8E1F-4B52-B41E-4A7846549965}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3FC519EB-8E1F-4B52-B41E-4A7846549965}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{E78925CF-F9E2-4E24-8E48-6E77C0875ACC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E78925CF-F9E2-4E24-8E48-6E77C0875ACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E78925CF-F9E2-4E24-8E48-6E77C0875ACC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{E78925CF-F9E2-4E24-8E48-6E77C0875ACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E78925CF-F9E2-4E24-8E48-6E77C0875ACC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E78925CF-F9E2-4E24-8E48-6E77C0875ACC}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{484FF5E2-B830-43D9-825D-F3198E955197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{484FF5E2-B830-43D9-825D-F3198E955197}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{484FF5E2-B830-43D9-825D-F3198E955197}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{484FF5E2-B830-43D9-825D-F3198E955197}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0EB2C4DA-77FF-420F-A551-63A08BD6D5A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0EB2C4DA-77FF-420F-A551-63A08BD6D5A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0EB2C4DA-77FF-420F-A551-63A08BD6D5A2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{0EB2C4DA-77FF-420F-A551-63A08BD6D5A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0EB2C4DA-77FF-420F-A551-63A08BD6D5A2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0EB2C4DA-77FF-420F-A551-63A08BD6D5A2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{4932B3DB-319A-4313-9788-C8D466C2AE37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4932B3DB-319A-4313-9788-C8D466C2AE37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4932B3DB-319A-4313-9788-C8D466C2AE37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4932B3DB-319A-4313-9788-C8D466C2AE37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{E78925CF-F9E2-4E24-8E48-6E77C0875ACC} = {82A0DDF7-F845-4602-A816-584FB7152F28}
-		{484FF5E2-B830-43D9-825D-F3198E955197} = {82A0DDF7-F845-4602-A816-584FB7152F28}
-		{0EB2C4DA-77FF-420F-A551-63A08BD6D5A2} = {82A0DDF7-F845-4602-A816-584FB7152F28}
+		{4932B3DB-319A-4313-9788-C8D466C2AE37} = {82A0DDF7-F845-4602-A816-584FB7152F28}
 	EndGlobalSection
 EndGlobal
