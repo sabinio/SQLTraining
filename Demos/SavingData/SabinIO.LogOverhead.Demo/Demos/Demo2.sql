@@ -36,5 +36,6 @@ on er.transaction_id = dt.transaction_id
 where er.session_id = @@spid
 
 COMMIT TRANSACTION
+
 --how much log is used?
 --how much log is reserved for a transaction to rollback?

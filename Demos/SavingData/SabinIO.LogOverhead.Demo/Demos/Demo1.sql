@@ -1,6 +1,7 @@
 ﻿USE [SabinIO.LogOverhead.Demo]
 GO
 
+TRUNCATE TABLE LogOverhead;
 SET NOCOUNT ON;
 GO
 

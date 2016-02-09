@@ -25,12 +25,6 @@ DECLARE @EndFlushes INT = (SELECT cntr_value FROM sys.dm_os_performance_counters
 SELECT @EndFlushes-@StartFlushes Flushes  -- Should be around 20k
 GO
 
-
-
-
-
-
-
 DECLARE @StartFlushes INT = (SELECT cntr_value FROM sys.dm_os_performance_counters where counter_name = 'Log Flushes/sec' AND instance_name = DB_NAME())
 
 DECLARE @x INT = 0

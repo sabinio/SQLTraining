@@ -1,6 +1,8 @@
 ﻿USE [SabinIO.dirtyPage.Demo]
 GO
 
+TRUNCATE TABLE IncompleteTransactionWriteLogTest
+GO
 
 /*EXECUTE STATEMENT FROM HERE*/
 BEGIN TRANSACTION

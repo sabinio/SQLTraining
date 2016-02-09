@@ -1,10 +1,10 @@
 ﻿USE [SabinIO.LogOverhead.Demo]
 GO
 
+truncate table LogOverhead2
+
 SET NOCOUNT ON;
 GO
-
-
 
 --INSERT Large number of records
 
@@ -17,10 +17,13 @@ GO
 --Insert 1 record per loop in a transaction (1,000,000 times)
 --RUN STATEMENTS FROM HERE ~30 secs
 --Check Table Size first = 0.008mb
+
+exec sp_spaceused 'LogOverhead'
+
 set nocount on
-go
+GO
 select (size * 8)/1024 AS LogSize_MB
-from sys.master_files
+from sys.master_files mf
 where database_id = db_id()
 and type_desc = 'LOG'
 
@@ -37,7 +40,12 @@ COMMIT TRANSACTION
 select (size * 8)/1024 AS LogSize_MB
 from sys.master_files
 where database_id = db_id()
-and type_desc = 'LOG'
+and type_desc = 'LOG';
+
+
+exec sp_spaceused 'LogOverhead'
+
+GO
 /*TO HERE*/
 --Check Table Size = 3.305mb
 --record values
@@ -60,7 +68,7 @@ GO
 --RUN STATEMENTS FROM HERE ~6 secs
 --Check Table Size first = 0.000mb
 set nocount on
-go
+GO
 select (size * 8)/1024 AS LogSize_MB
 from sys.master_files
 where database_id = db_id()
@@ -77,6 +85,8 @@ select (size * 8)/1024 AS LogSize_MB
 from sys.master_files
 where database_id = db_id()
 and type_desc = 'LOG'
+
+exec sp_spaceused 'LogOverhead2'
 /*TO HERE*/
 
 --Check Table Size = 3.141mb

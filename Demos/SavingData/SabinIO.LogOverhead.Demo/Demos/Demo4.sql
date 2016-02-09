@@ -18,7 +18,7 @@ GO
 --update 1,000,000 records in a transaction
 --RUN STATEMENTS FROM HERE ~10 secs
 set nocount on
-go
+GO
 select (size * 8)/1024 AS LogSize_MB
 from sys.master_files
 where database_id = db_id()
@@ -41,3 +41,5 @@ and type_desc = 'LOG'
 --log size before = 2 
 --log size after = 109
 --109mb transaction log to update 3mb data 
+
+select count(*) from LogOverhead2
