@@ -30,6 +30,7 @@ namespace SabinIO.LoggingDemos.UnitTestProject
             {
                 string batch = batches[i];
                 SqlDataAdapter da = new SqlDataAdapter(batch, constring);
+                da.SelectCommand.CommandTimeout = 120;
                 DataSet ds = new DataSet();
                 da.Fill(ds);
                 da.Dispose();
