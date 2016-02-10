@@ -6,10 +6,14 @@ GO
 
 SET NOCOUNT ON
 
-
+DECLARE @i INT = 0
+WHILE (@i <2000)
+BEGIN
 INSERT INTO PR_Sales (CustomerID, ProductID, Qty)
 SELECT RAND()*10000,RAND()*100,RAND()*10
-GO 2000
+SET @i = @i + 1;
+END
+GO 
 
 SELECT * FROM PR_Sales
 GO

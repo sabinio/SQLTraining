@@ -58,6 +58,7 @@
     <Compile Include="Logging.WithTran.cs" />
     <Compile Include="LogOverhead.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recovery.PageRestore.cs" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
