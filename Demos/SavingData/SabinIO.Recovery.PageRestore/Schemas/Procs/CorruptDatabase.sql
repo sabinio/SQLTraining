@@ -24,7 +24,7 @@ CREATE TABLE #IND(
 	PrevPagePID	INT)
 
 INSERT INTO #IND
-EXEC ('DBCC IND (N''$(DatabaseName)'', N''Sales'', -1);')
+EXEC ('DBCC IND (N''$(DatabaseName)'', N''PR_Sales'', -1);')
 
 SELECT @PageID = MAX(PagePID)
 FROM #IND

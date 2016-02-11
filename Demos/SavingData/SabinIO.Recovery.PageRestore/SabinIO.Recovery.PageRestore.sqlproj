@@ -73,6 +73,7 @@
     <None Include="Demos\1. PageRestore.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="local.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="SabinIO.Recovery.PageRestore.refactorlog" />
