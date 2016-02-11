@@ -53,6 +53,7 @@ namespace SabinIO.LoggingDemos.UnitTestProject
             }
         }
 
+
         private static void ConfirmBackupLocation (string expected, string actual)
         {
             expected = expected.Trim();
@@ -69,7 +70,9 @@ namespace SabinIO.LoggingDemos.UnitTestProject
                 }
             }
         }
-        //[TestMethod]
+        //as long as test is run against localdb, we cannot run the test on the build; this is because we cannot do tail of the log backups on localdb
+        //so keep this commented out
+        [TestMethod]
         public void TestPageRestore()
         {
             //string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.Recovery.PageRestore;Data Source=(localdb)\\ProjectsV12";
@@ -157,8 +160,8 @@ namespace SabinIO.LoggingDemos.UnitTestProject
                 {
                     DataTable dti = new DataTable();
                     dti = ds.Tables["Table"];
-                    Assert.AreEqual(1, (dti.Rows.Count), "multiple corrupt pages exist for this database. Re-create database and run test again.");
-                    CorruptPageId = Convert.ToInt32(dti.Rows[0]["page_id"]);
+                        Assert.AreEqual(1, (dti.Rows.Count), "multiple corrupt pages exist for this database. Re-create database and run test again.");
+                        CorruptPageId = Convert.ToInt32(dti.Rows[0]["page_id"]);
                 }
 
                 if (i == 12)

@@ -74,6 +74,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="local.publish.xml" />
+    <None Include="localdb.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="SabinIO.Recovery.PageRestore.refactorlog" />

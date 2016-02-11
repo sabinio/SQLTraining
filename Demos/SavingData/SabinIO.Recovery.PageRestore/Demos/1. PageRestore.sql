@@ -1,6 +1,8 @@
 ﻿USE [SabinIO.Recovery.PageRestore]
 GO --0
 
+DELETE FROM msdb.dbo.suspect_pages WHERE database_id = DB_ID('SabinIO.Recovery.PageRestore')
+
 ALTER DATABASE [SabinIO.Recovery.PageRestore] SET RECOVERY FULL
 
 TRUNCATE TABLE PR_Sales

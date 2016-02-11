@@ -72,14 +72,14 @@ namespace SabinIO.LoggingDemos.UnitTestProject
 
                    System.Diagnostics.Process stop = new System.Diagnostics.Process();
                    stop.StartInfo.FileName = "cmd.exe";
-                   stop.StartInfo.Arguments = "/C SqlLocalDB.exe stop 'ProjectsV12'";
+                   stop.StartInfo.Arguments = "/C SqlLocalDB.exe stop ProjectsV12";
                    stop.Start();
                    stop.WaitForExit();
                    int stopResult = stop.ExitCode;
 
                    System.Diagnostics.Process strt = new System.Diagnostics.Process();
                    strt.StartInfo.FileName = "cmd.exe";
-                   strt.StartInfo.Arguments = "/C SqlLocalDB.exe start 'ProjectsV12'";
+                   strt.StartInfo.Arguments = "/C SqlLocalDB.exe start ProjectsV12";
                    strt.Start();
                    strt.WaitForExit();
                    int strtResult = strt.ExitCode;
