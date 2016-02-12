@@ -72,7 +72,7 @@ namespace SabinIO.LoggingDemos.UnitTestProject
         }
         //as long as test is run against localdb, we cannot run the test on the build; this is because we cannot do tail of the log backups on localdb
         //so keep this commented out
-        [TestMethod]
+        //[TestMethod]
         public void TestPageRestore()
         {
             //string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.Recovery.PageRestore;Data Source=(localdb)\\ProjectsV12";

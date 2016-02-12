@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.ForcedParameterisation.Demo", "QueryExecution\SabinIO.ForcedParameterisation.Demo.sqlproj", "{7AA5FFA4-482D-4EC6-828C-970B3495C717}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryExecution.UnitTestProject", "QueryExecution.UnitTestProject\QueryExecution.UnitTestProject.csproj", "{793E196F-4CC1-491A-9CE9-C193886B9218}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Statistics.OutOfDate", "SabinIO.Statistics.OutOfDate\SabinIO.Statistics.OutOfDate.sqlproj", "{F3145EC0-9878-45F7-945F-FD5955702793}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.ArithAbort.PlanCache", "SabinIO.ArithAbort.PlanCache\SabinIO.ArithAbort.PlanCache.sqlproj", "{39B5F501-69BA-4078-AF5E-B54D9E509114}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7AA5FFA4-482D-4EC6-828C-970B3495C717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AA5FFA4-482D-4EC6-828C-970B3495C717}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AA5FFA4-482D-4EC6-828C-970B3495C717}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7AA5FFA4-482D-4EC6-828C-970B3495C717}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AA5FFA4-482D-4EC6-828C-970B3495C717}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AA5FFA4-482D-4EC6-828C-970B3495C717}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{793E196F-4CC1-491A-9CE9-C193886B9218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{793E196F-4CC1-491A-9CE9-C193886B9218}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{793E196F-4CC1-491A-9CE9-C193886B9218}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{793E196F-4CC1-491A-9CE9-C193886B9218}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3145EC0-9878-45F7-945F-FD5955702793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3145EC0-9878-45F7-945F-FD5955702793}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3145EC0-9878-45F7-945F-FD5955702793}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F3145EC0-9878-45F7-945F-FD5955702793}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3145EC0-9878-45F7-945F-FD5955702793}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3145EC0-9878-45F7-945F-FD5955702793}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{39B5F501-69BA-4078-AF5E-B54D9E509114}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39B5F501-69BA-4078-AF5E-B54D9E509114}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39B5F501-69BA-4078-AF5E-B54D9E509114}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{39B5F501-69BA-4078-AF5E-B54D9E509114}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39B5F501-69BA-4078-AF5E-B54D9E509114}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39B5F501-69BA-4078-AF5E-B54D9E509114}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
