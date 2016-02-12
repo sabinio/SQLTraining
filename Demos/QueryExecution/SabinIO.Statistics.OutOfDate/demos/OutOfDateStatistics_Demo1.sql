@@ -1,5 +1,6 @@
 ﻿USE [SabinIO.Statistics.OutOfDate]
 
+
 /*
     How are statistics updated and when
 
@@ -12,7 +13,7 @@
 */
 ALTER TABLE Orders ADD CONSTRAINT pk_Orders PRIMARY KEY (OrderId)
 GO
-
+	
 CREATE INDEX IX_Orders_OrderDate ON Orders (OrderDate)
 GO
 
@@ -23,30 +24,33 @@ GO
 DBCC SHOW_STATISTICS (
 		Orders
 		,IX_Orders_OrderDate
-		)
+		) WITH HISTOGRAM
 
 --Free the cache to make sure we haven't got any existing plans
 DBCC FREEPROCCACHE
 GO
 
+-- Turn on Actual Execution Plan from toolbar
+
 --Now look at a simple query for a date range greater than the maximum we know we have
 --we get 0 rows, the estimate and actual are both 1
-SELECT *
+SELECT COUNT(*)
 FROM orders
 WHERE OrderDate > '11 jan 2016'
 GO
 
+-- This proc gets orders between dates
 EXEC up_GetOrdersBYDate '11 jan 2016'
 	,'12 jan 2016'
-	--Now lets add a days worth of data
+	
 GO
 
+--Now lets add a days worth of data
 EXEC up_OrdersGenerate '11 jan 2016'
 	,'12 jan 2016'
 	,100
 
-SET STATISTICS IO ON
-GO
+
 
 --Lets run the stored procedure again this will use a cached plan and so the estimate should be 1
 EXEC up_GetOrdersBYDate '11 jan 2016'
@@ -59,23 +63,22 @@ DBCC FREEPROCCACHE
 EXEC up_GetOrdersBYDate '11 jan 2016'
 	,'12 jan 2016'
 
---We still get an estimate 1 but the actual number is 10,000
+--We still get an estimate 1 but the actual number is 100
 --Lets look at the statistics and see if we can explain it
 DBCC SHOW_STATISTICS (
 		'orders'
 		,'IX_Orders_OrderDate'
-		)
+		) WITH HISTOGRAM
 
 --We can see from the stats that the last date is apparently on 10 jan 2016
 --If we update the statistics what do we get
 UPDATE STATISTICS orders
-
 UPDATE STATISTICS orderDetails
 
 DBCC SHOW_STATISTICS (
 		'orders'
 		,'IX_Orders_OrderDate'
-		)
+		) WITH HISTOGRAM
 
 --The statistics are now up to date
 --If we re run the stored proc, even though we haven't cleared the cache, the query plan is now correct
@@ -83,5 +86,3 @@ DBCC SHOW_STATISTICS (
 EXEC up_GetOrdersBYDate '11 jan 2016'
 	,'12 jan 2016'
 GO
-
-
