@@ -2,7 +2,7 @@
 AS
 BEGIN
 SET NOCOUNT ON
-DECLARE @t INT = 1
+DECLARE @t INT = 0
 WHILE @t < @i
 BEGIN
       if @@TRANCOUNT =0
