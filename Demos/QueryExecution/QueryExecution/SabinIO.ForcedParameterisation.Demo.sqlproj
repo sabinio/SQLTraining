@@ -61,6 +61,7 @@
     <Folder Include="dbo\Tables\" />
     <Folder Include="dbo\scripts" />
     <Folder Include="Demo" />
+    <Folder Include="dbo\Indexes" />
   </ItemGroup>
   <ItemGroup>
     <None Include="local.publish.xml" />
@@ -69,6 +70,7 @@
   <ItemGroup>
     <Build Include="dbo\Tables\FP_Sales.sql" />
     <None Include="Demo\ForcedParamDemo1.sql" />
+    <Build Include="dbo\Indexes\Indexes.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="dbo\scripts\Script.PostDeployment.sql" />
