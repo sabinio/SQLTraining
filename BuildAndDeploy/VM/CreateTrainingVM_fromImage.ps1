@@ -5,9 +5,9 @@
 ,[string]$locName="WestEurope"                             # Azure Location
 ,[string]$saName="sabiniotraining1"                        # Image must be in same storage account as vhd for this vm
 ,[string]$vmName="SabinioTR" + $serverNumber               # Max 15 chars
-,[string]$vmSize="Standard_A1"                             # Machine Size
+,[string]$vmSize="Standard_A2"                             # Machine Size
 ,[string]$vnetName="trainingvnet"                          # Network Name (the first valid subnet will be selected)/(Will overwrite any manual changes)
-,[string]$SourceImageUri = "https://sabiniotraining1.blob.core.windows.net/system/Microsoft.Compute/Images/mytemplates/Trainingv4-osDisk.24a26de0-dd82-4eb8-92f3-d74691f0d765.vhd"
+,[string]$SourceImageUri = "https://sabiniotraining1.blob.core.windows.net/system/Microsoft.Compute/Images/mytemplates/Trainingv6-osDisk.ec4a3d6e-a36c-455a-80e8-85ea89f9efd1.vhd"
 )
 
 #	To call this script:
