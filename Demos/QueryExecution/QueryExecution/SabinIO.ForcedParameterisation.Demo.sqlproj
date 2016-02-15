@@ -66,11 +66,13 @@
   <ItemGroup>
     <None Include="local.publish.xml" />
     <None Include="dbo\scripts\Populate_FP_Sales.sql" />
+    <None Include="Demo\ForcedParamDemo2.sql" />
+    <None Include="dbo\scripts\Populate_Products.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\FP_Sales.sql" />
     <None Include="Demo\ForcedParamDemo1.sql" />
-    <Build Include="dbo\Indexes\Indexes.sql" />
+    <Build Include="dbo\Indexes\FP_Sales_Indexes.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="dbo\scripts\Script.PostDeployment.sql" />
