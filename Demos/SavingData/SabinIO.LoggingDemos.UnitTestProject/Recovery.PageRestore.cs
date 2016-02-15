@@ -160,7 +160,7 @@ namespace SabinIO.LoggingDemos.UnitTestProject
                 {
                     DataTable dti = new DataTable();
                     dti = ds.Tables["Table"];
-                        Assert.AreEqual(1, (dti.Rows.Count), "multiple corrupt pages exist for this database. Re-create database and run test again.");
+                        Assert.AreEqual(1, (dti.Rows.Count), "multiple corrupt pages exist for this database. Re-create database ordelete from msdb..suspectpages and run test again.");
                         CorruptPageId = Convert.ToInt32(dti.Rows[0]["page_id"]);
                 }
 
