@@ -74,12 +74,6 @@
     </ArtifactReference>
   </ItemGroup>
   <ItemGroup>
-    <SqlCmdVariable Include="tSQLt_DB">
-      <DefaultValue>tSQLt_DB</DefaultValue>
-      <Value>$(SqlCmdVar__1)</Value>
-    </SqlCmdVariable>
-  </ItemGroup>
-  <ItemGroup>
     <PreDeploy Include="Script.PreDeployment.tSQLt.Setup.sql" />
   </ItemGroup>
   <ItemGroup>

@@ -22,26 +22,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", 
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		Simple|Any CPU = Simple|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7A226391-0C07-4631-8E1B-BCA8415EE5BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A226391-0C07-4631-8E1B-BCA8415EE5BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A226391-0C07-4631-8E1B-BCA8415EE5BC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{7A226391-0C07-4631-8E1B-BCA8415EE5BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A226391-0C07-4631-8E1B-BCA8415EE5BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7A226391-0C07-4631-8E1B-BCA8415EE5BC}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{30CB9F6C-0888-468A-8BA2-3D39C17B587F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{30CB9F6C-0888-468A-8BA2-3D39C17B587F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{30CB9F6C-0888-468A-8BA2-3D39C17B587F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{30CB9F6C-0888-468A-8BA2-3D39C17B587F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B7122FAC-5A5C-4DAB-BDF9-FFBC9C0C7568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B7122FAC-5A5C-4DAB-BDF9-FFBC9C0C7568}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B7122FAC-5A5C-4DAB-BDF9-FFBC9C0C7568}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{B7122FAC-5A5C-4DAB-BDF9-FFBC9C0C7568}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B7122FAC-5A5C-4DAB-BDF9-FFBC9C0C7568}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B7122FAC-5A5C-4DAB-BDF9-FFBC9C0C7568}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7A226391-0C07-4631-8E1B-BCA8415EE5BC}.Simple|Any CPU.ActiveCfg = Simple|Any CPU
+		{7A226391-0C07-4631-8E1B-BCA8415EE5BC}.Simple|Any CPU.Build.0 = Simple|Any CPU
+		{7A226391-0C07-4631-8E1B-BCA8415EE5BC}.Simple|Any CPU.Deploy.0 = Simple|Any CPU
+		{30CB9F6C-0888-468A-8BA2-3D39C17B587F}.Simple|Any CPU.ActiveCfg = Simple|Any CPU
+		{30CB9F6C-0888-468A-8BA2-3D39C17B587F}.Simple|Any CPU.Build.0 = Simple|Any CPU
+		{B7122FAC-5A5C-4DAB-BDF9-FFBC9C0C7568}.Simple|Any CPU.ActiveCfg = Simple|Any CPU
+		{B7122FAC-5A5C-4DAB-BDF9-FFBC9C0C7568}.Simple|Any CPU.Build.0 = Simple|Any CPU
+		{B7122FAC-5A5C-4DAB-BDF9-FFBC9C0C7568}.Simple|Any CPU.Deploy.0 = Simple|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
