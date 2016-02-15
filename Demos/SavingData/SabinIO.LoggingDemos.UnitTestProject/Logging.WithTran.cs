@@ -49,7 +49,7 @@ namespace SabinIO.LoggingDemos.UnitTestProject
                     ExplicitTran = Convert.ToInt32(dti.Rows[0]["RunTime"]);
                 }
             }
-            Assert.IsTrue(NoTran > ExplicitTran);
+            Assert.IsTrue(NoTran >= ExplicitTran, "Results are: no transaction; {0}, Explicit Tran; {1}", NoTran, ExplicitTran);
         }
 
         //[TestMethod]
