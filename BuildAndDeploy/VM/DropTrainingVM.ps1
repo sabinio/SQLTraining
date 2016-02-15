@@ -1,4 +1,6 @@
-﻿$serverNumber = "10"
+﻿param(
+[string]$serverNumber = "10")
+
 $rgName="sqltraining"
 $vmName="sabiniotr" + $serverNumber
 $nicName="NIC-" + $vmName

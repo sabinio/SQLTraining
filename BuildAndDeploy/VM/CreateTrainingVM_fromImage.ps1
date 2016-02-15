@@ -1,6 +1,6 @@
 ﻿param(
 [string]$subScriptionName = "Visual Studio Ultimate with MSDN"  # Subscription Name (login before calling script)
-,[string]$serverNumber = "10"                              # Unique Number (if exists the VM will be reconfigured/imaged/sized as below)
+,[string]$serverNumber = "02"                              # Unique Number (if exists the VM will be reconfigured/imaged/sized as below)
 ,[string]$rgName="sqltraining"                         	  # Resource Group
 ,[string]$locName="WestEurope"                             # Azure Location
 ,[string]$saName="sabiniotraining1"                        # Image must be in same storage account as vhd for this vm
