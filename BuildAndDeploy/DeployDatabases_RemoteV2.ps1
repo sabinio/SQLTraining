@@ -4,7 +4,7 @@ param([string]$ServerName, [string]$DropFolder, [string]$SQLPassword)
 
 	
 
-Get-ChildItem $DropFolder -Filter *.dacpac -Exclude *tSQLt*,*test*,*Test* -Recurse | `
+Get-ChildItem $DropFolder -Exclude *tSQLt*,*test*,*Test* -Filter *.dacpac -Recurse | `
 Foreach-Object{
 	$DACPAC = $_.FullName
 	$ProfilePath = join-Path ($_.Directory) ('..\..\')
