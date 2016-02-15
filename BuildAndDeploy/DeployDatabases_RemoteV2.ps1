@@ -9,7 +9,7 @@ Foreach-Object{
 	$DACPAC = $_.FullName
 	$ProfilePath = join-Path ($_.Directory) ('..\..\')
 
-	Get-ChildItem $ProfilePath -Filter *.publish.xml -Exclude *tSQLt*,*test*,*Test* | `
+	Get-ChildItem $ProfilePath -Filter *.publish.xml | `
 	Foreach-Object{
 		# This will take the last publish profile if there are mutliple
 		$Profile = $_.FullName
