@@ -11,6 +11,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Statistics.OutOfDat
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.ArithAbort.PlanCache", "SabinIO.ArithAbort.PlanCache\SabinIO.ArithAbort.PlanCache.sqlproj", "{39B5F501-69BA-4078-AF5E-B54D9E509114}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Parameterisation", "SabinIO.Parameterisation\SabinIO.Parameterisation.sqlproj", "{2B979A88-9142-4F3D-B77A-B5EE51253043}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,12 @@ Global
 		{39B5F501-69BA-4078-AF5E-B54D9E509114}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39B5F501-69BA-4078-AF5E-B54D9E509114}.Release|Any CPU.Build.0 = Release|Any CPU
 		{39B5F501-69BA-4078-AF5E-B54D9E509114}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2B979A88-9142-4F3D-B77A-B5EE51253043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B979A88-9142-4F3D-B77A-B5EE51253043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B979A88-9142-4F3D-B77A-B5EE51253043}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2B979A88-9142-4F3D-B77A-B5EE51253043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B979A88-9142-4F3D-B77A-B5EE51253043}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B979A88-9142-4F3D-B77A-B5EE51253043}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

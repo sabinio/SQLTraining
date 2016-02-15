@@ -60,18 +60,17 @@
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
     <Folder Include="dbo\scripts" />
-    <Folder Include="Demo" />
+    <Folder Include="Demos" />
     <Folder Include="dbo\Indexes" />
   </ItemGroup>
   <ItemGroup>
     <None Include="local.publish.xml" />
     <None Include="dbo\scripts\Populate_FP_Sales.sql" />
-    <None Include="Demo\ForcedParamDemo2.sql" />
-    <None Include="dbo\scripts\Populate_Products.sql" />
+    <None Include="Demos\ForcedParamDemo2.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\FP_Sales.sql" />
-    <None Include="Demo\ForcedParamDemo1.sql" />
+    <None Include="Demos\ForcedParamDemo1.sql" />
     <Build Include="dbo\Indexes\FP_Sales_Indexes.sql" />
   </ItemGroup>
   <ItemGroup>
