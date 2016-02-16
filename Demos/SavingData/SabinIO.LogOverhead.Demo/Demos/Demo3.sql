@@ -14,7 +14,7 @@ DBCC SHRINKFILE (N'SabinIO.LogOverhead.Demo_log' , 2)
 GO
 
 
---Insert 1 record per loop in a transaction (1,000,000 times)
+--Insert 1 record per loop in a transaction (25,000)
 --RUN STATEMENTS FROM HERE ~30 secs
 --Check Table Size first = 0.008mb
 
@@ -29,7 +29,7 @@ and type_desc = 'LOG'
 
 BEGIN TRANSACTION
 declare @id int = 0
-while @id <= 250000
+while @id <= 100000
 begin
 	insert into LogOverhead
 	select 6
@@ -47,11 +47,11 @@ exec sp_spaceused 'LogOverhead'
 
 GO
 /*TO HERE*/
---Check Table Size = 3.305mb
+--Check Table Size = 392kb
 --record values
 --log size before = 2 
---log size after = 82
---311mb transaction log for 3mb data inserted
+--log size after = 8
+--8mb transaction log for 392kb data inserted
 
 
 
@@ -64,7 +64,7 @@ GO
 
 
 
---Insert 1,000,000 records in a transaction
+--Insert 100,000 records in a transaction
 --RUN STATEMENTS FROM HERE ~6 secs
 --Check Table Size first = 0.000mb
 set nocount on
