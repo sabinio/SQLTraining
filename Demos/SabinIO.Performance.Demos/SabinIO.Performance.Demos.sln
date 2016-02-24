@@ -21,6 +21,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Performance.UnionUn
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Performance.TruncateDelete", "SabinIO.Performance.TruncateDelete\SabinIO.Performance.TruncateDelete.sqlproj", "{982F0BA9-F14F-4166-BB15-7733A1D3ACE9}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Performance.InMemoryOltp", "SabinIO.Performance.InMemoryOltp\SabinIO.Performance.InMemoryOltp.sqlproj", "{750F41A0-EC48-4833-8A4C-527DCCBAE76D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -137,6 +139,18 @@ Global
 		{982F0BA9-F14F-4166-BB15-7733A1D3ACE9}.Release|x64.ActiveCfg = Release|Any CPU
 		{982F0BA9-F14F-4166-BB15-7733A1D3ACE9}.Release|x64.Build.0 = Release|Any CPU
 		{982F0BA9-F14F-4166-BB15-7733A1D3ACE9}.Release|x64.Deploy.0 = Release|Any CPU
+		{750F41A0-EC48-4833-8A4C-527DCCBAE76D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{750F41A0-EC48-4833-8A4C-527DCCBAE76D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{750F41A0-EC48-4833-8A4C-527DCCBAE76D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{750F41A0-EC48-4833-8A4C-527DCCBAE76D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{750F41A0-EC48-4833-8A4C-527DCCBAE76D}.Debug|x64.Build.0 = Debug|Any CPU
+		{750F41A0-EC48-4833-8A4C-527DCCBAE76D}.Debug|x64.Deploy.0 = Debug|Any CPU
+		{750F41A0-EC48-4833-8A4C-527DCCBAE76D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{750F41A0-EC48-4833-8A4C-527DCCBAE76D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{750F41A0-EC48-4833-8A4C-527DCCBAE76D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{750F41A0-EC48-4833-8A4C-527DCCBAE76D}.Release|x64.ActiveCfg = Release|Any CPU
+		{750F41A0-EC48-4833-8A4C-527DCCBAE76D}.Release|x64.Build.0 = Release|Any CPU
+		{750F41A0-EC48-4833-8A4C-527DCCBAE76D}.Release|x64.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
