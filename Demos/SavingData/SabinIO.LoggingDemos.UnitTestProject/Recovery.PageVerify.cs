@@ -19,6 +19,7 @@ namespace SabinIO.LoggingDemos.UnitTestProject
             string fileContent = File.ReadAllText(@"..\\..\\..\\SabinIO.Recovery.PageVerify\\Demos\\1. PageVerify.sql");
             string actualError = "";
             string[] batches = Regex.Split(fileContent, "GO", RegexOptions.IgnoreCase);
+            string pageNumber = "";
 
 
             for (int i = 0; i < batches.Length; i++)
@@ -26,6 +27,12 @@ namespace SabinIO.LoggingDemos.UnitTestProject
 
                 string _conn = constring;
                 string batch = batches[i];
+
+                if(i == 6 || i == 8 || i == 10)
+                { batch = batch.Replace("93", Convert.ToString(pageNumber)); }
+
+                if (i == 20 || i == 22 || i == 25)
+                { batch = batch.Replace("119", Convert.ToString(pageNumber)); }
 
                 SqlDataAdapter da = new SqlDataAdapter(batch, _conn);
                 DataSet ds = new DataSet();
@@ -46,8 +53,14 @@ namespace SabinIO.LoggingDemos.UnitTestProject
                     dti = ds.Tables["Table"];
 
                     int RowCountActual = dti.Rows.Count;
-                    if (@i == 2) { Assert.AreEqual(2000, RowCountActual); }
-                    if (@i == 16) { Assert.AreEqual(6000, RowCountActual); }
+                    if (@i == 2) { Assert.AreEqual(200, RowCountActual); }
+                    if (@i == 16) { Assert.AreEqual(600, RowCountActual); }
+                }
+                if (i == 5)
+                {
+                    DataTable dti = new DataTable();
+                    dti = ds.Tables["Table"];
+                    pageNumber = Convert.ToString(dti.Rows[1]["PagePID"]);
                 }
 
                 //if (@i == 6)
@@ -84,13 +97,13 @@ namespace SabinIO.LoggingDemos.UnitTestProject
                 {
                     DataTable dti = new DataTable();
                     dti = ds.Tables["Table"];
-                    DataRow[] r = dti.Select(@"PagePid = 166");
-                    Assert.AreEqual(1, r.Length);
+                    pageNumber = Convert.ToString(dti.Rows[3]["PagePID"]);
+
                 }
 
                 if (@i == 27)
                 {
-                    Assert.IsNotNull(actualError.Contains("166"));
+                    Assert.IsNotNull(actualError.Contains("119"));
                 }
             }
 

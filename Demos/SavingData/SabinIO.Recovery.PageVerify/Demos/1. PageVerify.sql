@@ -7,7 +7,7 @@ GO
 SET NOCOUNT ON
 
 DECLARE @i INT = 0
-WHILE @i < 2000
+WHILE @i < 200
 BEGIN
 -- Generate Test Data
 INSERT INTO PV_Sales (CustomerID, ProductID, Qty)
@@ -42,7 +42,7 @@ GO
 -- m_tornBits = 0    -- Find a Slot view record below
 
 --07
-SELECT * FROM PV_Sales WHERE OrderID = 300;
+SELECT * FROM PV_Sales WHERE OrderID = 100;
 GO
 --1294	4283	0	7
 --08
@@ -67,7 +67,7 @@ ALTER DATABASE [SabinIO.Recovery.PageVerify] SET MULTI_USER;
 GO
 --12
 -- Error is not detetced on select
-SELECT TOP 10 * FROM PV_Sales WHERE OrderID >= 300;
+SELECT TOP 10 * FROM PV_Sales WHERE OrderID >= 100;
 GO
 
 --13
@@ -84,7 +84,7 @@ SET NOCOUNT ON
 
 -- Generate Test Data
 DECLARE @i INT = 0
-WHILE @i < 6000
+WHILE @i < 600
 BEGIN
 -- Generate Test Data
 INSERT INTO PV_Sales (CustomerID, ProductID, Qty)
@@ -111,18 +111,18 @@ GO
 -- View a Page in the table
 --20
 DBCC TRACEON(3604)
-DBCC PAGE ([SabinIO.Recovery.PageVerify], 1, 166, 3) WITH TABLERESULTS;
+DBCC PAGE ([SabinIO.Recovery.PageVerify], 1, 119, 3) WITH TABLERESULTS;
 GO
 -- i am seeing torn bits here
 -- m_tornBits = 0    -- Find a Slot view record below
 --21
 -- Select a record
-SELECT * FROM PV_Sales WHERE OrderID = 2214;
+SELECT * FROM PV_Sales WHERE OrderID = 373;
 GO
 --1294	4283	0	7
 --22
 -- Find Slot Starting Place (Set PageID)
-DBCC PAGE ([SabinIO.Recovery.PageVerify], 1, 166, 2) WITH TABLERESULTS;
+DBCC PAGE ([SabinIO.Recovery.PageVerify], 1, 119, 2) WITH TABLERESULTS;
 GO
 --23
 -- Add 14 bytes (record header)
@@ -134,7 +134,7 @@ ALTER DATABASE [SabinIO.Recovery.PageVerify] SET SINGLE_USER WITH ROLLBACK IMMED
 GO
 --25
 -- (Set PageID)
-DBCC WRITEPAGE (N'SabinIO.Recovery.PageVerify', 1, 166,		133,		2,			0x6263, 1); 
+DBCC WRITEPAGE (N'SabinIO.Recovery.PageVerify', 1, 119,		133,		2,			0x6263, 1); 
 --												^Page	^Start		^Length		^Value
 GO
 --26
@@ -142,5 +142,5 @@ ALTER DATABASE [SabinIO.Recovery.PageVerify] SET MULTI_USER;
 GO
 --27
 -- Error IS detetced on select
-SELECT TOP 10 * FROM PV_Sales WHERE OrderID >= 2214;
+SELECT TOP 10 * FROM PV_Sales WHERE OrderID >= 373;
 GO
