@@ -242,7 +242,13 @@ EXEC usp_InsertData4 @rowcount, @c;
 
 SET @timems = datediff(ms, @starttime, sysdatetime());
 SELECT CAST(@timems AS VARCHAR(10)) + ' ms (memory-optimized table with schema only durability and natively-compiled stored procedure).';
---end of the insert code block
+/*-- the results should be (from slowest to fastest)
+	--DiskBasedTable
+	--InMemTable
+	--InMemTable2
+	--InMemTable3
+	--InMemTable4
+--end of the insert code block demo*/
 
 --get counts from the tables and restart the instance
 SELECT COUNT(*) FROM DiskBasedTable
