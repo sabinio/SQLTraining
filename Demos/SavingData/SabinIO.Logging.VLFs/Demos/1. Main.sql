@@ -31,7 +31,7 @@ GO
 -- Create Transactions in session 2 (Script 2)
 -- Run until all VLF's active to show recycle
 DECLARE @i INT = 0
-WHILE @i < 60
+WHILE @i < 40
 BEGIN
 INSERT INTO Test1 (col1) VALUES (REPLICATE('a',8000))
 SET @i = @i + 1

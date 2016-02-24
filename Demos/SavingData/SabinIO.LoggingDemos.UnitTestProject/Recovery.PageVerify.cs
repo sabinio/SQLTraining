@@ -71,7 +71,7 @@ namespace SabinIO.LoggingDemos.UnitTestProject
                     dti = ds.Tables["Table"];
                     foreach (DataRow r in dti.Select(@"ParentObject LIKE 'DATA:%' AND Object LIKE 'OFFSET TABLE:%' AND VALUE LIKE '1 (0x1)%'"))
                     {
-                        Assert.AreEqual("1 (0x1) - 119 (0x77) ", r.ItemArray[3], "slot starting place is different for batch 8");
+                        Assert.AreEqual("1 (0x1) - 119 (0x77) ", r.ItemArray[3], "slot starting place is different for batch batch {0}", @i);
                     }
                 }
                 if (@i == 12)

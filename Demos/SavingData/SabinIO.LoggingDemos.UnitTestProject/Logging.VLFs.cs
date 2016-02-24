@@ -90,41 +90,41 @@ namespace SabinIO.LoggingDemos.UnitTestProject
 
                     //first condition we test is that the active number of vlfs correspond to the expected number per batch
                     DataRow[] r = dti.Select(@"Status = '2'");
-                    if (@i == 2 || @i == 6 || @i == 18)
+                    if (@i == 2 || @i == 6|| @i == 18)
                     {
                         Assert.AreEqual(1, r.Length, string.Format("There are an incorrect number of active VLF's for batch {0}", @i));
                     }
-                    if (@i == 4)
+                    if (@i == 4 || @i == 16)
                     {
                         Assert.AreEqual(2, r.Length, string.Format("There are an incorrect number of active VLF's for batch {0}", @i));
                     }
-                    if (@i == 8 || @i == 10 | @i == 16)
+                    if (@i == 8 || @i == 10 )
                     {
                         Assert.AreEqual(3, r.Length, string.Format("There are an incorrect number of active VLF's for batch {0}", @i));
                     }
                     if (@i == 12)
                     {
-                        Assert.AreEqual(4, r.Length, string.Format("There are an incorrect number of active VLF's for batch {0}", @i));
+                        Assert.AreEqual( 4, r.Length, string.Format("There are an incorrect number of active VLF's for batch {0}", @i));
                     }
                     if (@i == 14)
                     {
-                        Assert.AreEqual(6, r.Length, string.Format("There are an incorrect number of active VLF's for batch {0}", @i));
+                        Assert.AreEqual(5, r.Length, string.Format("There are an incorrect number of active VLF's for batch {0}", @i));
                     }
 
-                    //second condition is that we test that the total number of vlfs, active or not, is greater than or equal to the amount grown by
+                    //second condition is that we test that the total number of vlfs, active or not, are as expected per batch
                     //from this we can infer that the remaining vlfs status is at 0, and that the demo is working as expected
                     int sumOfRows = Convert.ToInt32(dti.Select(@"1=1").Length);
                     if (@i == 2 || @i == 4 || @i == 6 || @i == 8 || @i == 10)
                     {
-                        Assert.IsTrue(sumOfRows >= 4, string.Format("There are an incorrect number of VLF's for batch {0}", @i));
+                        Assert.AreEqual(4, sumOfRows, string.Format("There are an incorrect number of VLF's for batch {0}", @i));
                     }
                     if (@i == 12)
                     {
-                        Assert.IsTrue(sumOfRows >= 6, string.Format("There are an incorrect number of VLF's for batch {0}", @i));
+                        Assert.AreEqual(5, sumOfRows, string.Format("There are an incorrect number of VLF's for batch {0}", @i));
                     }
                     if (@i == 14 || @i == 16 || @i == 18)
                     {
-                        Assert.IsTrue(sumOfRows >= 7, string.Format("There are an incorrect number of VLF's for batch {0}", @i));
+                        Assert.AreEqual(6, sumOfRows, string.Format("There are an incorrect number of VLF's for batch {0}", @i));
                     }
                 }
             }
