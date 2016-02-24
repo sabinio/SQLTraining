@@ -1,4 +1,5 @@
-﻿USE [SabinIO.LogOverhead.Demo]
+﻿
+USE [SabinIO.LogOverhead.Demo]
 GO
 
 TRUNCATE TABLE LogOverhead;

@@ -124,7 +124,7 @@
   <ItemGroup>
     <None Include="Demos\Demo1-WriteLogTest.sql" />
     <None Include="Demos\Demo2-IncompleteTransactionWriteLogTest.sql" />
-    <None Include="SabinIO.dirtyPage.Demo.publish.xml" />
+    <None Include="local.publish.xml" />
     <None Include="localdb.publish.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

@@ -19,7 +19,7 @@ namespace SabinIO.LoggingDemos.UnitTestProject
             int NoTran = 0;
             int ExplicitTran = 0;
             //must express initial catalogue as correct db as each batch will default to this database
-            string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.Logging.WithTran;Data Source=(localdb)\\ProjectsV12";
+            string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.Logging.WithTran;Data Source=.";
             //relative path in solution; test will not run on the build if we change this
             string fileContent = File.ReadAllText(@"..\\..\\..\\SabinIO.Logging.WithTran\\Demos\\1. WithorWithout.sql");
             //regex means we can ignore changes in GO casing

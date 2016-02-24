@@ -75,8 +75,8 @@ namespace SabinIO.LoggingDemos.UnitTestProject
         //[TestMethod]
         public void TestPageRestore()
         {
-            //string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.Recovery.PageRestore;Data Source=(localdb)\\ProjectsV12";
-            //string masterconstring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=(localdb)\\ProjectsV12";
+            //string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.Recovery.PageRestore;Data Source=.";
+            //string masterconstring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=.";
 
             string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.Recovery.PageRestore;Data Source=.";
             string masterconstring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=.";

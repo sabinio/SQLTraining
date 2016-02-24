@@ -73,5 +73,7 @@
     <None Include="Demos\1. PageVerify.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="local.publish.xml" />
+    <None Include="localdb.publish.xml" />
   </ItemGroup>
 </Project>

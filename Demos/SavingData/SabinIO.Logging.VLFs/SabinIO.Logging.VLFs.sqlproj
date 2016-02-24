@@ -87,5 +87,6 @@
     <None Include="Demos\3. Session 3.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="local.publish.xml" />
   </ItemGroup>
 </Project>

@@ -15,7 +15,7 @@ namespace SabinIO.LoggingDemos.UnitTestProject
         [TestCategory("RunOnBuild")]
         public void TestDemo1WriteLogToTest()
         {
-            string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.dirtyPage.Demo;Data Source=(localdb)\\ProjectsV12";
+            string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.dirtyPage.Demo;Data Source=.";
             string fileContent = File.ReadAllText(@"..\\..\\..\\SabinIO.DirtyPage.Demo\\Demos\\Demo1-WriteLogTest.sql");
             string[] batches = Regex.Split(fileContent, "GO", RegexOptions.IgnoreCase);
 
@@ -50,7 +50,7 @@ namespace SabinIO.LoggingDemos.UnitTestProject
         [TestCategory("RunOnBuild")]
         public void TestDemo2IncompleteWriteLogToTest()
         {
-            string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.dirtyPage.Demo;Data Source=(localdb)\\ProjectsV12";
+            string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.dirtyPage.Demo;Data Source=.";
             string fileContent = File.ReadAllText(@"..\\..\\..\\SabinIO.DirtyPage.Demo\\Demos\\Demo2-IncompleteTransactionWriteLogTest.sql");
             string[] batches = Regex.Split(fileContent, "GO", RegexOptions.IgnoreCase);
 

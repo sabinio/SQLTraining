@@ -15,21 +15,30 @@ namespace SabinIO.LoggingDemos.UnitTestProject
         [TestMethod]
         public void LogOverheadDemo1()
         {
-            string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.LogOverhead.Demo;Data Source=(localdb)\\ProjectsV12";
+            string constring =  ("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.LogOverhead.Demo;Data Source=.");
             string fileContent = File.ReadAllText(@"..\\..\\..\\SabinIO.LogOverhead.Demo\\Demos\\Demo1.sql");
 
             //name of database includes "gO", so removed case sensitivity from regex
             //all demo scripts must use keyword GO in uppercase only
             string[] batches = Regex.Split(fileContent, "GO");
+            DataSet ds = new DataSet();
 
             for (int i = 0; i < batches.Length; i++)
             {
-                string batch = batches[i];
-                SqlDataAdapter da = new SqlDataAdapter(batch, constring);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                da.Dispose();
 
+                using (SqlConnection _constring = new SqlConnection (constring))
+                using (SqlCommand batch = new SqlCommand(batches[i], _constring))
+                using (SqlDataAdapter da = new SqlDataAdapter(batch))
+                {
+                    _constring.Open();
+                    try
+                    {
+                        da.Fill(ds);
+                        da.Dispose();
+                    }
+                    catch (Exception e)
+                    { string error = e.Message;}
+                }
                 if (i == 2)
                 {
                     DataTable dt_singleValue = new DataTable();
@@ -62,7 +71,7 @@ namespace SabinIO.LoggingDemos.UnitTestProject
         [TestMethod]
         public void LogOverheadDemo2()
         {
-            string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.LogOverhead.Demo;Data Source=(localdb)\\ProjectsV12";
+            string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.LogOverhead.Demo;Data Source=.";
             string fileContent = File.ReadAllText(@"..\\..\\..\\SabinIO.LogOverhead.Demo\\Demos\\Demo2.sql");
 
             //name of database includes "gO", so removed case sensitivity from regex
@@ -118,7 +127,7 @@ namespace SabinIO.LoggingDemos.UnitTestProject
             int rows_postrun = 0;
             string data_postrun = "";
             string index_postrun = "";
-            string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.LogOverhead.Demo;Data Source=(localdb)\\ProjectsV12";
+            string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.LogOverhead.Demo;Data Source=.";
             string fileContent = File.ReadAllText(@"..\\..\\..\\SabinIO.LogOverhead.Demo\\Demos\\Demo3.sql");
 
             //name of database includes "gO", so removed case sensitivity from regex
@@ -209,7 +218,7 @@ namespace SabinIO.LoggingDemos.UnitTestProject
         {
             int LogSize_MB_PreRun = 0;
             int LogSize_MB_PostRun = 0;
-            string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.LogOverhead.Demo;Data Source=(localdb)\\ProjectsV12";
+            string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.LogOverhead.Demo;Data Source=.";
             string fileContent = File.ReadAllText(@"..\\..\\..\\SabinIO.LogOverhead.Demo\\Demos\\Demo4.sql");
 
             //name of database includes "gO", so removed case sensitivity from regex
@@ -255,7 +264,7 @@ namespace SabinIO.LoggingDemos.UnitTestProject
         {
             int LogSize_MB_PreRun = 0;
             int LogSize_MB_PostRun = 0;
-            string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.LogOverhead.Demo;Data Source=(localdb)\\ProjectsV12";
+            string constring = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.LogOverhead.Demo;Data Source=.";
             string fileContent = File.ReadAllText(@"..\\..\\..\\SabinIO.LogOverhead.Demo\\Demos\\Demo5.sql");
 
             //name of database includes "gO", so removed case sensitivity from regex

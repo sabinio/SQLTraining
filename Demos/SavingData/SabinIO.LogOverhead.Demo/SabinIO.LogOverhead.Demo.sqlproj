@@ -124,7 +124,7 @@
     <None Include="Demos\Demo3.sql" />
     <None Include="Demos\Demo4.sql" />
     <None Include="Demos\Demo5.sql" />
-    <None Include="SabinIO.LogOverhead.Demo.publish.xml" />
+    <None Include="local.publish.xml" />
     <None Include="localdb.publish.xml" />
   </ItemGroup>
 </Project>

@@ -55,10 +55,12 @@
   <ItemGroup>
     <Compile Include="DirtyPage.cs" />
     <Compile Include="InsertPerformance.cs" />
+    <Compile Include="Logging.VLFs.cs" />
     <Compile Include="Logging.WithTran.cs" />
     <Compile Include="LogOverhead.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recovery.PageRestore.cs" />
+    <Compile Include="Recovery.PageVerify.cs" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
