@@ -63,15 +63,15 @@ namespace SabinIO.LoggingDemos.UnitTestProject
                     pageNumber = Convert.ToString(dti.Rows[1]["PagePID"]);
                 }
 
-                //if (@i == 6)
-                //{
-                //    DataTable dti = new DataTable();
-                //    dti = ds.Tables["Table"];
-                //    foreach (DataRow r in dti.Select(@"Field = 'm_tornBits'"))
-                //    {
-                //        Assert.AreEqual(0, Convert.ToInt32(r.ItemArray[3]),"m_tornbits is greater than 0" );
-                //    }
-                //}
+                if (@i == 6)
+                {
+                    DataTable dti = new DataTable();
+                    dti = ds.Tables["Table"];
+                    foreach (DataRow r in dti.Select(@"Field = 'm_tornBits'"))
+                    {
+                        Assert.AreEqual(0, Convert.ToInt32(r.ItemArray[3]), "m_tornbits is greater than 0");
+                    }
+                }
 
                 if (@i == 7 || @i == 21)
                 {
