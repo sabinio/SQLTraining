@@ -23,13 +23,6 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Performance.Truncat
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Performance.InMemoryOltp", "SabinIO.Performance.InMemoryOltp\SabinIO.Performance.InMemoryOltp.sqlproj", "{750F41A0-EC48-4833-8A4C-527DCCBAE76D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "batfiles", "batfiles", "{00CF8CAA-41FF-43B5-8840-737896F94FF5}"
-	ProjectSection(SolutionItems) = preProject
-		deploy.ps1 = deploy.ps1
-		batfiles\runlocaldb.bat = batfiles\runlocaldb.bat
-		batfiles\sqlpackage.bat = batfiles\sqlpackage.bat
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
