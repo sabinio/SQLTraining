@@ -2,10 +2,10 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
-    <TargetDatabaseName>SabinIO.Performance.Grouping</TargetDatabaseName>
-    <DeployScriptFileName>SabinIO.Performance.Grouping.sql</DeployScriptFileName>
+    <TargetDatabaseName>SabinIO.Performance.MissingIndex</TargetDatabaseName>
+    <DeployScriptFileName>SabinIO.Performance.MissingIndex.sql</DeployScriptFileName>
+    <TargetConnectionString>Data Source=(localdb)\ProjectsV12;Integrated Security=True;Pooling=False</TargetConnectionString>
     <ProfileVersionNumber>1</ProfileVersionNumber>
-    <TargetConnectionString>Data Source=.;Integrated Security=True;Pooling=False</TargetConnectionString>
     <BlockOnPossibleDataLoss>True</BlockOnPossibleDataLoss>
     <CreateNewDatabase>True</CreateNewDatabase>
   </PropertyGroup>

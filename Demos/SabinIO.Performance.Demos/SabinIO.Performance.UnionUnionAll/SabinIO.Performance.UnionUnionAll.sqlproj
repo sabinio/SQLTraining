@@ -64,6 +64,8 @@
   <ItemGroup>
     <None Include="Demos\UnionUnionAllDemo1.sql" />
     <None Include="Demos\UnionUnionAllDemo2.sql" />
+    <None Include="localdb.publish.xml" />
+    <None Include="local.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Table2.sql" />

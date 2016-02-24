@@ -63,6 +63,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Demos\TruncateDeleteDemo1.sql" />
+    <None Include="local.publish.xml" />
+    <None Include="localdb.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\TruncTable.sql" />
