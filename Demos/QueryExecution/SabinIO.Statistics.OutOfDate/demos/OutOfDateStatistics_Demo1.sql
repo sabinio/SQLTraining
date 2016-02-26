@@ -7,6 +7,8 @@
     This set of scripts highlight the issue of out of date statistics
     This is simulated with an orders and orderdetails table
 
+	Database is in 2008 Mode - in 2014 mode forward estimates will be detected
+
 */
 /* 
 	Add a primary key and an index, this will create a set of statistics
@@ -33,7 +35,7 @@ GO
 -- Turn on Actual Execution Plan from toolbar
 
 --Now look at a simple query for a date range greater than the maximum we know we have
---we get 0 rows, the estimate and actual are both 1
+--we get 0 rows, the estimate is 1 and actual 0
 SELECT COUNT(*)
 FROM orders
 WHERE OrderDate > '11 jan 2016'

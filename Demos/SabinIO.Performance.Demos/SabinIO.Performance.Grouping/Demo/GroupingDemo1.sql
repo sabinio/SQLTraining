@@ -1,4 +1,7 @@
-﻿--include actual execution plan
+﻿USE [SabinIO.Performance.Grouping]
+GO
+
+--include actual execution plan
 set statistics IO ON
 
 select P.BigId from dbo.Table1 P
