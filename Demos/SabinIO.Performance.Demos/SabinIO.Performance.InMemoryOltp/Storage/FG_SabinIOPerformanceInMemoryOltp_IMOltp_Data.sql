@@ -1,0 +1,3 @@
+﻿ALTER DATABASE [$(DatabaseName)]
+    ADD FILEGROUP [FG_SabinIOPerformanceInMemoryOltp_IMOltp_Data] CONTAINS MEMORY_OPTIMIZED_DATA;
+
