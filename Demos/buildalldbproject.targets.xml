@@ -1,0 +1,13 @@
+<Project ToolsVersion="4.0" 
+         xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+         DefaultTargets="Default">
+
+    <ItemGroup>
+        <ProjectReference Include=".\**\*.sln" Exclude=".\**\PerformanceTesting.sln"/>
+    </ItemGroup>
+
+    <Target Name="Default">
+         <MSBuild Projects="@(ProjectReference)" Targets="Rebuild"/>
+    </Target>
+
+ </Project>

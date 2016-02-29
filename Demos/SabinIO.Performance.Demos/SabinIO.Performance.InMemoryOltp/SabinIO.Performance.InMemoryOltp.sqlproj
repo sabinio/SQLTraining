@@ -58,10 +58,24 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Demo" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Storage\" />
+    <Folder Include="dbo\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Demo\InMemoryOltpDemo.sql" />
     <None Include="local.publish.xml" />
     <None Include="localdb.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\InMemTable4.sql" />
+    <Build Include="dbo\Tables\InMemTable3.sql" />
+    <Build Include="dbo\Tables\InMemTable2.sql" />
+    <Build Include="dbo\Tables\InMemTable.sql" />
+    <Build Include="dbo\Tables\DiskBasedTable.sql" />
+    <Build Include="Storage\FG_SabinIOPerformanceInMemoryOltp_IMOltp_Data.sql" />
+    <Build Include="dbo\Stored Procedures\usp_InsertData4.sql" />
+    <Build Include="dbo\Stored Procedures\usp_InsertData2.sql" />
   </ItemGroup>
 </Project>
