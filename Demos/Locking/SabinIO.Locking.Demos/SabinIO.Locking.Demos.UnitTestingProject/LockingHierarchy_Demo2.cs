@@ -183,8 +183,8 @@ namespace SabinIO.Locking.Demos.UnitTestingProject
                     DataRow[] dr_exclusive_pagelock_3_1 = dt_exclusive_intent_update.Select("request_mode = 'X' AND resource_type = 'PAGE'");
                     DataRow[] dr_intent_update_pagelock_3_1 = dt_exclusive_intent_update.Select("request_mode = 'IU' AND resource_type = 'PAGE'");
 
-                    Assert.AreEqual(1, dr_intent_update_pagelock_3_1.Length);
-                    Assert.AreEqual(1, dr_exclusive_pagelock_3_1.Length);
+                    Assert.AreEqual(1, dr_intent_update_pagelock_3_1.Length,"number of intent update locks is not 1");
+                    Assert.AreEqual(1, dr_exclusive_pagelock_3_1.Length, "number of exclusive update locks is not 1");
                 }
 
                 catch (Exception e)
