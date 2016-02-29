@@ -84,7 +84,7 @@
     <Folder Include="Properties" />
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
-    <Folder Include="Demo" />
+    <Folder Include="Demos" />
     <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
@@ -94,8 +94,8 @@
   <ItemGroup>
     <None Include="localdb.publish.xml" />
     <None Include="local.publish.xml" />
-    <None Include="Demo\Udf_Demo1.sql" />
-    <None Include="Demo\Udf_Demo2.sql" />
-    <None Include="Demo\Udf_Demo3.sql" />
+    <None Include="Demos\Udf_Demo1.sql" />
+    <None Include="Demos\Udf_Demo2.sql" />
+    <None Include="Demos\Udf_Demo3.sql" />
   </ItemGroup>
 </Project>

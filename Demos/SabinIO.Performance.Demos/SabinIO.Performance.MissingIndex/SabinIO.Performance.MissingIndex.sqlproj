@@ -82,10 +82,10 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Demo" />
+    <Folder Include="Demos" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Demo\MissingIndexDemo.sql" />
+    <None Include="Demos\MissingIndexDemo.sql" />
     <None Include="local.publish.xml" />
     <None Include="localdb.publish.xml" />
   </ItemGroup>

@@ -85,14 +85,14 @@
     <Folder Include="Properties" />
     <Folder Include="dbo" />
     <Folder Include="Scripts" />
-    <Folder Include="Demo" />
+    <Folder Include="Demos" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.PostDeploymentPopulateTable.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Table1.sql" />
-    <None Include="Demo\GroupingDemo1.sql" />
+    <None Include="Demos\GroupingDemo1.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="localdb.publish.xml" />
