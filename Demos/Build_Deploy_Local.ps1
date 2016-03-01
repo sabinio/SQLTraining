@@ -19,10 +19,10 @@ $msbuild = "C:\Windows\Microsoft.Net\Framework\v4.0.30319\MSBuild.exe"
 $MsBuilExists = Test-Path $msbuild
 If ($MsBuilExists -ne $true) {write-host "msbuild does not exist at this location. Install Visual Studio 2015 (Community Edition should be adequate)"}
 $buildFile = $PSScriptRoot+"\BuildAllDBProjects.targets.xml"
-$arg = "/p:VisualStudioVersion=14.0"
+$arg = "/p:Configuration=Debug;Platform=Any CPU;VisualStudioVersion=14.0"
 
 & $msbuild $buildFile $arg
-#end of build
+#end of buildset 
 
 #deploy all projects
 #ignores any tSQLt projects
