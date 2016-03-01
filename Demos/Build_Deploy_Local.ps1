@@ -12,7 +12,6 @@
 #                                                                                                     #
 #######################################################################################################
 
-
 #build all projects; we call an msbuild file that excludes the performancetesting sln as it will fail
 #on build unless we have ultimate/enterprise visual studio installed
 $msbuild = "C:\Windows\Microsoft.Net\Framework\v4.0.30319\MSBuild.exe"
@@ -29,20 +28,9 @@ $arg = "/p:Configuration=Debug;Platform=Any CPU;VisualStudioVersion=14.0"
 $SQLServer = "." # if you have a named instance, change here
 $DropFolder = $PSScriptRoot
 
-$sqlpackage = "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\120\sqlpackage.exe"
-$sqlpackageExists = Test-Path $sqlpackage
-If ($sqlpackageExists -ne $true) {
-
-write-host "sqlpackage does not exist at this location. Trying earlier version of SSDT"
-$sqlpackage = "C:\Program Files (x86)\Microsoft Visual Studio 13.0\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\120\sqlpackage.exe"
-$sqlpackageExists = Test-Path $sqlpackage
-If ($sqlpackageExists -ne $true) {
-write-host "sqlpackage does not exist at this location."
-}
-
-
-}
-
+$findSqlPackage = "C:\Program Files (x86)\Microsoft SQL Server\"
+$findSqlPackage  = get-childitem $findSqlPackage sqlpackage.exe -recurse
+$SQLPackage = $findSqlPackage.FullName
 
 Get-ChildItem $DropFolder -Exclude *tSQLt*,*test*,*Test*,*master*,*db* -Filter *.dacpac -Recurse | `
 Foreach-Object{
