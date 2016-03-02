@@ -29,8 +29,9 @@ $SQLServer = "." # if you have a named instance, change here
 $DropFolder = $PSScriptRoot
 
 $findSqlPackage = "C:\Program Files (x86)\Microsoft SQL Server\"
-$findSqlPackage  = get-childitem $findSqlPackage sqlpackage.exe -recurse
-$SQLPackage = $findSqlPackage.FullName
+
+$findSqlPackage  = get-childitem $findSqlPackage sqlpackage.exe -recurse | `
+ForEach-Object{$SQLPackage = $_.FullName}
 
 Get-ChildItem $DropFolder -Exclude *tSQLt*,*test*,*Test*,*master*,*db* -Filter *.dacpac -Recurse | `
 Foreach-Object{
@@ -47,7 +48,7 @@ Foreach-Object{
 
 	write-host "Deploying model for database "$DACPAC
 		& $SQLPackage $vars
-	if (! $?) { throw "Deploy failed" }
+	if (! $?) { Write-Error "Deploy failed" "$_"}
 }
 #end of deploy
 
