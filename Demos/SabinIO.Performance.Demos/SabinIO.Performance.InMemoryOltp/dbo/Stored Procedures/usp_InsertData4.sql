@@ -10,7 +10,7 @@ CREATE PROCEDURE [dbo].[usp_InsertData4]
   DECLARE @i INT = 1;
   WHILE @i <= @rowcount
   BEGIN
-    INSERT INTO [dbo].[inMemTable4](c1,c2) VALUES (@i, @c);
+    INSERT INTO [dbo].[InMemTable4](c1,c2) VALUES (@i, @c);
     SET @i += 1;
   END
 END

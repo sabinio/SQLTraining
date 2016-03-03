@@ -7,7 +7,7 @@ WHILE @t < @i
 BEGIN
       if @@TRANCOUNT =0
         begin transaction
-INSERT INTO dbo.Table1 (monthEndDate, memberId)
+INSERT INTO dbo.Table1 (MonthEndDate, memberId)
 VALUES
 (GETDATE(), RAND ()*12)
       if @i%20 = 0

@@ -18,11 +18,11 @@ as
     declare @ms_interval int
 
     --find the difference in seconds and then divide by the number of rows wanted
-    set @interval = datediff(s,@startdate,@enddate)*1.0/@rows
+    set @interval = datediff(s,@StartDate,@EndDate)*1.0/@Rows
     set @s_interval = @interval
     set @ms_interval = (1000 * @interval ) % 1000
 
-    while @i < @rows
+    while @i < @Rows
       begin
       --Use transactions as it can be a bit quicker
       if @@TRANCOUNT =0
@@ -32,7 +32,7 @@ as
       select dateadd(ms, @ms_interval * @i ,dateadd(s, @s_interval * @i,@StartDate) ), RAND() * 10000
       --dateadd doesn't handle decimals so you need to add seconds and milliseconds
       
-      insert into orderDetails(orderId, col1) 
+      insert into orderdetails(OrderId, col1) 
       select SCOPE_IDENTITY (),''
       --add an order detail record
       

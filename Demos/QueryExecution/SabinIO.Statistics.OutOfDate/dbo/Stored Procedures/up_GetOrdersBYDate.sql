@@ -9,10 +9,10 @@ create procedure up_GetOrdersBYDate
 as
 set statistics io on
 --select orders with the orderdate between the two dates passed in
-    select o.orderId, o.orderDate, od.OrderDetailId, od.col1
+    select o.OrderId, o.OrderDate, od.OrderDetailId, od.col1
     into #dump
     from orders  o
-    join orderdetails od on o.OrderId = od.orderId
+    join orderdetails od on o.OrderId = od.OrderId
     where OrderDate between @FromDate and @ToDate
     
     select @@rowcount RowsAffected

@@ -17,7 +17,6 @@ namespace SabinIO.Locking.Demos.UnitTestingProject
         public void TestReadingLockedRecords()
         {   //separate connections because trying to reuse same connection breaks the transaction we setup
             string constring_1 = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.Locking.Isolation;Data Source=.";
-            string constring_2 = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=.";
 
             //two separate files to read from
             string fileContent_session_1 = File.ReadAllText(@"..\\..\\..\\SabinIO.Locking.Isolation\\Demos\\Demo1 - Reading Locked Records - Session 1.sql");
@@ -176,7 +175,6 @@ namespace SabinIO.Locking.Demos.UnitTestingProject
         {
             //separate connections because trying to reuse same connection breaks the transaction we setup
             string constring_1 = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.Locking.Isolation;Data Source=.";
-            string constring_2 = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=.";
 
             //two separate files to read from
             string fileContent_session_1 = File.ReadAllText(@"..\\..\\..\\SabinIO.Locking.Isolation\\Demos\\Demo2 - Snapshot Data Change - Session 1.sql");
@@ -308,7 +306,6 @@ namespace SabinIO.Locking.Demos.UnitTestingProject
 
             //separate connections because trying to reuse same connection breaks the transaction we setup
             string constring_1 = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SabinIO.Locking.Isolation;Data Source=.";
-            string constring_2 = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=.";
 
             //two separate files to read from
             string fileContent_session_1 = File.ReadAllText(@"..\\..\\..\\SabinIO.Locking.Isolation\\Demos\\Demo3 - RepeatbleRead - Session 1.sql");

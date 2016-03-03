@@ -46,6 +46,11 @@ namespace SabinIO.LoggingDemos.UnitTestProject
             for (int i = 0; i < batches.Length; i++)
             {
                 string batch = batches[i];
+
+                if (i >= 2)
+                {
+                    batch = batch.Replace("200", "20");
+                }
                 SqlDataAdapter da = new SqlDataAdapter(batch, constring);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
@@ -136,6 +141,10 @@ namespace SabinIO.LoggingDemos.UnitTestProject
             for (int i = 0; i < batches.Length; i++)
             {
                 string batch = batches[i];
+                if (i >= 1)
+                {
+                    batch = batch.Replace("200", "20");
+                }
                 SqlDataAdapter da = new SqlDataAdapter(batch, constring);
                 DataSet ds = new DataSet();
                 da.Fill(ds);

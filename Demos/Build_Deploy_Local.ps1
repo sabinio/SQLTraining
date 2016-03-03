@@ -44,15 +44,15 @@ Foreach-Object{
 		$Profile = $_.FullName
 	}
 
-	$vars = ('/a:publish'), ('/sf:' + $DACPAC), ('/pr:' + $PROFILE), ('/TargetServerName:' + $SQLServer), ('/p:AllowIncompatiblePlatform=True' )
+	$vars = ('/a:publish'), ('/sf:' + $DACPAC), ('/pr:' + $PROFILE), ('/TargetServerName:' + $SQLServer), ('/p:Storage=Memory'), ('/p:AllowIncompatiblePlatform="True"' )
     $date1=get-date
 	write-output "Deploying model for database "$DACPAC
 		& $SQLPackage $vars
 	if (! $?) { Write-Error "Deploy failed" "$_"}
     $date2=get-date
-    $deploytime = "Deployment of "+$_.Name+"took(HH:MM:SS:MS) "+(New-TimeSpan –Start $date1 –End $date2)
+    $deploytime = "Deployment of "+$_.Name+" took(HH:MM:SS:MS) "+(New-TimeSpan –Start $date1 –End $date2)
     write-output $deploytime 
-}
+}  
 #end of deploy
 
 #restore adventureworks

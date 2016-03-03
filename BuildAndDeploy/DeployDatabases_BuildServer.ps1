@@ -21,7 +21,7 @@ Foreach-Object{
 		& $SQLPackage $vars
 	if (! $?) { throw "Deploy failed" }
     $date2=get-date
-    $deploytime = "Deployment of "+$_.Name+"took(HH:MM:SS:MS) "+(New-TimeSpan –Start $date1 –End $date2)
+    $deploytime = "Deployment of "+$_.Name+" took(HH:MM:SS:MS) "+(New-TimeSpan –Start $date1 –End $date2)
     write-output $deploytime
 }
 
