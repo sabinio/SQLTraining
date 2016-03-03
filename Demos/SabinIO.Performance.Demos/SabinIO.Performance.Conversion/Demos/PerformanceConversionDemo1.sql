@@ -1,16 +1,6 @@
 ﻿USE [SabinIO.Performance.Conversion];
 GO
 
-CREATE TABLE _integer (
-	id INT NOT NULL
-	,CONSTRAINT [pk_int] PRIMARY KEY CLUSTERED ([id] ASC)
-	)
-
-CREATE TABLE _char (
-	ch NVARCHAR(2) NOT NULL
-	,CONSTRAINT [pk_char] PRIMARY KEY CLUSTERED ([ch] ASC)
-	)
-
 SET NOCOUNT ON
 
 DECLARE @i INT = 1

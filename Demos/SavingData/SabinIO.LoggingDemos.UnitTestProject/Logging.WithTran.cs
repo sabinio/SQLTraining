@@ -29,6 +29,11 @@ namespace SabinIO.LoggingDemos.UnitTestProject
             for (int i = 0; i < batches.Length; i++)
             {
                 string batch = batches[i];
+
+                if (i > 0)
+                {
+                    batch = batch.Replace("2000", "20");
+                }
                 SqlDataAdapter da = new SqlDataAdapter(batch, constring);
                 da.SelectCommand.CommandTimeout = 120;
                 DataSet ds = new DataSet();

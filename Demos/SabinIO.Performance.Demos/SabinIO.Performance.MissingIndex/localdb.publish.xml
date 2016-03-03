@@ -7,6 +7,6 @@
     <TargetConnectionString>Data Source=(localdb)\ProjectsV12;Integrated Security=True;Pooling=False</TargetConnectionString>
     <ProfileVersionNumber>1</ProfileVersionNumber>
     <BlockOnPossibleDataLoss>True</BlockOnPossibleDataLoss>
-    <CreateNewDatabase>True</CreateNewDatabase>
+    <CreateNewDatabase>False</CreateNewDatabase>
   </PropertyGroup>
 </Project>
