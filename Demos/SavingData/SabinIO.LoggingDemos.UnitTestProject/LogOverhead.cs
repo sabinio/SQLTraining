@@ -140,7 +140,7 @@ namespace SabinIO.LoggingDemos.UnitTestProject
 
                 if (i == 4)
                 {
-                    batch = batch.Replace("100000", "8000");
+                    batch = batch.Replace("100000", "20000");
                 }
                 SqlDataAdapter da = new SqlDataAdapter(batch, constring);
                 da.SelectCommand.CommandTimeout = 120;
@@ -191,10 +191,10 @@ namespace SabinIO.LoggingDemos.UnitTestProject
                         //Assert.AreEqual(2, LogSize_MB_PreRun);
                         Assert.IsTrue(LogSize_MB_PreRun <= 1);
                         //Assert.AreEqual(8, LogSize_MB_PostRun, "error on batch 4 post load mb check");
-                        Assert.AreEqual(8006, rows_postrun);
-                        Assert.AreEqual("112 KB", data_postrun);
+                        Assert.AreEqual(20006, rows_postrun);
+                        Assert.AreEqual("272 KB", data_postrun);
                         Assert.AreEqual("8 KB", index_postrun);
-                        //as long as we can prove that post log size is greater than 2mb, and that a 1352 KB insert causes log file growth, then that will have to do as a test
+                        //as long as we can prove that post log size is greater than prerun, and that a 272 KB insert causes log file growth, then that will have to do as a test
                         Assert.IsTrue(LogSize_MB_PreRun < LogSize_MB_PostRun);
                     }
 
@@ -203,8 +203,8 @@ namespace SabinIO.LoggingDemos.UnitTestProject
                         //Assert.AreEqual(2, LogSize_MB_PreRun);
                         Assert.IsTrue(LogSize_MB_PreRun <= 2);
                         //Assert.AreEqual(8, LogSize_MB_PostRun, "error on batch 7 post load mb check");
-                        Assert.AreEqual(8006, rows_postrun);
-                        Assert.AreEqual("104 KB", data_postrun);
+                        Assert.AreEqual(20006, rows_postrun);
+                        Assert.AreEqual("264 KB", data_postrun);
                         Assert.AreEqual("8 KB", index_postrun);
                         //as long as we can prove that post log size is greater than 2mb, and that a 104 KB insert caused log file growth, then that will have to do as a test
                         Assert.IsTrue(LogSize_MB_PreRun <= LogSize_MB_PostRun);
