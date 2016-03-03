@@ -20,7 +20,7 @@ If ($MsBuilExists -ne $true) {write-host "msbuild does not exist at this locatio
 $buildFile = $PSScriptRoot+"\BuildAllDBProjects.targets.xml"
 $arg = "/p:Configuration=Debug;Platform=Any CPU;VisualStudioVersion=14.0"
 
-& $msbuild $buildFile $arg
+#& $msbuild $buildFile $arg
 #end of buildset 
 
 #deploy all projects
@@ -47,6 +47,7 @@ Foreach-Object{
 	$vars = ('/a:publish'), ('/sf:' + $DACPAC), ('/pr:' + $PROFILE), ('/TargetServerName:' + $SQLServer), ('/p:Storage=Memory'), ('/p:AllowIncompatiblePlatform="True"' )
     $date1=get-date
 	write-output "Deploying model for database "$DACPAC
+write-output $SQLPackage $vars
 		& $SQLPackage $vars
 	if (! $?) { Write-Error "Deploy failed" "$_"}
     $date2=get-date

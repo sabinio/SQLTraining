@@ -102,7 +102,7 @@ CROSS APPLY sys.dm_exec_sql_text(p.plan_handle) s
 LEFT JOIN sys.dm_exec_query_stats stat ON stat.plan_handle = p.plan_handle
 WHERE s.TEXT LIKE '%fp_sales%'
 ORDER BY stat.execution_count desc
-
+GO
 /*
 now run in forced
 */

@@ -13,6 +13,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.ArithAbort.PlanCach
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Parameterisation", "SabinIO.Parameterisation\SabinIO.Parameterisation.sqlproj", "{2B979A88-9142-4F3D-B77A-B5EE51253043}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{E9D28857-3C83-4B12-805A-3DE3910CB579}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,5 +52,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{793E196F-4CC1-491A-9CE9-C193886B9218} = {E9D28857-3C83-4B12-805A-3DE3910CB579}
 	EndGlobalSection
 EndGlobal

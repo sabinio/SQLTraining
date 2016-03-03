@@ -1,8 +1,7 @@
-﻿USE AdventureWorks2012;
+﻿USE AdventureWorks2014;
 GO
 
-ALTER DATABASE AdventureWorks2012
-
+ALTER DATABASE AdventureWorks2014
 SET PARAMETERIZATION FORCED;
 GO
 
@@ -27,6 +26,7 @@ SELECT p.ProductID
 FROM [Production].[TransactionHistory] th
 INNER JOIN [Production].[Product] p ON th.ProductID = p.ProductID
 WHERE p.ProductID < 420;
+GO
 
 --two adhoc plans used as shells that point to parameterised plan
 --view query_plan to verify (should only show "select")
@@ -40,15 +40,16 @@ OUTER APPLY sys.dm_exec_sql_text(cp.plan_handle) st
 OUTER APPLY sys.dm_exec_query_plan(cp.plan_handle) qp
 WHERE st.TEXT LIKE '%TransactionHistory%'
 	AND st.TEXT NOT LIKE '%dm_exec_cached_plans%';
+GO
 
-ALTER DATABASE AdventureWorks2012
+ALTER DATABASE AdventureWorks2014
 
 SET PARAMETERIZATION SIMPLE;
 GO
 
 
 DBCC FREEPROCCACHE
-
+GO
 --include actual execution plan
 --run both queries at the same time 
 --view estimated and actual row counts for both nested loops (left outer join)
@@ -68,7 +69,7 @@ SELECT p.ProductID
 FROM [Production].[TransactionHistory] th
 INNER JOIN [Production].[Product] p ON th.ProductID = p.ProductID
 WHERE p.ProductID < 420;
-
+GO
 
 --two adhoc plans used as shells that point to parameterised plan
 --view query_plan to verify (should only show"select")

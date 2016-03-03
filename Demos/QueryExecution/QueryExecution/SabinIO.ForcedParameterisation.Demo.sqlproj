@@ -70,7 +70,9 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\FP_Sales.sql" />
-    <None Include="Demos\ForcedParamDemo1.sql" />
+    <None Include="Demos\ForcedParamDemo1.sql">
+      <CopyToOutputDirectory>DoNotCopy</CopyToOutputDirectory>
+    </None>
     <Build Include="dbo\Indexes\FP_Sales_Indexes.sql" />
   </ItemGroup>
   <ItemGroup>
