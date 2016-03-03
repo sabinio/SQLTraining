@@ -16,9 +16,12 @@ Foreach-Object{
 	}
 
 	$vars = ('/a:publish'), ('/sf:' + $DACPAC), ('/pr:' + $PROFILE), ('/TargetServerName:' + $ServerName)
-
-	write-host "Deploying model for database "$DACPAC
+    $date1=get-date
+	write-output "Deploying model for database "$DACPAC
 		& $SQLPackage $vars
 	if (! $?) { throw "Deploy failed" }
+    $date2=get-date
+    $deploytime = "Deployment of "+$_.Name+"took(HH:MM:SS:MS) "+(New-TimeSpan –Start $date1 –End $date2)
+    write-output $deploytime
 }
 
