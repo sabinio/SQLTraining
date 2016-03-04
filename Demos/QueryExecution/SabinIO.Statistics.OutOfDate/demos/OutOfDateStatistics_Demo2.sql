@@ -1,5 +1,5 @@
 ﻿USE [SabinIO.Statistics.OutOfDate]
-
+GO
 /*
     This script highlights how statistics are updated as data changes
     
@@ -19,49 +19,48 @@ FROM sys.indexes i
 JOIN sys.partitions p ON p.object_id = i.object_id
 	AND i.index_id = p.index_id
 WHERE NAME = 'IX_Orders_OrderDate'
-
+GO
 EXEC up_OrdersGenerate '12 jan 2016'
 	,'13 jan 2016'
 	,100
-
+GO
 EXEC up_GetOrdersBYDate '11 jan 2016'
 	,'12 jan 2016' --We have to perform a query to update the stats
-
+GO
 SELECT p.rows
 	,stats_date(i.object_id, p.index_id)
 FROM sys.indexes i
 JOIN sys.partitions p ON p.object_id = i.object_id
 	AND i.index_id = p.index_id
 WHERE NAME = 'IX_Orders_OrderDate'
-
+GO
 EXEC up_OrdersGenerate '13 jan 2016'
 	,'14 jan 2016'
 	,100
-
+GO
 EXEC up_GetOrdersBYDate '11 jan 2016'
 	,'12 jan 2016'
-
+GO
 SELECT p.rows
 	,stats_date(i.object_id, p.index_id)
 FROM sys.indexes i
 JOIN sys.partitions p ON p.object_id = i.object_id
 	AND i.index_id = p.index_id
 WHERE NAME = 'IX_Orders_OrderDate'
-
+GO
 EXEC up_OrdersGenerate '14 jan 2016'
 	,'15 jan 2016'
 	,100
-
+GO
 EXEC up_GetOrdersBYDate '11 jan 2016'
 	,'12 jan 2016'
-
+GO
 SELECT p.rows
 	,stats_date(i.object_id, p.index_id)
 FROM sys.indexes i
 JOIN sys.partitions p ON p.object_id = i.object_id
 	AND i.index_id = p.index_id
 WHERE NAME = 'IX_Orders_OrderDate'
-
 GO
 	--Stats will have been now have been updated with the last set of data having been added
 --Lets add 5 days worth and have a look at what happens to the stored proc call
@@ -84,3 +83,11 @@ SELECT StatMan([SC0], [SB0000]) FROM (SELECT TOP 100 PERCENT [SC0], step_directi
 
 
 */
+GO
+SELECT p.rows
+	,stats_date(i.object_id, p.index_id)
+FROM sys.indexes i
+JOIN sys.partitions p ON p.object_id = i.object_id
+	AND i.index_id = p.index_id
+WHERE NAME = 'IX_Orders_OrderDate'
+GO
