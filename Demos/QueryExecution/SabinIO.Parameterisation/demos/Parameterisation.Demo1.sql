@@ -10,7 +10,7 @@ GO
 -- Run both queries (turn on actual plan first)
 -- Neither are paramertised (plans are different because product 870 has lots of results, -1 has none - taken from statistics)
 -- Query is not paramertised because the group by is too complex for simple paramertisation
-GO
+
 
 SELECT OrderQty, COUNT(*)
 FROM Sales.SalesOrderDetail
@@ -196,7 +196,7 @@ GO
 
 
 
--- What if you can't be sure 870 will always be a good choice of ID (data changes over time)
+-- What if you can't be sure 870 will always be a correct choice of ID (data changes over time)
 -- Use UNKNOWN - this will take an average of the expected results based on input
 DECLARE @Cmd NVARCHAR(4000)
 

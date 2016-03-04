@@ -43,6 +43,7 @@
     <Compile Include="GetBatches.cs" />
     <Compile Include="GetBatchResult.cs" />
     <Compile Include="GetConnection.cs" />
+    <Compile Include="GetQueryPlanValues.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
