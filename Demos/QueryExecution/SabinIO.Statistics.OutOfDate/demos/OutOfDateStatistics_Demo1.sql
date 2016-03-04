@@ -1,5 +1,5 @@
 ﻿USE [SabinIO.Statistics.OutOfDate]
-
+GO
 
 /*
     How are statistics updated and when
@@ -51,7 +51,7 @@ GO
 EXEC up_OrdersGenerate '11 jan 2016'
 	,'12 jan 2016'
 	,100
-
+GO
 
 
 --Lets run the stored procedure again this will use a cached plan and so the estimate should be 1
@@ -61,27 +61,27 @@ GO
 
 --lets free the cache and see what new plan we get
 DBCC FREEPROCCACHE
-
+GO
 EXEC up_GetOrdersBYDate '11 jan 2016'
 	,'12 jan 2016'
-
+GO
 --We still get an estimate 1 but the actual number is 100
 --Lets look at the statistics and see if we can explain it
 DBCC SHOW_STATISTICS (
 		'orders'
 		,'IX_Orders_OrderDate'
 		) WITH HISTOGRAM
-
+GO
 --We can see from the stats that the last date is apparently on 10 jan 2016
 --If we update the statistics what do we get
 UPDATE STATISTICS orders
 UPDATE STATISTICS orderDetails
-
+GO
 DBCC SHOW_STATISTICS (
 		'orders'
 		,'IX_Orders_OrderDate'
 		) WITH HISTOGRAM
-
+GO
 --The statistics are now up to date
 --If we re run the stored proc, even though we haven't cleared the cache, the query plan is now correct
 --This is because the updating of the stats causes the query plan to be invalidated.

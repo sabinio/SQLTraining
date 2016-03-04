@@ -22,12 +22,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>full</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -43,6 +44,7 @@
     <Compile Include="GetBatches.cs" />
     <Compile Include="GetBatchResult.cs" />
     <Compile Include="GetConnection.cs" />
+    <Compile Include="GetQueryPlan.cs" />
     <Compile Include="GetQueryPlanValues.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

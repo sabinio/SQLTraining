@@ -76,7 +76,9 @@
   <ItemGroup>
     <None Include="Scripts\LoadData.sql" />
     <None Include="local.publish.xml" />
-    <None Include="demos\OutOfDateStatistics_Demo1.sql" />
+    <None Include="demos\OutOfDateStatistics_Demo1.sql">
+      <CopyToOutputDirectory>DoNotCopy</CopyToOutputDirectory>
+    </None>
     <None Include="demos\OutOfDateStatistics_Demo2.sql" />
     <None Include="demos\trace template\Capture_OutOfDateStatistics.tdf" />
     <None Include="demos\trace template\how to import trace template.sql" />

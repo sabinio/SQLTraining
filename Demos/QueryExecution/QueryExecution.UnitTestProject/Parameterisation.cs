@@ -29,7 +29,7 @@ namespace QueryExecution.UnitTestProject
             Single Batch9EstimatedRows = 0;
             Single Batch12EstimatedRows = 0;
             Single Batch15EstimatedRows = 0;
-            
+
             for (int i = 0; i < batches.Length; i++)
             {
                 string batch = batches[i];
@@ -60,7 +60,7 @@ namespace QueryExecution.UnitTestProject
                         Batch9EstimatedRows = q.GetSumOfValues(ConvertQueryPlan, SqlNamespace, XPath);
                         Assert.AreNotEqual(Batch6EstimatedRows, Batch9EstimatedRows);
                     }
-                    if (i==12)
+                    if (i == 12)
                     {
                         Batch12EstimatedRows = q.GetSumOfValues(ConvertQueryPlan, SqlNamespace, XPath);
                         Assert.AreEqual(Batch6EstimatedRows, Batch12EstimatedRows);
@@ -73,7 +73,6 @@ namespace QueryExecution.UnitTestProject
                     }
                 }
             }
-
         }
     }
 }

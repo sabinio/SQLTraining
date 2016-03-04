@@ -35,7 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SabinIO.Demos.UnitTestFrameWork">
+    <Reference Include="SabinIO.Demos.UnitTestFrameWork, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>References\SabinIO.Demos.UnitTestFrameWork.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -60,6 +61,7 @@
   <ItemGroup>
     <Compile Include="ArithAbort.cs" />
     <Compile Include="Parameterisation.cs" />
+    <Compile Include="Statistics.cs" />
     <Compile Include="TestForcedParamDemo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
