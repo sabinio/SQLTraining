@@ -25,10 +25,10 @@ namespace QueryExecution.UnitTestProject
             string XPath = "//sql:Batch/sql:Statements/sql:StmtSimple/" + "sql:QueryPlan[1]/sql:RelOp[1]/@EstimateRows";
             string SqlNamespace = "http://schemas.microsoft.com/sqlserver/2004/07/showplan";
             string ConvertQueryPlan;
-            Single Batch6EstimatedRows = 0;
-            Single Batch9EstimatedRows = 0;
-            Single Batch12EstimatedRows = 0;
-            Single Batch15EstimatedRows = 0;
+            string Batch6EstimatedRows = String.Empty;
+            string Batch9EstimatedRows = String.Empty;
+            string Batch12EstimatedRows = String.Empty;
+            string Batch15EstimatedRows = String.Empty;
 
             for (int i = 0; i < batches.Length; i++)
             {

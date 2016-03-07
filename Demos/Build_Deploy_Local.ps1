@@ -46,9 +46,9 @@ Foreach-Object{
 
 	$vars = ('/a:publish'), ('/sf:' + $DACPAC), ('/pr:' + $PROFILE), ('/TargetServerName:' + $SQLServer), ('/p:Storage=Memory'), ('/p:AllowIncompatiblePlatform="True"' )
     $date1=get-date
-	write-output "Deploying model for database "$DACPAC
+	#write-output "Deploying model for database "$DACPAC
 write-output $SQLPackage $vars
-		& $SQLPackage $vars
+		#& $SQLPackage $vars
 	if (! $?) { Write-Error "Deploy failed" "$_"}
     $date2=get-date
     $deploytime = "Deployment of "+$_.Name+" took(HH:MM:SS:MS) "+(New-TimeSpan –Start $date1 –End $date2)

@@ -27,6 +27,10 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Performance.ColumnO
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SabinIO.Performance.ClusteredColumnstore", "SabinIO.Performance.ClusteredColumnstore\SabinIO.Performance.ClusteredColumnstore.sqlproj", "{AFD33CF1-98FC-452D-924E-73905B7B1C80}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{F8C36E38-2401-4682-BB89-95E7A0F39E97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SabinIO.Performance.UnitTesting", "SabinIO.Performance.UnitTesting\SabinIO.Performance.UnitTesting.csproj", "{11ED2A91-DDAF-4DFB-91B0-A99884E964EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -179,8 +183,19 @@ Global
 		{AFD33CF1-98FC-452D-924E-73905B7B1C80}.Release|x64.ActiveCfg = Release|Any CPU
 		{AFD33CF1-98FC-452D-924E-73905B7B1C80}.Release|x64.Build.0 = Release|Any CPU
 		{AFD33CF1-98FC-452D-924E-73905B7B1C80}.Release|x64.Deploy.0 = Release|Any CPU
+		{11ED2A91-DDAF-4DFB-91B0-A99884E964EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11ED2A91-DDAF-4DFB-91B0-A99884E964EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11ED2A91-DDAF-4DFB-91B0-A99884E964EB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{11ED2A91-DDAF-4DFB-91B0-A99884E964EB}.Debug|x64.Build.0 = Debug|Any CPU
+		{11ED2A91-DDAF-4DFB-91B0-A99884E964EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11ED2A91-DDAF-4DFB-91B0-A99884E964EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11ED2A91-DDAF-4DFB-91B0-A99884E964EB}.Release|x64.ActiveCfg = Release|Any CPU
+		{11ED2A91-DDAF-4DFB-91B0-A99884E964EB}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{11ED2A91-DDAF-4DFB-91B0-A99884E964EB} = {F8C36E38-2401-4682-BB89-95E7A0F39E97}
 	EndGlobalSection
 EndGlobal

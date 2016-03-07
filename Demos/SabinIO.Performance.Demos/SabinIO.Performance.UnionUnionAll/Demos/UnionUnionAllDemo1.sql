@@ -11,7 +11,7 @@ UNION ALL
 SELECT 'Beryllium'
 UNION ALL
 SELECT 'Boron'
-
+GO
 
 INSERT INTO Table2
 SELECT 'Hydrogen'
@@ -19,6 +19,7 @@ UNION ALL
 SELECT 'Lithium'
 UNION ALL
 SELECT 'Boron'
+GO
 
 --turn on actual execution results
 --using UNION ALL returns all 8 rows, including duplicates
@@ -27,7 +28,7 @@ FROM Table1
 UNION ALL
 SELECT *
 FROM Table2
-
+GO
 --using UNION returns unique values
 --this is achieved using a distinct sort
 SELECT *
@@ -35,5 +36,3 @@ FROM Table1
 UNION
 SELECT *
 FROM Table2
-GO 
-

@@ -32,23 +32,23 @@ namespace QueryExecution.UnitTestProject
                 {
                     Assert.AreEqual(0, Convert.ToInt32(ds.Tables["table"].Rows[0]["Column1"]));
                     string QueryPlan = qp.GetQueryPlanForQuery(constring_1, batch);
-                    Single RowEstimate = qv.GetSumOfValues(QueryPlan, SqlNamespace, XPath);
-                    Assert.AreEqual(1, RowEstimate);
+                    string RowEstimate = qv.GetSumOfValues(QueryPlan, SqlNamespace, XPath);
+                    Assert.AreEqual("1", RowEstimate);
                 }
 
                 if (i == 7)
                 {
                     Assert.AreEqual(0, Convert.ToInt32(ds.Tables["table"].Rows[0]["RowsAffected"]));
                     string QueryPlan = qp.GetQueryPlanForQuery(constring_1, batch);
-                    Single RowEstimate = qv.GetSumOfValues(QueryPlan, SqlNamespace, XPathForSproc);
-                    Assert.AreEqual(1, RowEstimate);
+                    string RowEstimate = qv.GetSumOfValues(QueryPlan, SqlNamespace, XPathForSproc);
+                    Assert.AreEqual("1", RowEstimate);
                 }
                 if (i == 9 || i == 11)
                 {
                     Assert.AreEqual(100, Convert.ToInt32(ds.Tables["table"].Rows[0]["RowsAffected"]));
                     string QueryPlan = qp.GetQueryPlanForQuery(constring_1, batch);
-                    Single RowEstimate = qv.GetSumOfValues(QueryPlan, SqlNamespace, XPathForSproc);
-                    Assert.AreEqual(1, RowEstimate);
+                    string RowEstimate = qv.GetSumOfValues(QueryPlan, SqlNamespace, XPathForSproc);
+                    Assert.AreEqual("1", RowEstimate);
                 }
 
                 if (i == 4 || i == 12)
@@ -71,8 +71,8 @@ namespace QueryExecution.UnitTestProject
                 {
                     Assert.AreEqual(100, Convert.ToInt32(ds.Tables["table"].Rows[0]["RowsAffected"]));
                     string QueryPlan = qp.GetQueryPlanForQuery(constring_1, batch);
-                    Single RowEstimate = qv.GetSumOfValues(QueryPlan, SqlNamespace, XPathForSproc);
-                    Assert.AreEqual(99.125, RowEstimate);
+                    string RowEstimate = qv.GetSumOfValues(QueryPlan, SqlNamespace, XPathForSproc);
+                    Assert.AreEqual("99.125", RowEstimate);
                 }
             }
         }
