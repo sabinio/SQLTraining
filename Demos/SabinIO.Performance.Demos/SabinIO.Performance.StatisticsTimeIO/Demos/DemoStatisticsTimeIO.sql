@@ -1,14 +1,13 @@
-﻿--logical read: how many 8kb pages read
+﻿USE AdventureWorks2014
+GO
+--logical read: how many 8kb pages read
 --physical reads: how many 8kb pages were read from disk
 --read-ahead reads: pre-fetched disksfor the query
 
 SET STATISTICS IO ON;
-GO
-
 SELECT *
 FROM [Sales].[SalesOrderDetail]
 GO
-
 SET STATISTICS IO OFF;
 GO
 
@@ -16,11 +15,7 @@ GO
 --execution time: complete the execution of the query plan
 
 SET STATISTICS TIME ON;
-GO
-
 SELECT *
 FROM [Sales].[SalesOrderDetail]
 GO
-
 SET STATISTICS TIME OFF;
-GO

@@ -1,30 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SabinIO.Demos.UnitTestFrameWork;
+using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 
 namespace SabinIO.Performance.UnitTesting
 {
     [TestClass]
-    public class TruncateDelete
+    public class StatisticsTimeIO
     {
         [TestMethod]
-        public void TestTruncateDeleteDemo1()
+        public void TestDemoStatisticsTimeIO()
         {
             GetConnection u = new GetConnection();
             GetBatches b = new GetBatches();
             GetBatchResult r = new GetBatchResult();
             GetSqlInfo s = new GetSqlInfo();
 
-            string constring_1 = u.GetConnectionString("SabinIO.Performance.TruncateDelete");
-            string[] batches = b.GetFileContent(@"..\\..\\..\\SabinIO.Performance.TruncateDelete\\Demos\\TruncateDeleteDemo1.sql");
+            string constring_1 = u.GetConnectionString("AdventureWorks2014");
+            string[] batches = b.GetFileContent(@"..\\..\\..\\SabinIO.Performance.StatisticsTimeIO\\Demos\\DemoStatisticsTimeIO.sql");
 
             SqlConnection _conn = new SqlConnection(constring_1);
             _conn.InfoMessage += new SqlInfoMessageEventHandler(s.Message);
+
 
             for (int i = 0; i < batches.Length; i++)
             {
@@ -35,19 +33,10 @@ namespace SabinIO.Performance.UnitTesting
             }
 
             MatchCollection q = Regex.Matches(s.SqlInfoMessages[1], @"\d+");
-
-            Assert.IsTrue(Convert.ToInt32(q[0].ToString()) == 0);
-            Assert.IsTrue(Convert.ToInt32(q[1].ToString()) <= 2);
+            Assert.IsTrue(Convert.ToInt32(q[1].ToString()) <= 1246);
 
             MatchCollection w = Regex.Matches(s.SqlInfoMessages[2], @"\d+");
-
-            Assert.IsTrue(Convert.ToInt32(w[0].ToString()) <= 1);
-            Assert.IsTrue(Convert.ToInt32(w[1].ToString()) <= 11);
-            Assert.IsTrue(Convert.ToInt32(w[2].ToString()) <= 2);
-            Assert.IsTrue(Convert.ToInt32(w[3].ToString()) <= 2);
-            Assert.IsTrue(Convert.ToInt32(w[4].ToString()) <= 2);
-            Assert.IsTrue(Convert.ToInt32(w[5].ToString()) <= 2);
-            Assert.IsTrue(Convert.ToInt32(w[6].ToString()) <= 2);
+            Assert.IsTrue(Convert.ToInt32(q[0].ToString()) <= 200);
         }
     }
 }

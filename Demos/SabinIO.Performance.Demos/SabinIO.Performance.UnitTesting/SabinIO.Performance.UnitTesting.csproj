@@ -56,6 +56,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="StatisticsTimeIO.cs" />
     <Compile Include="TruncateDelete.cs" />
     <Compile Include="UDF.cs" />
     <Compile Include="UnionUnionAll.cs" />
