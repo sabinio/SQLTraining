@@ -30,7 +30,6 @@ namespace SabinIO.Demos.UnitTestFrameWork
             xpression.SetContext(nsmgr);
             //iterate over the nodes
             XPathNodeIterator iterator =  navigator.Select(xpression);
-            //get total value of each of the expressions we are looking for in the node
             return iterator;
         }
 

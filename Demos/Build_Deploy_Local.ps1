@@ -11,6 +11,11 @@
 #     the connection to local SQL instance is trusted                                                 #
 #                                                                                                     #
 #######################################################################################################
+[CmdletBinding()]
+Param(
+  [Parameter(Mandatory=$True,Position=1)]
+   [string]$SQLServer
+)
 
 #build all projects; we call an msbuild file that excludes the performancetesting sln as it will fail
 #on build unless we have ultimate/enterprise visual studio installed
@@ -20,12 +25,11 @@ If ($MsBuilExists -ne $true) {write-host "msbuild does not exist at this locatio
 $buildFile = $PSScriptRoot+"\BuildAllDBProjects.targets.xml"
 $arg = "/p:Configuration=Debug;Platform=Any CPU;VisualStudioVersion=14.0"
 
-#& $msbuild $buildFile $arg
+& $msbuild $buildFile $arg
 #end of buildset 
 
 #deploy all projects
 #ignores any tSQLt projects
-$SQLServer = "." # if you have a named instance, change here
 $DropFolder = $PSScriptRoot
 
 $findSqlPackage = "C:\Program Files (x86)\Microsoft SQL Server\"
@@ -46,9 +50,8 @@ Foreach-Object{
 
 	$vars = ('/a:publish'), ('/sf:' + $DACPAC), ('/pr:' + $PROFILE), ('/TargetServerName:' + $SQLServer), ('/p:Storage=Memory'), ('/p:AllowIncompatiblePlatform="True"' )
     $date1=get-date
-	#write-output "Deploying model for database "$DACPAC
-write-output $SQLPackage $vars
-		#& $SQLPackage $vars
+	write-output "Deploying model for database "$DACPAC
+    & $SQLPackage $vars
 	if (! $?) { Write-Error "Deploy failed" "$_"}
     $date2=get-date
     $deploytime = "Deployment of "+$_.Name+" took(HH:MM:SS:MS) "+(New-TimeSpan –Start $date1 –End $date2)

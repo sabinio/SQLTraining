@@ -1,5 +1,5 @@
 ﻿USE [SabinIO.Performance.TruncateDelete]
-
+GO
 /*
 TRUNCATE TABLE removes the data by de-allocating the data pages used to store the table’s data, 
 and only the page de-allocations are recorded in the transaction log. 
@@ -8,34 +8,36 @@ It’s important to understand that TRUNCATE is logged, just not at the row leve
 */
  
 SET NOCOUNT ON
+DECLARE @INT INT = 1
+WHILE @INT < 1000
+BEGIN
 INSERT INTO TruncTable (ID, IntColumnOne, IntColumnTwo, IntColumnThree)
 SELECT RAND()*10000, RAND()*10000, RAND()*10000, RAND()*10000
-GO 1000
+SET @INT = @INT + 1
+END
+GO
 
 SET NOCOUNT OFF
 SET STATISTICS IO ON
-GO
 SET STATISTICS TIME ON
-GO
-truncate table TruncTable
-GO
-SET STATISTICS IO OFF
-GO
-SET STATISTICS TIME OFF
+TRUNCATE TABLE TruncTable
 GO
  
-
 SET NOCOUNT ON
-INSERT INTO DelTable (ID, IntColumnOne, IntColumnTwo, IntColumnThree)
+DECLARE @INT INT = 1
+WHILE @INT < 1000
+BEGIN
+INSERT INTO DelTable(ID, IntColumnOne, IntColumnTwo, IntColumnThree)
 SELECT RAND()*10000, RAND()*10000, RAND()*10000, RAND()*10000
-GO 1000
+SET @INT = @INT + 1
+END
+GO
+
 SET NOCOUNT OFF
  
 SET STATISTICS IO ON
-GO
 SET STATISTICS TIME ON
-GO
-delete from DelTable
+DELETE FROM DelTable
 GO
 SET STATISTICS IO OFF
 GO

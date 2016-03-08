@@ -1,6 +1,15 @@
-﻿--demo3
+﻿USE [AdventureWorks2014]
+GO
+--demo3
 
 --udf returns the max totaldue from sales order header for each territory
+IF EXISTS (
+    SELECT * FROM sysobjects WHERE id = object_id(N'GetMaxTotalDue_Scalar') 
+    AND xtype IN (N'FN', N'IF', N'TF')
+)
+    DROP FUNCTION GetMaxTotalDue_Scalar
+GO
+
 CREATE FUNCTION GetMaxTotalDue_Scalar
 (
     @TerritoryId INT
@@ -29,6 +38,14 @@ GO
 
 
 --create tdf for the same logic; this just returns a table
+
+IF EXISTS (
+    SELECT * FROM sysobjects WHERE id = object_id(N'GetMaxTotalDue_Inline') 
+    AND xtype IN (N'FN', N'IF', N'TF')
+)
+    DROP FUNCTION GetMaxTotalDue_Inline
+GO
+
 CREATE FUNCTION GetMaxTotalDue_Inline
 (
     @TerritoryId INT

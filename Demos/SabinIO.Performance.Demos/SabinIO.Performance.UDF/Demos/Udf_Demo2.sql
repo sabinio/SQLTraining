@@ -1,8 +1,15 @@
 ﻿--demo2
-
+USE [AdventureWorks2014]
+GO
 SELECT COUNT (*) FROM [AdventureWorks2014].[Sales].[Customer]
 --19820 rows
-
+GO
+IF EXISTS (
+    SELECT * FROM sysobjects WHERE id = object_id(N'TripleTerritoryId') 
+    AND xtype IN (N'FN', N'IF', N'TF')
+)
+    DROP FUNCTION TripleTerritoryId
+GO
 CREATE FUNCTION Sales.TripleTerritoryId(@Input int)
        RETURNS int
 AS
@@ -23,6 +30,7 @@ SELECT MAX(Sales.TripleTerritoryId([TerritoryID])) AS MaxTriple
 FROM   [AdventureWorks2014].[Sales].[Customer]
 GO
 SET STATISTICS TIME OFF
+GO
 --the cpu and elapsed time when executing on sql server is greater 
 --using the udf than the first time round because the udf is called each time
 
@@ -41,7 +49,7 @@ GO
 SELECT 1 - Sales.TripleTerritoryId(TerritoryID)
 FROM   [AdventureWorks2014].[Sales].[Customer]
 WHERE  Sales.TripleTerritoryId(TerritoryID) > 20;
-
+GO
 
 SELECT 1 - (3 * TerritoryId)
 FROM   [AdventureWorks2014].[Sales].[Customer]
@@ -50,6 +58,7 @@ GO
 SET STATISTICS TIME OFF
 
 SELECT DISTINCT TerritoryId from [AdventureWorks2014].[Sales].[Customer]
+GO
 --there are only 10 distinct territory id's, so does the udf ned to be called 19820 times?
 
 SET STATISTICS TIME ON
