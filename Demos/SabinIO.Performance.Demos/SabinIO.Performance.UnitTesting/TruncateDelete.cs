@@ -40,18 +40,18 @@ namespace SabinIO.Performance.UnitTesting
 
             MatchCollection q = Regex.Matches(s.SqlInfoMessages[1], @"\d+");
 
-            Assert.IsTrue(Convert.ToInt32(q[0].ToString()) == 0);
-            Assert.IsTrue(Convert.ToInt32(q[1].ToString()) <= 2);
+            Assert.IsTrue(Convert.ToInt32(q[0].ToString())<= 10);
+            Assert.IsTrue(Convert.ToInt32(q[1].ToString()) <= 10);
 
             MatchCollection w = Regex.Matches(s.SqlInfoMessages[2], @"\d+");
 
-            Assert.IsTrue(Convert.ToInt32(w[0].ToString()) <= 1);
-            Assert.IsTrue(Convert.ToInt32(w[1].ToString()) <= 11);
-            Assert.IsTrue(Convert.ToInt32(w[2].ToString()) <= 2);
-            Assert.IsTrue(Convert.ToInt32(w[3].ToString()) <= 2);
-            Assert.IsTrue(Convert.ToInt32(w[4].ToString()) <= 2);
-            Assert.IsTrue(Convert.ToInt32(w[5].ToString()) <= 2);
-            Assert.IsTrue(Convert.ToInt32(w[6].ToString()) <= 2);
+            Assert.IsTrue(Convert.ToInt32(w[0].ToString()) <= 10);
+            Assert.IsTrue(Convert.ToInt32(w[1].ToString()) <= 22);
+            Assert.IsTrue(Convert.ToInt32(w[2].ToString()) <= 10);
+            Assert.IsTrue(Convert.ToInt32(w[3].ToString()) <= 10);
+            Assert.IsTrue(Convert.ToInt32(w[4].ToString()) <= 10);
+            Assert.IsTrue(Convert.ToInt32(w[5].ToString()) <= 10);
+            Assert.IsTrue(Convert.ToInt32(w[6].ToString()) <= 10);
         }
     }
 }
