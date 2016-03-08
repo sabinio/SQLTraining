@@ -28,8 +28,12 @@ namespace SabinIO.Performance.UnitTesting
 
             for (int i = 0; i < batches.Length; i++)
             {
+
+                batches[1] = batches[1].Replace("1000", "100");
+                batches[3] = batches[3].Replace("1000", "100");
                 _conn.Open();
                 SqlCommand cmd_1 = new SqlCommand(batches[i], _conn);
+                cmd_1.CommandTimeout = 60;
                 cmd_1.ExecuteNonQuery();
                 _conn.Close();
             }
