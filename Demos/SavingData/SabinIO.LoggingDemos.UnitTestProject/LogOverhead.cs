@@ -253,7 +253,7 @@ namespace SabinIO.LoggingDemos.UnitTestProject
                     DataTable LogSize_PostRun = new DataTable();
                     LogSize_PostRun = ds.Tables["Table1"];
                     LogSize_MB_PostRun = Convert.ToInt32(LogSize_PostRun.Rows[0]["LogSize_MB"]);
-                    Assert.IsTrue(LogSize_MB_PreRun < LogSize_MB_PostRun);
+                    Assert.IsTrue(LogSize_MB_PreRun <= LogSize_MB_PostRun);
                 }
             }
         }
@@ -301,7 +301,7 @@ namespace SabinIO.LoggingDemos.UnitTestProject
 
                     if (i == 4)
                     {
-                        Assert.IsTrue(LogSize_MB_PreRun < LogSize_MB_PostRun, "is also failed");
+                        Assert.IsTrue(LogSize_MB_PreRun <= LogSize_MB_PostRun, "is also failed");
                     }
                     if (i == 6)
                     {
