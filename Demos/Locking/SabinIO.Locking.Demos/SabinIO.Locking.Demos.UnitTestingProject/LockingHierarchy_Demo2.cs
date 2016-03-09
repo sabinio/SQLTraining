@@ -176,7 +176,7 @@ namespace SabinIO.Locking.Demos.UnitTestingProject
                 }
 
                 try
-                {
+                { 
                     da_3_1.Fill(ds_3_1);
                     DataTable dt_exclusive_intent_update = GetDataTable(ds_3_1, "table", "resource_type asc");
 

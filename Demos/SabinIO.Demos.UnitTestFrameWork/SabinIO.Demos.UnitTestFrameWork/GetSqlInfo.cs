@@ -13,7 +13,6 @@ namespace SabinIO.Demos.UnitTestFrameWork
 
         public void Message(object sender, SqlInfoMessageEventArgs e)
         {
-
             int i;
             for (i = 0; i < e.Errors.Count; i++)
             {
