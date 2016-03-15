@@ -4,11 +4,8 @@ GO
 SELECT COUNT (*) FROM [AdventureWorks2014].[Sales].[Customer]
 --19820 rows
 GO
-IF EXISTS (
-    SELECT * FROM sysobjects WHERE id = object_id(N'TripleTerritoryId') 
-    AND xtype IN (N'FN', N'IF', N'TF')
-)
-    DROP FUNCTION TripleTerritoryId
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = object_id(N'Sales.TripleTerritoryId'))
+    DROP FUNCTION Sales.TripleTerritoryId
 GO
 CREATE FUNCTION Sales.TripleTerritoryId(@Input int)
        RETURNS int
