@@ -1,7 +1,8 @@
-﻿
+﻿USE [SabinIO.Performance.UDF]
+GO
+
 --populate table with 1000 rows
 SET NOCOUNT ON
-set statistics IO OFF
 declare @i as int;
 set @i = 1;
 begin tran
@@ -16,7 +17,7 @@ end;
 commit;
 
 --what happens when we run this query?
-SELECT Number, GetDate() AS CurDate
+SELECT Number, SYSUTCDATETIME() AS CurDate
 FROM dbo.Numbers
 WHERE Number <= 1000;
 GO
@@ -24,10 +25,10 @@ GO
 
 --create function to getdate
 CREATE FUNCTION dbo.GetDateFunction()
-RETURNS DateTime
+RETURNS DATETIME2(7)
 AS
 BEGIN
-   RETURN GetDate();
+   RETURN SYSUTCDATETIME();
 END
 GO
 

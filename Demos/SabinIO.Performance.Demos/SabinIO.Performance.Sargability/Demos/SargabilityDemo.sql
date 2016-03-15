@@ -1,4 +1,6 @@
-﻿
+﻿USE [SabinIO.Performance.Sargability]
+GO
+
 
 CREATE NONCLUSTERED INDEX IX_Guitar_GuitarName 
 ON Guitar(GuitarName); 
@@ -30,7 +32,7 @@ GO
 
 SELECT [Date] FROM Guitar WHERE Year([Date]) = 2016
 
-SELECT [Date] FROM Guitar WHERE [Date] >= '2016-01-01 ' AND [Date] <= '2016-12-31'
+SELECT [Date] FROM Guitar WHERE [Date] >= '2016-01-01' AND [Date] <= '2016-12-31'
 
 --Substring examples
 --non sargable

@@ -1,4 +1,7 @@
-﻿--in memory object dlls are created and loaded
+﻿USE [SabinIO.Performance.InMemoryOltp]
+GO
+
+--in memory object dlls are created and loaded
 --expand name column and dlls are named using object_ids
 SELECT OBJECT_ID('InMemTable')
 SELECT OBJECT_ID('InMemTable2')
@@ -12,7 +15,6 @@ GO
 
 -- run the following code multiple times
 --ignore first run as memory is initialised
-
 SET STATISTICS TIME OFF;
 SET NOCOUNT ON;
 
@@ -33,9 +35,17 @@ DELETE FROM [dbo].[InMemTable4]
     WHERE [c1]>0
 GO
 
+
+/*
+
+MAIN SCRIPT RUN THE REST OF THIS SCRIPT AT ONCE
+
+*/
+
+
 -- Declare parameters for the test queries.
 DECLARE @i INT = 1;
-DECLARE @rowcount INT = 1000000;
+DECLARE @rowcount INT = 50000;  -- Tuned for Azure A2 VM. For local instance up to 1 million
 DECLARE @c NCHAR(48) = N'12345678901234567890123456789012345678';
 DECLARE @timems INT;
 DECLARE @starttime datetime2 = sysdatetime();
@@ -106,21 +116,15 @@ SELECT CAST(@timems AS VARCHAR(10)) + ' ms (memory-optimized table with schema o
 --end of the insert code block demo*/
 
 --get counts from the tables and restart the instance
-SELECT COUNT(*) FROM DiskBasedTable
-SELECT COUNT(*) FROM InMemTable
-SELECT COUNT(*) FROM InMemTable2
-SELECT COUNT(*) FROM InMemTable3
-SELECT COUNT(*) FROM InMemTable4
---restart
+SELECT COUNT(*), 'DiskBasedTable' FROM DiskBasedTable
+UNION ALL
+SELECT COUNT(*), 'InMemTable' FROM InMemTable
+UNION ALL
+SELECT COUNT(*), 'InMemTable2' FROM InMemTable2
+UNION ALL
+SELECT COUNT(*), 'InMemTable3' FROM InMemTable3
+UNION ALL
+SELECT COUNT(*), 'InMemTable4' FROM InMemTable4
+--restart sql server
 
---now get the count and tables 3 and 4 will now be empty
-select 1
-
-USE [SabinIO.Performance.InMemoryOltp]
-GO
-
-SELECT COUNT(*) FROM DiskBasedTable
-SELECT COUNT(*) FROM InMemTable
-SELECT COUNT(*) FROM InMemTable2
-SELECT COUNT(*) FROM InMemTable3
-SELECT COUNT(*) FROM InMemTable4
+--now rerun the 5 count(*) tables 3 and 4 will now be empty
