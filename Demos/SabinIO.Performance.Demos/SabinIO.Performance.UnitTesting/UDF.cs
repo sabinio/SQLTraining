@@ -24,7 +24,7 @@ namespace SabinIO.Performance.UnitTesting
                 string batch = batches[i];
                 DataSet ds = r.GetDataSet(batch, constring_1);
 
-                if (i == 2)
+                if (i == 3)
                 {
                     DataView v = new DataView(ds.Tables["table"]);
                     DataTable distinctValues = v.ToTable(true, "CurDate");
@@ -40,7 +40,7 @@ namespace SabinIO.Performance.UnitTesting
                         Assert.AreEqual(ds.Tables["Table"].Rows[0]["CurDate"], ds.Tables["Table"].Rows[1]["CurDate"]);
                     }
                 }
-                if (i == 4)
+                if (i == 5)
                 {
                     Assert.IsTrue(ds.Tables["Table"].Rows.Count >= 2);
                 }
