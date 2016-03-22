@@ -1,11 +1,11 @@
 ﻿param(
 [string]$serverNumber = "10")
 
-$rgName="sqltraining"
+$rgName="training"
 $vmName="sabiniotr" + $serverNumber
 $nicName="NIC-" + $vmName
-$StorageAccountName = "sabiniotraining1"
-$StorageAccountKey = "5r9bxMh6hSsuwRLihcLhAwJ0tbXs4Xy6cLCoGIfwiknRpf5rlaaZARJryy3u3G6JR4V8msCWG5xRt0Jum8RZog=="
+$StorageAccountName = "siotraining"
+$StorageAccountKey = "Ro6Id471dYenfdg8bNo4JaGOygaV32f389nXWi/J2T9UjgPd6OPP/SXGmIBFHLb90KjPy32Y9bWs9XMWUgDQwQ=="
 $vhd = "SabinioTR"+$ServerNumber+"OSDisk.vhd"
 
 $context = New-AzureStorageContext -StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey

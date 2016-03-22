@@ -1,13 +1,13 @@
 ﻿param(
 [string]$subScriptionName = "Visual Studio Ultimate with MSDN"  # Subscription Name (login before calling script)
-,[string]$serverNumber = "02"                              # Unique Number (if exists the VM will be reconfigured/imaged/sized as below)
-,[string]$rgName="sqltraining"                         	  # Resource Group
-,[string]$locName="WestEurope"                             # Azure Location
-,[string]$saName="sabiniotraining1"                        # Image must be in same storage account as vhd for this vm
+,[string]$serverNumber = "01"                              # Unique Number (if exists the VM will be reconfigured/imaged/sized as below)
+,[string]$rgName="training"                         	  # Resource Group
+,[string]$locName="NorthEurope"                             # Azure Location
+,[string]$saName="siotraining"                             # Image must be in same storage account as vhd for this vm
 ,[string]$vmName="SabinioTR" + $serverNumber               # Max 15 chars
 ,[string]$vmSize="Standard_A2"                             # Machine Size
-,[string]$vnetName="trainingvnet"                          # Network Name (the first valid subnet will be selected)/(Will overwrite any manual changes)
-,[string]$SourceImageUri = "https://sabiniotraining1.blob.core.windows.net/system/Microsoft.Compute/Images/mytemplates/Trainingv7-osDisk.34998b08-4a7e-4da7-99f9-4ab64b435757.vhd"
+,[string]$vnetName="sabinio"                          # Network Name (the first valid subnet will be selected)/(Will overwrite any manual changes)
+,[string]$SourceImageUri = "https://siotraining.blob.core.windows.net/images/TrainingV9-osDisk.vhd"
 )
 
 #	To call this script:
@@ -41,8 +41,8 @@ New-AzureRmResourceGroup -Name $rgName -Location $locName -Force
 #$subnet = Get-AzureRmVirtualNetworkSubnetConfig -Name $subnetName -VirtualNetwork $vnet
 
 # Set the existing virtual network and subnet index
-$subnetIndex=0
-$vnet=Get-AzureRMVirtualNetwork -Name $vnetName -ResourceGroupName $rgName
+$subnetIndex=3
+$vnet=Get-AzureRMVirtualNetwork -Name $vnetName -ResourceGroupName "sabinio"
 
 # Create the NIC
 $nicName="NIC-" + $vmName
