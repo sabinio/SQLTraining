@@ -37,7 +37,7 @@
   <ItemGroup>
     <Reference Include="SabinIO.Demos.UnitTestFrameWork, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Test\SabinIO.Demos.UnitTestFrameWork\SabinIO.Demos.UnitTestFrameWork\bin\Debug\SabinIO.Demos.UnitTestFrameWork.dll</HintPath>
+      <HintPath>..\References\SabinIO.Demos.UnitTestFrameWork.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
