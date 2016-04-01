@@ -36,8 +36,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="SabinIO.Demos.UnitTestFrameWork, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SabinIO.Demos.UnitTestFrameWork.1.0.0.4\lib\net452\SabinIO.Demos.UnitTestFrameWork.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Test\SabinIO.Demos.UnitTestFrameWork\SabinIO.Demos.UnitTestFrameWork\bin\Debug\SabinIO.Demos.UnitTestFrameWork.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -62,9 +62,6 @@
     <Compile Include="UDF.cs" />
     <Compile Include="UnionUnionAll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
