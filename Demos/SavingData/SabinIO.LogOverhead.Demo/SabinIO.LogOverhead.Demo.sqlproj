@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{39603bec-1f5a-4b5b-a535-af50b2385fe4}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql140DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -52,7 +52,7 @@
     <ReadCommittedSnapshot>False</ReadCommittedSnapshot>
     <VardecimalStorageFormatOn>True</VardecimalStorageFormatOn>
     <SupplementalLoggingOn>False</SupplementalLoggingOn>
-    <CompatibilityMode>120</CompatibilityMode>
+    <CompatibilityMode>140</CompatibilityMode>
     <AnsiNullDefault>False</AnsiNullDefault>
     <AnsiPadding>False</AnsiPadding>
     <AnsiWarnings>False</AnsiWarnings>
@@ -73,6 +73,8 @@
     <Recovery>SIMPLE</Recovery>
     <EnableFullTextSearch>True</EnableFullTextSearch>
     <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <QueryStoreDesiredState>ReadWrite</QueryStoreDesiredState>
+    <QueryStoreMaxStorageSize>1000</QueryStoreMaxStorageSize>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -117,6 +119,8 @@
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
     <Build Include="dbo\Tables\LogOverhead2.sql" />
+    <Build Include="Log.sql" />
+    <Build Include="Data.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Demos\Demo1.sql" />

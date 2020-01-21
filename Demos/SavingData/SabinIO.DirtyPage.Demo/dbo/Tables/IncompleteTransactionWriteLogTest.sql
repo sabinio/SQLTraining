@@ -1,4 +1,4 @@
 ﻿CREATE TABLE [dbo].[IncompleteTransactionWriteLogTest] (
-    [StringColumn] VARCHAR (15) NULL
+    [StringColumn] VARCHAR (35) NULL
 );
 

@@ -10,7 +10,7 @@ GO
 
 --ensure transaction log is small
 USE [SabinIO.LogOverhead.Demo];
-DBCC SHRINKFILE (N'SabinIO.LogOverhead.Demo_log' , 2)
+DBCC SHRINKFILE (N'Log_log' , 2)
 GO
 
 
@@ -28,6 +28,13 @@ BEGIN TRANSACTION
 
 	update LogOverhead2 
 	set ID = 10
+
+
+select er.session_id,dt.database_transaction_log_record_count,dt.database_transaction_log_bytes_used,dt.database_transaction_log_bytes_reserved 
+from sys.dm_exec_requests er
+inner join sys.dm_tran_database_transactions dt
+on er.transaction_id = dt.transaction_id
+where er.session_id = @@spid
 
 COMMIT TRANSACTION
 

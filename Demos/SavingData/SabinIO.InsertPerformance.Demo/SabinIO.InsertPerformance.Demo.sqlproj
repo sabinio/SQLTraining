@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{aa154ad3-7d5e-4a41-91be-42a4f2190a90}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql140DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -52,7 +52,7 @@
     <ReadCommittedSnapshot>False</ReadCommittedSnapshot>
     <VardecimalStorageFormatOn>True</VardecimalStorageFormatOn>
     <SupplementalLoggingOn>False</SupplementalLoggingOn>
-    <CompatibilityMode>120</CompatibilityMode>
+    <CompatibilityMode>140</CompatibilityMode>
     <AnsiNullDefault>False</AnsiNullDefault>
     <AnsiPadding>False</AnsiPadding>
     <AnsiWarnings>False</AnsiWarnings>
@@ -73,6 +73,8 @@
     <Recovery>SIMPLE</Recovery>
     <EnableFullTextSearch>True</EnableFullTextSearch>
     <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <QueryStoreDesiredState>ReadWrite</QueryStoreDesiredState>
+    <QueryStoreMaxStorageSize>1000</QueryStoreMaxStorageSize>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -127,6 +129,14 @@
     </Build>
     <None Include="Demos\Demo1.sql" />
     <None Include="Demos\Demo2.sql" />
+    <Build Include="dbo\Tables\WideTableWithNCIndexesCompression.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Tables\WideTableWithNCIndexesRealistic.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
   </ItemGroup>
   <ItemGroup>
     <None Include="SabinIO.InsertPerformance.Demo.publish.xml" />

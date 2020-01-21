@@ -1,8 +1,12 @@
 ﻿--00
-
+use master
+Go
+drop database [SabinIO.Recovery.PageVerify]
+go
 USE [SabinIO.Recovery.PageVerify]
 GO
-
+truncate table PV_Sales
+select * from PV_Sales
 --01
 SET NOCOUNT ON
 
@@ -42,7 +46,7 @@ GO
 -- m_tornBits = 0    -- Find a Slot view record below
 
 --07
-SELECT * FROM PV_Sales WHERE OrderID = 100;
+SELECT * FROM dbo.PV_Sales WHERE OrderID = 100;
 GO
 --1294	4283	0	7
 --08
@@ -142,5 +146,7 @@ ALTER DATABASE [SabinIO.Recovery.PageVerify] SET MULTI_USER;
 GO
 --27
 -- Error IS detetced on select
+SELECT TOP 10 * FROM PV_Sales WHERE OrderID <373
+
 SELECT TOP 10 * FROM PV_Sales WHERE OrderID >= 373;
 GO

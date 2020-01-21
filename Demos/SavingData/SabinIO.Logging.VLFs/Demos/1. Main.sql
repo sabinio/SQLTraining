@@ -8,7 +8,7 @@ GO
 DBCC LOGINFO()
 GO
 --03
--- Run until two active VLF's
+-- Run until two active VLFs
 DECLARE @i INT = 0
 WHILE @i < 30
 BEGIN
@@ -29,7 +29,7 @@ DBCC LOGINFO()
 GO
 --07
 -- Create Transactions in session 2 (Script 2)
--- Run until all VLF's active to show recycle
+-- Run until all VLFs active to show recycle
 DECLARE @i INT = 0
 WHILE @i < 40
 BEGIN

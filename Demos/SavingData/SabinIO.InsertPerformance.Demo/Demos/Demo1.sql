@@ -1,6 +1,6 @@
 ﻿USE [SabinIO.InsertPerformance.Demo]
 GO
-
+truncate table PageSplits
 
 --Page Splits Demo
 set nocount on
@@ -10,7 +10,7 @@ GO
 BEGIN TRANSACTION
 
 declare @a int = 1
-while @a <= 200
+while @a <= 20000
 begin
 	insert into PageSplits(id,col1)
 	values (@a,'a'),(@a,'b'),(@a,'c'),(@a,'d'),(@a,'e'),(@a,'f'),(@a,'g'),(@a,'h')
@@ -24,12 +24,13 @@ on er.transaction_id = dt.transaction_id
 where er.session_id = @@spid
 
 select page_count from sys.dm_db_index_physical_stats(db_id(),object_id('PageSplits'),1,Null,null)
+select count(1) from PageSplits
 
 COMMIT TRANSACTION
 GO
 --5 secs
---transaction log bytes - 183925500
---transaction log bytes reserved - 49654176
+--transaction log bytes         ~ 183,925,500
+--transaction log bytes reserved ~ 49,654,176
 --page count 20000
 
 
@@ -38,7 +39,7 @@ GO
 BEGIN TRANSACTION
 
 declare @a int = 1
-while @a <= 200
+while @a <= 20000
 begin
 	insert into PageSplits(id,col1)
 	values (@a,'a')
@@ -55,8 +56,8 @@ select page_count from sys.dm_db_index_physical_stats(db_id(),object_id('PageSpl
 COMMIT TRANSACTION
 GO
 --3 secs
---transaction log bytes - 121933532
---transaction log bytes reserved - 46742070
+--transaction log bytes         - 121,933,532
+--transaction log bytes reserved - 46,742,070
 --page count 40000
 
 
@@ -80,7 +81,7 @@ truncate table PageSplits
 BEGIN TRANSACTION
 
 declare @a int = 1
-while @a <= 200
+while @a <= 20000
 begin
 	insert into PageSplits(id,col1)
 	values (@a,'a'),(@a,'b'),(@a,'c'),(@a,'d'),(@a,'e'),(@a,'f'),(@a,'g'),(@a,'h')
@@ -115,7 +116,7 @@ GO
 BEGIN TRANSACTION
 
 declare @a int = 1
-while @a <= 200
+while @a <= 20000
 begin
 	insert into PageSplits(id,col1)
 	values (@a,'a')
@@ -132,8 +133,8 @@ select page_count from sys.dm_db_index_physical_stats(db_id(),object_id('PageSpl
 COMMIT TRANSACTION
 GO
 --1 secs
---transaction log bytes - 20400144
---transaction log bytes reserved - 1489170
+--transaction log bytes         - 20,400,144
+--transaction log bytes reserved - 1,489,170
 --page count 22860
 
 

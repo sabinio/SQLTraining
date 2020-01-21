@@ -3,15 +3,11 @@ GO
 
 SET NOCOUNT ON;
 GO
-
-
-
-
 --DELETE / TRUNCATE Large number of records
 
 --ensure transaction log is small
 USE [SabinIO.LogOverhead.Demo];
-DBCC SHRINKFILE (N'SabinIO.LogOverhead.Demo_log' , 2)
+DBCC SHRINKFILE (N'Log_log' , 2)
 GO
 
 
@@ -48,7 +44,7 @@ GO
 
 --ensure transaction log is small
 USE [SabinIO.LogOverhead.Demo];
-DBCC SHRINKFILE (N'SabinIO.LogOverhead.Demo_log' , 2)
+DBCC SHRINKFILE (N'Log_log' , 2)
 GO
 
 

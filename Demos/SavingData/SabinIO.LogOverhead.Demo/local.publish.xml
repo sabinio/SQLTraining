@@ -8,5 +8,8 @@
     <ProfileVersionNumber>1</ProfileVersionNumber>
     <BlockOnPossibleDataLoss>True</BlockOnPossibleDataLoss>
     <CreateNewDatabase>True</CreateNewDatabase>
+    <IgnoreFileSize>False</IgnoreFileSize>
+    <IgnoreFileAndLogFilePath>True</IgnoreFileAndLogFilePath>
+    <ScriptFileSize>True</ScriptFileSize>
   </PropertyGroup>
 </Project>
